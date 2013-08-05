@@ -1,0 +1,14 @@
+Package: RcppTN
+Type: Package
+Title: Rcpp-based Truncated Normal Distribution RNG
+Version: 0.1
+Date: 2013-04-11
+Author: Jonathan Olmsted
+Maintainer: Jonathan Olmsted <jpolmsted@gmail.com>
+Description: This package provides an R function to generate random deviates
+    from a Truncated Normal distribution using the Robert (1995)
+    algorithm. No d/p/q functions are provided. See the 'truncnorm'
+    package for these facilities.
+License: GPL (>= 2)
+Depends: Rcpp (>= 0.10.2), truncnorm
+LinkingTo: Rcpp
