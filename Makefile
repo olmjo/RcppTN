@@ -8,6 +8,9 @@ check :
 install :
 	R CMD INSTALL pkg
 
+remove :
+	R CMD REMOVE RcppTN
+
 clean :
 	rm -f RcppTN*.tar.gz
 	rm -fr pkg.Rcheck
