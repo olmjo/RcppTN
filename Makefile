@@ -19,6 +19,10 @@ clean :
 	rm -f ./pkg/src/*.rds
 	rm -f ./pkg.pdf
 
+bigtest : install
+	Rscript ./pkg/inst/bigtest.R
+	Rscript ./pkg/inst/comparison.R
+
 .PHONEY : clean
 
 
