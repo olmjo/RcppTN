@@ -2,12 +2,6 @@
 
 Rcpp-based Truncated Normal RNG by Jonathan Olmsted (jpolmsted@gmail.com)
 
-## Installation
-
-
-
-
-
 ## Example Usage
 
 This is taken from the documentation on the single function provided in `RcppTN`, `rtn()`.
