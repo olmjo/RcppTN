@@ -4,7 +4,7 @@
   Draw from a Truncated Normal Distribution.
 }
 \description{
-df df df df df
+
 }
 \usage{
 rtn(.mean = rep(0, 1),
