@@ -2,6 +2,17 @@
 
 Rcpp-based Truncated Normal RNG by Jonathan Olmsted (jpolmsted@gmail.com)
 
+## Installation
+
+Using `install_github()` from the `devtools` package will install this for
+you. Alternatively, you could clone the repository and build with the Makefile
+that is included.
+
+```
+library(devtools)
+install_github("RcppTN", username = "olmjo", subdir = "pkg")
+```
+
 ## Example Usage
 
 This is taken from the documentation on the single function provided in `RcppTN`, `rtn()`.
