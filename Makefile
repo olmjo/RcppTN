@@ -1,6 +1,7 @@
 build : clean
 	R CMD BUILD pkg
 	R CMD Rd2pdf pkg
+	tar -xvf RcppTN_*	
 
 check :
 	R CMD CHECK pkg
@@ -18,6 +19,7 @@ clean :
 	rm -f ./pkg/src/*.so
 	rm -f ./pkg/src/*.rds
 	rm -f ./pkg.pdf
+	rm -Rf ./RcppTN/
 
 bigtest : install
 	Rscript ./pkg/inst/bigtest.R

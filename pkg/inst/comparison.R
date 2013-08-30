@@ -1,5 +1,6 @@
 library(RcppTN)
 library(rbenchmark)
+library(msm)
 
 set.seed(1)
 

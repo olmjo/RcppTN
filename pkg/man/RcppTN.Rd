@@ -20,12 +20,12 @@ Type: \tab Package\cr
 Version: \tab 0.1-0\cr
 Date: \tab 2013-08-29\cr
 License: \tab GPL (>=2)\cr
+}
 
 While an R-level function to produce a vector of draws corresponding to
 an arbitrary set of distributions is provided, \code{\link{rtn}}, the main
 purpose of this R package is to provide a truncated Normal distribution
 RNG for other Rcpp-based projects that respects R's RNG state.
-}
 
 
 }
