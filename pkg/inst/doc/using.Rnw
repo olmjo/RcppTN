@@ -40,9 +40,11 @@
 \rhead{}
 \cfoot{\thepage}
 
-\author{Jonathan Olmsted \texttt{jpolmsted\@gmail.com}}
+\author{Jonathan Olmsted\\
+  \texttt{jpolmsted\@gmail.com}
+}
 \title{Using \RcppTN{} in \R{}}
-\date{August 29, 2013}
+\date{August 30, 2013}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -61,7 +63,7 @@ truncated Normal distributions. Although much of the value added by the
 \RcppTN{} package comes from providing a library to link against in development
 of other \Rcpp{}-based C++ codes, \RcppTN{} does expose a perfectly valid
 \R{}-level RNG. Existing implementations for drawing from a truncated Normal
-distribution include \textbf{truncnorm} and \textbf{tnorm}.
+distribution include \textbf{truncnorm} and \textbf{msm}.
 
 \section{Installation}
 
@@ -257,6 +259,7 @@ interest where the mean and standard deviation are fixed, but the bounds of
 truncation, themselves, are taken from a distribution (in this case, a truncated
 Normal distribution).
 
+\begin{center}
 <<tidy=FALSE, out.height = ".65\\textwidth", out.width= ".65\\textwidth">>=
 lows <- rtn(rep(0, 1000),
             rep(3, 1000),
@@ -280,6 +283,11 @@ ggplot() +
     geom_histogram(aes(x = outputD))
 
 @
+\end{center}
+
+This sampling distribution is non-standard and the easiest way to characterize
+it would be through a simulation like that above and not through analytical
+means.
 
 
 \end{document}

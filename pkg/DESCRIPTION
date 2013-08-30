@@ -11,7 +11,7 @@ Description: This package provides an R function to generate random deviates
     package for these facilities.
 License: GPL (>= 2)
 Depends: Rcpp (>= 0.10.2), truncnorm
-Suggests: knitr (>= 1.1), ggplot2
+Suggests: knitr (>= 1.1), ggplot2, msm, rbenchmark
 LinkingTo: Rcpp
 VignetteBuilder: knitr
 

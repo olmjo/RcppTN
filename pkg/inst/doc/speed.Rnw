@@ -1,0 +1,209 @@
+% \VignetteEngine{knitr::knitr}
+% \VignetteIndexEntry{rtn()'s Performance}
+% \VignetteKeyword{RNG}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PREAMBLE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%% CLASS %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[11pt,letterpaper]{article}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%% PACKAGES %%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[T1]{fontenc}
+
+\usepackage{graphicx}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{hyperref}
+\usepackage[top=1in,left=1in,bottom=1in,right=1in]{geometry}
+\usepackage{fancyhdr}
+
+\newcommand{\R}{\textsf{R}}
+\newcommand{\RcppTN}{\textbf{RcppTN}}
+\newcommand{\Rcpp}{\textbf{Rcpp}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%% SETTINGS %%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagestyle{fancy}
+\lhead{}
+\chead{Benchmarking \texttt{rtn()}'s Performance}
+\rhead{}
+\cfoot{\thepage}
+
+\author{Jonathan Olmsted\\
+  \texttt{jpolmsted\@gmail.com}
+}
+
+\title{Benchmarking \texttt{rtn()}'s Performance}
+
+\date{August 30, 2013}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CONTENT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\maketitle
+
+\thispagestyle{plain}
+
+This brief document shows some performance benchmarks of \RcppTN{}'s
+\texttt{rtn()} compared to other truncated Normal distribution RNG's in
+\R{}. The other functions considered come from the \R{} packages
+\textbf{truncnorm} and \textbf{msm}.
+
+\section{Three different RNG's}
+
+Broadly speaking, calls to the three different \R{} functions are similar. In
+the simplest case (no truncation), they even identical return values.
+<<>>=
+set.seed(1)
+RcppTN::rtn()
+set.seed(1)
+msm::rtnorm(n=1)
+set.seed(1)
+truncnorm::rtruncnorm(n=1)
+@
+
+But, this is not true in general. Differences in return values result from the
+use of different algorithms and different implementations of the same
+algorithm. First, consider a standard Normal distribution truncated below 4 and
+above 4.1. Here, the output from the \RcppTN{} package and the
+\textbf{truncnorm} package agree.
+
+<<>>=
+set.seed(1)
+RcppTN::rtn(.mean = 0, .sd = 1, .low = 4, .high = 4.1)
+set.seed(1)
+msm::rtnorm(n=1, mean = 0, sd = 1, lower = 4, upper = 4.1)
+set.seed(1)
+truncnorm::rtruncnorm(n=1, mean = 0, sd = 1, a = 4, b = 4.1)
+@
+
+Yet, in the case of truncation below 5 without any truncation from above, the
+output from the \RcppTN{} and the \textbf{msm} package agree. Again, this is
+just a result of how each sampler is implemented using \R{}'s base RNG
+functionality. None of these return values is incorrect, per se, but it is worth
+noting that the functions do not produce identical output, even if they are all
+valid RNG's for the same distribution.
+
+<<>>=
+set.seed(1)
+RcppTN::rtn(.mean = 0, .sd = 1, .low = 5, .high = Inf)
+set.seed(1)
+msm::rtnorm(n=1, mean = 0, sd = 1, lower = 5, upper = Inf)
+set.seed(1)
+truncnorm::rtruncnorm(n=1, mean = 0, sd = 1, a = 5, b = Inf)
+@
+
+
+
+\section{Compiled Code is faster than  Interpreted Code}
+
+<<tidy=FALSE>>=
+library(RcppTN)
+library(truncnorm)
+library(msm)
+library(rbenchmark)
+
+sizes <- c(1e0, 1e2, 1e4, 1e6)
+
+lows <- c(-1, 5, -Inf, 4, 4, -Inf)
+highs <- c(1, Inf, 10, 7, 4.1, Inf)
+@
+
+
+Both \RcppTN{} and \textbf{truncnorm} use compiled code for their RNG. However,
+the RNG in \textbf{msm} is written in \R{}. As a result, the performance cost
+that one would expect manifests in even the a simple case where the standard
+Normal distribution is truncated below at -1 and above at 1. Here, a naive
+Accept-Reject sampler works perfectly fine. Yet, the C(++)-based implementations
+are over 20 times faster in drawing samples of size 100
+
+<<tidy=FALSE>>=
+s <- sizes[2]
+lows[1]
+highs[1]
+s
+
+benchmark(
+    "rtn" = rtn(.mean = rep(0, s),
+    .low = rep(lows[1], s),
+    .high = rep(highs[1], s)
+    ),
+    "rtruncnorm" = rtruncnorm(n = s,
+    a = rep(lows[1], s),
+    b = rep(highs[1], s)
+    ),
+    "rtnorm" = rtnorm(n = s,
+    lower = rep(lows[1], s),
+    upper = rep(highs[1], s)
+    ),
+    replications = 100,
+    columns = c("test", "elapsed", "relative")
+    )
+@
+
+A similarly large performance cost due to writing the RNG in \R{} is seen in a
+slightly harder case: a standard Normal distribution truncated below at 4 and
+above at 4.1. The sample size is still 100.
+
+<<tidy=FALSE>>=
+lows[5]
+highs[5]
+s
+benchmark(
+    "rtn" = rtn(.mean = rep(0, s),
+    .low = rep(lows[5], s),
+    .high = rep(highs[5], s)
+    ),
+    "rtruncnorm" = rtruncnorm(n = s,
+    a = rep(lows[5], s),
+    b = rep(highs[5], s)
+    ),
+    "rtnorm" = rtnorm(n = s,
+    lower = rep(lows[5], s),
+    upper = rep(highs[5], s)
+    ),
+    replications = 100,
+    columns = c("test", "elapsed", "relative")
+    )
+@
+
+For this reason, the \texttt{rtnorm()} function from the \textbf{msm} package is
+excluded from subsequent analysis. Not only is it assumed that it will be the
+slowest for the different sample sizes and truncation bounds considered, but it
+will just take too long to build the vignette if it is included.
+
+
+
+\section{\RcppTN{} vs.\ \textbf{truncnorm}}
+
+The RNG's in \RcppTN{} and \textbf{truncnorm{}} are written in \Rcpp{}-based C++
+and C, respectively. However, they implement different mathematical
+algorithms. The former uses Robert (1995) and the latter uses Geweke (1991). To
+compare the R-level performance of the two, a more complete set of conditions is
+considered.
+
+
+
+
+
+
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
