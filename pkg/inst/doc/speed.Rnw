@@ -118,10 +118,10 @@ library(truncnorm)
 library(msm)
 library(rbenchmark)
 
-sizes <- c(1e0, 1e2, 1e4, 1e6)
+sizes <- c(1e1, 1e3, 1e5)
 
-lows <- c(-1, 5, -Inf, 4, 4, -Inf)
-highs <- c(1, Inf, 10, 7, 4.1, Inf)
+lows <- c(-1, 5, -Inf, 4, 4, -Inf, 50)
+highs <- c(1, Inf, 10, 7, 4.1, Inf, 100)
 @
 
 
@@ -197,8 +197,33 @@ algorithms. The former uses Robert (1995) and the latter uses Geweke (1991). To
 compare the R-level performance of the two, a more complete set of conditions is
 considered.
 
+<<tidy=FALSE>>=
 
+for (case in 1:length(lows)) {
+    cat("=======================\n")
+    cat("Lower Bound:", lows[case], "\n")
+    cat("Upper Bound:", highs[case], "\n\n")
 
+    for (s in sizes) {
+        cat("  [ Sample Size per Call:", s,  "]\n")
+        out <- benchmark(
+            "rtn" = rtn(.mean = rep(0, s),
+            .low = rep(lows[1], s),
+            .high = rep(highs[1], s)
+            ),
+            "rtruncnorm" = rtruncnorm(n = s,
+            a = rep(lows[1], s),
+            b = rep(highs[1], s)
+            ),
+            replications = 50,
+            columns = c("test", "elapsed", "relative")
+            )
+        print(out)
+        cat("\n")
+    }
+    cat("=======================\n\n")
+}
+@
 
 
 
