@@ -9,11 +9,11 @@
 # include <Rcpp.h>
 # include "rtn1.h"
 
-Rcpp::NumericVector rtn(const Rcpp::NumericVector &Mean, ///< vector of means
-			const Rcpp::NumericVector &Sd, ///< vector of standard deviations
-			const Rcpp::NumericVector &Low,	///< vector of lower bounds
-			const Rcpp::NumericVector &High	///< vector of upper bounds
-			) {
+Rcpp::NumericVector& rtn(const Rcpp::NumericVector &Mean, ///< vector of means
+                         const Rcpp::NumericVector &Sd, ///< vector of standard deviations
+                         const Rcpp::NumericVector &Low,	///< vector of lower bounds
+                         const Rcpp::NumericVector &High	///< vector of upper bounds
+                         ) {
 
   // Namespace
   using namespace Rcpp ;
