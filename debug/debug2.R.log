@@ -1,0 +1,2018 @@
+==39403== Memcheck, a memory error detector
+==39403== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.
+==39403== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info
+==39403== Command: /opt/local/Library/Frameworks/R.framework/Resources/bin/exec/R --vanilla
+==39403== Parent PID: 39402
+==39403== 
+==39403== WARNING: Support on MacOS 10.8 is experimental and mostly broken.
+==39403== WARNING: Expect incorrect results, assertions and crashes.
+==39403== WARNING: In particular, Memcheck on 32-bit programs will fail to
+==39403== WARNING: detect any errors associated with heap-allocated data.
+==39403== 
+==39403== Warning: ignored attempt to set SIGUSR2 handler in sigaction();
+==39403==          the SIGUSR2 signal is used internally by Valgrind
+==39403== Use of uninitialised value of size 8
+==39403==    at 0x7FFF5FC1E238: _simple_salloc (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC016E5: dyld::mkstringf(char const*, ...) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0AC07: dlsym (in /usr/lib/dyld)
+==39403==    by 0x1436E75: dlsym (in /usr/lib/system/libdyld.dylib)
+==39403==    by 0x14A7C: AddDLL (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x14C90: do_dynload (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x6A2F73726573552E: ???
+==39403==    by 0x2F646574736D6C6E: ???
+==39403==    by 0x2F7972617262694B: ???
+==39403==    by 0x696C2F302E332F51: ???
+==39403==    by 0x72742F7972617261: ???
+==39403==    by 0x2F6D726F6E636E74: ???
+==39403==  Uninitialised value was created by a stack allocation
+==39403==    at 0x7FFF5FC1E204: _simple_salloc (in /usr/lib/dyld)
+==39403== 
+==39403== Use of uninitialised value of size 8
+==39403==    at 0x7FFF5FC1E23F: _simple_salloc (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC016E5: dyld::mkstringf(char const*, ...) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0AC07: dlsym (in /usr/lib/dyld)
+==39403==    by 0x1436E75: dlsym (in /usr/lib/system/libdyld.dylib)
+==39403==    by 0x14A7C: AddDLL (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x14C90: do_dynload (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x6A2F73726573552E: ???
+==39403==    by 0x2F646574736D6C6E: ???
+==39403==    by 0x2F7972617262694B: ???
+==39403==    by 0x696C2F302E332F51: ???
+==39403==    by 0x72742F7972617261: ???
+==39403==    by 0x2F6D726F6E636E74: ???
+==39403==  Uninitialised value was created by a stack allocation
+==39403==    at 0x7FFF5FC1E204: _simple_salloc (in /usr/lib/dyld)
+==39403== 
+==39403== Use of uninitialised value of size 8
+==39403==    at 0x7FFF5FC1E255: _simple_salloc (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC016E5: dyld::mkstringf(char const*, ...) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0AC07: dlsym (in /usr/lib/dyld)
+==39403==    by 0x1436E75: dlsym (in /usr/lib/system/libdyld.dylib)
+==39403==    by 0x14A7C: AddDLL (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x14C90: do_dynload (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x6A2F73726573552E: ???
+==39403==    by 0x2F646574736D6C6E: ???
+==39403==    by 0x2F7972617262694B: ???
+==39403==    by 0x696C2F302E332F51: ???
+==39403==    by 0x72742F7972617261: ???
+==39403==    by 0x2F6D726F6E636E74: ???
+==39403==  Uninitialised value was created by a stack allocation
+==39403==    at 0x7FFF5FC1E204: _simple_salloc (in /usr/lib/dyld)
+==39403== 
+==39403== Use of uninitialised value of size 8
+==39403==    at 0x7FFF5FC1E25D: _simple_salloc (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC016E5: dyld::mkstringf(char const*, ...) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0AC07: dlsym (in /usr/lib/dyld)
+==39403==    by 0x1436E75: dlsym (in /usr/lib/system/libdyld.dylib)
+==39403==    by 0x14A7C: AddDLL (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x14C90: do_dynload (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x6A2F73726573552E: ???
+==39403==    by 0x2F646574736D6C6E: ???
+==39403==    by 0x2F7972617262694B: ???
+==39403==    by 0x696C2F302E332F51: ???
+==39403==    by 0x72742F7972617261: ???
+==39403==    by 0x2F6D726F6E636E74: ???
+==39403==  Uninitialised value was created by a stack allocation
+==39403==    at 0x7FFF5FC1E204: _simple_salloc (in /usr/lib/dyld)
+==39403== 
+==39403== Conditional jump or move depends on uninitialised value(s)
+==39403==    at 0x7FFF5FC016EC: dyld::mkstringf(char const*, ...) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0AC07: dlsym (in /usr/lib/dyld)
+==39403==    by 0x1436E75: dlsym (in /usr/lib/system/libdyld.dylib)
+==39403==    by 0x14A7C: AddDLL (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x14C90: do_dynload (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x6A2F73726573552E: ???
+==39403==    by 0x2F646574736D6C6E: ???
+==39403==    by 0x2F7972617262694B: ???
+==39403==    by 0x696C2F302E332F51: ???
+==39403==    by 0x72742F7972617261: ???
+==39403==    by 0x2F6D726F6E636E74: ???
+==39403==    by 0x7572742F7362696B: ???
+==39403==  Uninitialised value was created by a stack allocation
+==39403==    at 0x7FFF5FC1E204: _simple_salloc (in /usr/lib/dyld)
+==39403== 
+==39403== Use of uninitialised value of size 8
+==39403==    at 0x7FFF5FC1DB13: __simple_bprintf (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC1E38E: _simple_vsprintf (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0171D: dyld::mkstringf(char const*, ...) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0AC07: dlsym (in /usr/lib/dyld)
+==39403==    by 0x1436E75: dlsym (in /usr/lib/system/libdyld.dylib)
+==39403==    by 0x14A7C: AddDLL (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x14C90: do_dynload (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x6A2F73726573552E: ???
+==39403==    by 0x2F646574736D6C6E: ???
+==39403==    by 0x2F7972617262694B: ???
+==39403==    by 0x696C2F302E332F51: ???
+==39403==    by 0x72742F7972617261: ???
+==39403==  Uninitialised value was created by a stack allocation
+==39403==    at 0x7FFF5FC1E204: _simple_salloc (in /usr/lib/dyld)
+==39403== 
+==39403== Use of uninitialised value of size 8
+==39403==    at 0x7FFF5FC1DB18: __simple_bprintf (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC1E38E: _simple_vsprintf (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0171D: dyld::mkstringf(char const*, ...) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0AC07: dlsym (in /usr/lib/dyld)
+==39403==    by 0x1436E75: dlsym (in /usr/lib/system/libdyld.dylib)
+==39403==    by 0x14A7C: AddDLL (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x14C90: do_dynload (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x6A2F73726573552E: ???
+==39403==    by 0x2F646574736D6C6E: ???
+==39403==    by 0x2F7972617262694B: ???
+==39403==    by 0x696C2F302E332F51: ???
+==39403==    by 0x72742F7972617261: ???
+==39403==  Uninitialised value was created by a stack allocation
+==39403==    at 0x7FFF5FC1E204: _simple_salloc (in /usr/lib/dyld)
+==39403== 
+==39403== Conditional jump or move depends on uninitialised value(s)
+==39403==    at 0x7FFF5FC1DB1D: __simple_bprintf (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC1E38E: _simple_vsprintf (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0171D: dyld::mkstringf(char const*, ...) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0AC07: dlsym (in /usr/lib/dyld)
+==39403==    by 0x1436E75: dlsym (in /usr/lib/system/libdyld.dylib)
+==39403==    by 0x14A7C: AddDLL (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x14C90: do_dynload (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x6A2F73726573552E: ???
+==39403==    by 0x2F646574736D6C6E: ???
+==39403==    by 0x2F7972617262694B: ???
+==39403==    by 0x696C2F302E332F51: ???
+==39403==    by 0x72742F7972617261: ???
+==39403==  Uninitialised value was created by a stack allocation
+==39403==    at 0x7FFF5FC1E204: _simple_salloc (in /usr/lib/dyld)
+==39403== 
+==39403== Use of uninitialised value of size 8
+==39403==    at 0x7FFF5FC1DB30: __simple_bprintf (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC1E38E: _simple_vsprintf (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0171D: dyld::mkstringf(char const*, ...) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0AC07: dlsym (in /usr/lib/dyld)
+==39403==    by 0x1436E75: dlsym (in /usr/lib/system/libdyld.dylib)
+==39403==    by 0x14A7C: AddDLL (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x14C90: do_dynload (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x6A2F73726573552E: ???
+==39403==    by 0x2F646574736D6C6E: ???
+==39403==    by 0x2F7972617262694B: ???
+==39403==    by 0x696C2F302E332F51: ???
+==39403==    by 0x72742F7972617261: ???
+==39403==  Uninitialised value was created by a stack allocation
+==39403==    at 0x7FFF5FC1E204: _simple_salloc (in /usr/lib/dyld)
+==39403== 
+==39403== Use of uninitialised value of size 8
+==39403==    at 0x7FFF5FC1DB35: __simple_bprintf (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC1E38E: _simple_vsprintf (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0171D: dyld::mkstringf(char const*, ...) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0AC07: dlsym (in /usr/lib/dyld)
+==39403==    by 0x1436E75: dlsym (in /usr/lib/system/libdyld.dylib)
+==39403==    by 0x14A7C: AddDLL (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x14C90: do_dynload (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x6A2F73726573552E: ???
+==39403==    by 0x2F646574736D6C6E: ???
+==39403==    by 0x2F7972617262694B: ???
+==39403==    by 0x696C2F302E332F51: ???
+==39403==    by 0x72742F7972617261: ???
+==39403==  Uninitialised value was created by a stack allocation
+==39403==    at 0x7FFF5FC1E204: _simple_salloc (in /usr/lib/dyld)
+==39403== 
+==39403== Use of uninitialised value of size 8
+==39403==    at 0x7FFF5FC1E3F0: put_s (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC1E770: hex (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC1DE68: __simple_bprintf (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC1E38E: _simple_vsprintf (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0171D: dyld::mkstringf(char const*, ...) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0AC07: dlsym (in /usr/lib/dyld)
+==39403==    by 0x1436E75: dlsym (in /usr/lib/system/libdyld.dylib)
+==39403==    by 0x14A7C: AddDLL (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x14C90: do_dynload (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x6A2F73726573552E: ???
+==39403==    by 0x2F646574736D6C6E: ???
+==39403==    by 0x2F7972617262694B: ???
+==39403==  Uninitialised value was created by a stack allocation
+==39403==    at 0x7FFF5FC1E204: _simple_salloc (in /usr/lib/dyld)
+==39403== 
+==39403== Use of uninitialised value of size 8
+==39403==    at 0x7FFF5FC1E3F4: put_s (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC1E770: hex (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC1DE68: __simple_bprintf (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC1E38E: _simple_vsprintf (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0171D: dyld::mkstringf(char const*, ...) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0AC07: dlsym (in /usr/lib/dyld)
+==39403==    by 0x1436E75: dlsym (in /usr/lib/system/libdyld.dylib)
+==39403==    by 0x14A7C: AddDLL (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x14C90: do_dynload (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x6A2F73726573552E: ???
+==39403==    by 0x2F646574736D6C6E: ???
+==39403==    by 0x2F7972617262694B: ???
+==39403==  Uninitialised value was created by a stack allocation
+==39403==    at 0x7FFF5FC1E204: _simple_salloc (in /usr/lib/dyld)
+==39403== 
+==39403== Conditional jump or move depends on uninitialised value(s)
+==39403==    at 0x7FFF5FC1E3F8: put_s (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC1E770: hex (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC1DE68: __simple_bprintf (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC1E38E: _simple_vsprintf (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0171D: dyld::mkstringf(char const*, ...) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0AC07: dlsym (in /usr/lib/dyld)
+==39403==    by 0x1436E75: dlsym (in /usr/lib/system/libdyld.dylib)
+==39403==    by 0x14A7C: AddDLL (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x14C90: do_dynload (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x6A2F73726573552E: ???
+==39403==    by 0x2F646574736D6C6E: ???
+==39403==    by 0x2F7972617262694B: ???
+==39403==  Uninitialised value was created by a stack allocation
+==39403==    at 0x7FFF5FC1E204: _simple_salloc (in /usr/lib/dyld)
+==39403== 
+==39403== Use of uninitialised value of size 8
+==39403==    at 0x7FFF5FC1E409: put_s (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC1E770: hex (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC1DE68: __simple_bprintf (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC1E38E: _simple_vsprintf (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0171D: dyld::mkstringf(char const*, ...) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0AC07: dlsym (in /usr/lib/dyld)
+==39403==    by 0x1436E75: dlsym (in /usr/lib/system/libdyld.dylib)
+==39403==    by 0x14A7C: AddDLL (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x14C90: do_dynload (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x6A2F73726573552E: ???
+==39403==    by 0x2F646574736D6C6E: ???
+==39403==    by 0x2F7972617262694B: ???
+==39403==  Uninitialised value was created by a stack allocation
+==39403==    at 0x7FFF5FC1E204: _simple_salloc (in /usr/lib/dyld)
+==39403== 
+==39403== Use of uninitialised value of size 8
+==39403==    at 0x7FFF5FC1E40D: put_s (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC1E770: hex (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC1DE68: __simple_bprintf (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC1E38E: _simple_vsprintf (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0171D: dyld::mkstringf(char const*, ...) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0AC07: dlsym (in /usr/lib/dyld)
+==39403==    by 0x1436E75: dlsym (in /usr/lib/system/libdyld.dylib)
+==39403==    by 0x14A7C: AddDLL (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x14C90: do_dynload (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x6A2F73726573552E: ???
+==39403==    by 0x2F646574736D6C6E: ???
+==39403==    by 0x2F7972617262694B: ???
+==39403==  Uninitialised value was created by a stack allocation
+==39403==    at 0x7FFF5FC1E204: _simple_salloc (in /usr/lib/dyld)
+==39403== 
+==39403== Use of uninitialised value of size 8
+==39403==    at 0x7FFF5FC1E3F0: put_s (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC1E77E: hex (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC1DE68: __simple_bprintf (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC1E38E: _simple_vsprintf (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0171D: dyld::mkstringf(char const*, ...) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0AC07: dlsym (in /usr/lib/dyld)
+==39403==    by 0x1436E75: dlsym (in /usr/lib/system/libdyld.dylib)
+==39403==    by 0x14A7C: AddDLL (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x14C90: do_dynload (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x6A2F73726573552E: ???
+==39403==    by 0x2F646574736D6C6E: ???
+==39403==    by 0x2F7972617262694B: ???
+==39403==  Uninitialised value was created by a stack allocation
+==39403==    at 0x7FFF5FC1E204: _simple_salloc (in /usr/lib/dyld)
+==39403== 
+==39403== Use of uninitialised value of size 8
+==39403==    at 0x7FFF5FC1E3F4: put_s (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC1E77E: hex (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC1DE68: __simple_bprintf (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC1E38E: _simple_vsprintf (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0171D: dyld::mkstringf(char const*, ...) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0AC07: dlsym (in /usr/lib/dyld)
+==39403==    by 0x1436E75: dlsym (in /usr/lib/system/libdyld.dylib)
+==39403==    by 0x14A7C: AddDLL (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x14C90: do_dynload (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x6A2F73726573552E: ???
+==39403==    by 0x2F646574736D6C6E: ???
+==39403==    by 0x2F7972617262694B: ???
+==39403==  Uninitialised value was created by a stack allocation
+==39403==    at 0x7FFF5FC1E204: _simple_salloc (in /usr/lib/dyld)
+==39403== 
+==39403== Conditional jump or move depends on uninitialised value(s)
+==39403==    at 0x7FFF5FC1E3F8: put_s (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC1E77E: hex (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC1DE68: __simple_bprintf (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC1E38E: _simple_vsprintf (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0171D: dyld::mkstringf(char const*, ...) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0AC07: dlsym (in /usr/lib/dyld)
+==39403==    by 0x1436E75: dlsym (in /usr/lib/system/libdyld.dylib)
+==39403==    by 0x14A7C: AddDLL (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x14C90: do_dynload (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x6A2F73726573552E: ???
+==39403==    by 0x2F646574736D6C6E: ???
+==39403==    by 0x2F7972617262694B: ???
+==39403==  Uninitialised value was created by a stack allocation
+==39403==    at 0x7FFF5FC1E204: _simple_salloc (in /usr/lib/dyld)
+==39403== 
+==39403== Use of uninitialised value of size 8
+==39403==    at 0x7FFF5FC1E409: put_s (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC1E77E: hex (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC1DE68: __simple_bprintf (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC1E38E: _simple_vsprintf (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0171D: dyld::mkstringf(char const*, ...) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0AC07: dlsym (in /usr/lib/dyld)
+==39403==    by 0x1436E75: dlsym (in /usr/lib/system/libdyld.dylib)
+==39403==    by 0x14A7C: AddDLL (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x14C90: do_dynload (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x6A2F73726573552E: ???
+==39403==    by 0x2F646574736D6C6E: ???
+==39403==    by 0x2F7972617262694B: ???
+==39403==  Uninitialised value was created by a stack allocation
+==39403==    at 0x7FFF5FC1E204: _simple_salloc (in /usr/lib/dyld)
+==39403== 
+==39403== Use of uninitialised value of size 8
+==39403==    at 0x7FFF5FC1E40D: put_s (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC1E77E: hex (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC1DE68: __simple_bprintf (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC1E38E: _simple_vsprintf (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0171D: dyld::mkstringf(char const*, ...) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0AC07: dlsym (in /usr/lib/dyld)
+==39403==    by 0x1436E75: dlsym (in /usr/lib/system/libdyld.dylib)
+==39403==    by 0x14A7C: AddDLL (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x14C90: do_dynload (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x6A2F73726573552E: ???
+==39403==    by 0x2F646574736D6C6E: ???
+==39403==    by 0x2F7972617262694B: ???
+==39403==  Uninitialised value was created by a stack allocation
+==39403==    at 0x7FFF5FC1E204: _simple_salloc (in /usr/lib/dyld)
+==39403== 
+==39403== Use of uninitialised value of size 8
+==39403==    at 0x7FFF5FC1E3F0: put_s (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC1DAA9: __simple_bprintf (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC1E38E: _simple_vsprintf (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0171D: dyld::mkstringf(char const*, ...) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0AC07: dlsym (in /usr/lib/dyld)
+==39403==    by 0x1436E75: dlsym (in /usr/lib/system/libdyld.dylib)
+==39403==    by 0x14A7C: AddDLL (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x14C90: do_dynload (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x6A2F73726573552E: ???
+==39403==    by 0x2F646574736D6C6E: ???
+==39403==    by 0x2F7972617262694B: ???
+==39403==    by 0x696C2F302E332F51: ???
+==39403==  Uninitialised value was created by a stack allocation
+==39403==    at 0x7FFF5FC1E204: _simple_salloc (in /usr/lib/dyld)
+==39403== 
+==39403== Use of uninitialised value of size 8
+==39403==    at 0x7FFF5FC1E3F4: put_s (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC1DAA9: __simple_bprintf (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC1E38E: _simple_vsprintf (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0171D: dyld::mkstringf(char const*, ...) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0AC07: dlsym (in /usr/lib/dyld)
+==39403==    by 0x1436E75: dlsym (in /usr/lib/system/libdyld.dylib)
+==39403==    by 0x14A7C: AddDLL (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x14C90: do_dynload (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x6A2F73726573552E: ???
+==39403==    by 0x2F646574736D6C6E: ???
+==39403==    by 0x2F7972617262694B: ???
+==39403==    by 0x696C2F302E332F51: ???
+==39403==  Uninitialised value was created by a stack allocation
+==39403==    at 0x7FFF5FC1E204: _simple_salloc (in /usr/lib/dyld)
+==39403== 
+==39403== Conditional jump or move depends on uninitialised value(s)
+==39403==    at 0x7FFF5FC1E3F8: put_s (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC1DAA9: __simple_bprintf (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC1E38E: _simple_vsprintf (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0171D: dyld::mkstringf(char const*, ...) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0AC07: dlsym (in /usr/lib/dyld)
+==39403==    by 0x1436E75: dlsym (in /usr/lib/system/libdyld.dylib)
+==39403==    by 0x14A7C: AddDLL (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x14C90: do_dynload (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x6A2F73726573552E: ???
+==39403==    by 0x2F646574736D6C6E: ???
+==39403==    by 0x2F7972617262694B: ???
+==39403==    by 0x696C2F302E332F51: ???
+==39403==  Uninitialised value was created by a stack allocation
+==39403==    at 0x7FFF5FC1E204: _simple_salloc (in /usr/lib/dyld)
+==39403== 
+==39403== Use of uninitialised value of size 8
+==39403==    at 0x7FFF5FC1E409: put_s (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC1DAA9: __simple_bprintf (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC1E38E: _simple_vsprintf (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0171D: dyld::mkstringf(char const*, ...) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0AC07: dlsym (in /usr/lib/dyld)
+==39403==    by 0x1436E75: dlsym (in /usr/lib/system/libdyld.dylib)
+==39403==    by 0x14A7C: AddDLL (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x14C90: do_dynload (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x6A2F73726573552E: ???
+==39403==    by 0x2F646574736D6C6E: ???
+==39403==    by 0x2F7972617262694B: ???
+==39403==    by 0x696C2F302E332F51: ???
+==39403==  Uninitialised value was created by a stack allocation
+==39403==    at 0x7FFF5FC1E204: _simple_salloc (in /usr/lib/dyld)
+==39403== 
+==39403== Use of uninitialised value of size 8
+==39403==    at 0x7FFF5FC1E40D: put_s (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC1DAA9: __simple_bprintf (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC1E38E: _simple_vsprintf (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0171D: dyld::mkstringf(char const*, ...) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0AC07: dlsym (in /usr/lib/dyld)
+==39403==    by 0x1436E75: dlsym (in /usr/lib/system/libdyld.dylib)
+==39403==    by 0x14A7C: AddDLL (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x14C90: do_dynload (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x6A2F73726573552E: ???
+==39403==    by 0x2F646574736D6C6E: ???
+==39403==    by 0x2F7972617262694B: ???
+==39403==    by 0x696C2F302E332F51: ???
+==39403==  Uninitialised value was created by a stack allocation
+==39403==    at 0x7FFF5FC1E204: _simple_salloc (in /usr/lib/dyld)
+==39403== 
+==39403== Use of uninitialised value of size 8
+==39403==    at 0x7FFF5FC1E3F0: put_s (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC1E38E: _simple_vsprintf (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0171D: dyld::mkstringf(char const*, ...) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0AC07: dlsym (in /usr/lib/dyld)
+==39403==    by 0x1436E75: dlsym (in /usr/lib/system/libdyld.dylib)
+==39403==    by 0x14A7C: AddDLL (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x14C90: do_dynload (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x6A2F73726573552E: ???
+==39403==    by 0x2F646574736D6C6E: ???
+==39403==    by 0x2F7972617262694B: ???
+==39403==    by 0x696C2F302E332F51: ???
+==39403==    by 0x72742F7972617261: ???
+==39403==  Uninitialised value was created by a stack allocation
+==39403==    at 0x7FFF5FC1E204: _simple_salloc (in /usr/lib/dyld)
+==39403== 
+==39403== Use of uninitialised value of size 8
+==39403==    at 0x7FFF5FC1E3F4: put_s (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC1E38E: _simple_vsprintf (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0171D: dyld::mkstringf(char const*, ...) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0AC07: dlsym (in /usr/lib/dyld)
+==39403==    by 0x1436E75: dlsym (in /usr/lib/system/libdyld.dylib)
+==39403==    by 0x14A7C: AddDLL (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x14C90: do_dynload (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x6A2F73726573552E: ???
+==39403==    by 0x2F646574736D6C6E: ???
+==39403==    by 0x2F7972617262694B: ???
+==39403==    by 0x696C2F302E332F51: ???
+==39403==    by 0x72742F7972617261: ???
+==39403==  Uninitialised value was created by a stack allocation
+==39403==    at 0x7FFF5FC1E204: _simple_salloc (in /usr/lib/dyld)
+==39403== 
+==39403== Conditional jump or move depends on uninitialised value(s)
+==39403==    at 0x7FFF5FC1E3F8: put_s (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC1E38E: _simple_vsprintf (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0171D: dyld::mkstringf(char const*, ...) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0AC07: dlsym (in /usr/lib/dyld)
+==39403==    by 0x1436E75: dlsym (in /usr/lib/system/libdyld.dylib)
+==39403==    by 0x14A7C: AddDLL (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x14C90: do_dynload (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x6A2F73726573552E: ???
+==39403==    by 0x2F646574736D6C6E: ???
+==39403==    by 0x2F7972617262694B: ???
+==39403==    by 0x696C2F302E332F51: ???
+==39403==    by 0x72742F7972617261: ???
+==39403==  Uninitialised value was created by a stack allocation
+==39403==    at 0x7FFF5FC1E204: _simple_salloc (in /usr/lib/dyld)
+==39403== 
+==39403== Use of uninitialised value of size 8
+==39403==    at 0x7FFF5FC1E409: put_s (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC1E38E: _simple_vsprintf (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0171D: dyld::mkstringf(char const*, ...) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0AC07: dlsym (in /usr/lib/dyld)
+==39403==    by 0x1436E75: dlsym (in /usr/lib/system/libdyld.dylib)
+==39403==    by 0x14A7C: AddDLL (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x14C90: do_dynload (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x6A2F73726573552E: ???
+==39403==    by 0x2F646574736D6C6E: ???
+==39403==    by 0x2F7972617262694B: ???
+==39403==    by 0x696C2F302E332F51: ???
+==39403==    by 0x72742F7972617261: ???
+==39403==  Uninitialised value was created by a stack allocation
+==39403==    at 0x7FFF5FC1E204: _simple_salloc (in /usr/lib/dyld)
+==39403== 
+==39403== Use of uninitialised value of size 8
+==39403==    at 0x7FFF5FC1E40D: put_s (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC1E38E: _simple_vsprintf (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0171D: dyld::mkstringf(char const*, ...) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0AC07: dlsym (in /usr/lib/dyld)
+==39403==    by 0x1436E75: dlsym (in /usr/lib/system/libdyld.dylib)
+==39403==    by 0x14A7C: AddDLL (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x14C90: do_dynload (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x6A2F73726573552E: ???
+==39403==    by 0x2F646574736D6C6E: ???
+==39403==    by 0x2F7972617262694B: ???
+==39403==    by 0x696C2F302E332F51: ???
+==39403==    by 0x72742F7972617261: ???
+==39403==  Uninitialised value was created by a stack allocation
+==39403==    at 0x7FFF5FC1E204: _simple_salloc (in /usr/lib/dyld)
+==39403== 
+==39403== Use of uninitialised value of size 8
+==39403==    at 0x7FFF5FC1E397: _simple_string (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC01725: dyld::mkstringf(char const*, ...) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0AC07: dlsym (in /usr/lib/dyld)
+==39403==    by 0x1436E75: dlsym (in /usr/lib/system/libdyld.dylib)
+==39403==    by 0x14A7C: AddDLL (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x14C90: do_dynload (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x6A2F73726573552E: ???
+==39403==    by 0x2F646574736D6C6E: ???
+==39403==    by 0x2F7972617262694B: ???
+==39403==    by 0x696C2F302E332F51: ???
+==39403==    by 0x72742F7972617261: ???
+==39403==    by 0x2F6D726F6E636E74: ???
+==39403==  Uninitialised value was created by a stack allocation
+==39403==    at 0x7FFF5FC1E204: _simple_salloc (in /usr/lib/dyld)
+==39403== 
+==39403== Use of uninitialised value of size 8
+==39403==    at 0x7FFF5FC1E39B: _simple_string (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC01725: dyld::mkstringf(char const*, ...) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0AC07: dlsym (in /usr/lib/dyld)
+==39403==    by 0x1436E75: dlsym (in /usr/lib/system/libdyld.dylib)
+==39403==    by 0x14A7C: AddDLL (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x14C90: do_dynload (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x6A2F73726573552E: ???
+==39403==    by 0x2F646574736D6C6E: ???
+==39403==    by 0x2F7972617262694B: ???
+==39403==    by 0x696C2F302E332F51: ???
+==39403==    by 0x72742F7972617261: ???
+==39403==    by 0x2F6D726F6E636E74: ???
+==39403==  Uninitialised value was created by a stack allocation
+==39403==    at 0x7FFF5FC1E204: _simple_salloc (in /usr/lib/dyld)
+==39403== 
+==39403== Use of uninitialised value of size 8
+==39403==    at 0x7FFF5FC1E39E: _simple_string (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC01725: dyld::mkstringf(char const*, ...) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0AC07: dlsym (in /usr/lib/dyld)
+==39403==    by 0x1436E75: dlsym (in /usr/lib/system/libdyld.dylib)
+==39403==    by 0x14A7C: AddDLL (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x14C90: do_dynload (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x6A2F73726573552E: ???
+==39403==    by 0x2F646574736D6C6E: ???
+==39403==    by 0x2F7972617262694B: ???
+==39403==    by 0x696C2F302E332F51: ???
+==39403==    by 0x72742F7972617261: ???
+==39403==    by 0x2F6D726F6E636E74: ???
+==39403==  Uninitialised value was created by a stack allocation
+==39403==    at 0x7FFF5FC1E204: _simple_salloc (in /usr/lib/dyld)
+==39403== 
+==39403== Use of uninitialised value of size 8
+==39403==    at 0x23804A47B: ???
+==39403==    by 0x7FFF5FC0172D: dyld::mkstringf(char const*, ...) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0AC07: dlsym (in /usr/lib/dyld)
+==39403==    by 0x1436E75: dlsym (in /usr/lib/system/libdyld.dylib)
+==39403==    by 0x14A7C: AddDLL (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x14C90: do_dynload (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x6A2F73726573552E: ???
+==39403==    by 0x2F646574736D6C6E: ???
+==39403==    by 0x2F7972617262694B: ???
+==39403==    by 0x696C2F302E332F51: ???
+==39403==    by 0x72742F7972617261: ???
+==39403==    by 0x2F6D726F6E636E74: ???
+==39403==  Uninitialised value was created by a stack allocation
+==39403==    at 0x7FFF5FC1E204: _simple_salloc (in /usr/lib/dyld)
+==39403== 
+==39403== Conditional jump or move depends on uninitialised value(s)
+==39403==    at 0x7FFF5FC1C998: memcpy$VARIANT$sse3x (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC23446: strdup (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0172D: dyld::mkstringf(char const*, ...) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0AC07: dlsym (in /usr/lib/dyld)
+==39403==    by 0x1436E75: dlsym (in /usr/lib/system/libdyld.dylib)
+==39403==    by 0x14A7C: AddDLL (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x14C90: do_dynload (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x6A2F73726573552E: ???
+==39403==    by 0x2F646574736D6C6E: ???
+==39403==    by 0x2F7972617262694B: ???
+==39403==    by 0x696C2F302E332F51: ???
+==39403==    by 0x72742F7972617261: ???
+==39403==  Uninitialised value was created by a stack allocation
+==39403==    at 0x7FFF5FC1E204: _simple_salloc (in /usr/lib/dyld)
+==39403== 
+==39403== Conditional jump or move depends on uninitialised value(s)
+==39403==    at 0x7FFF5FC1C99E: memcpy$VARIANT$sse3x (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC23446: strdup (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0172D: dyld::mkstringf(char const*, ...) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0AC07: dlsym (in /usr/lib/dyld)
+==39403==    by 0x1436E75: dlsym (in /usr/lib/system/libdyld.dylib)
+==39403==    by 0x14A7C: AddDLL (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x14C90: do_dynload (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x6A2F73726573552E: ???
+==39403==    by 0x2F646574736D6C6E: ???
+==39403==    by 0x2F7972617262694B: ???
+==39403==    by 0x696C2F302E332F51: ???
+==39403==    by 0x72742F7972617261: ???
+==39403==  Uninitialised value was created by a stack allocation
+==39403==    at 0x7FFF5FC1E204: _simple_salloc (in /usr/lib/dyld)
+==39403== 
+==39403== Conditional jump or move depends on uninitialised value(s)
+==39403==    at 0x7FFF5FC1C9A5: memcpy$VARIANT$sse3x (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC23446: strdup (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0172D: dyld::mkstringf(char const*, ...) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0AC07: dlsym (in /usr/lib/dyld)
+==39403==    by 0x1436E75: dlsym (in /usr/lib/system/libdyld.dylib)
+==39403==    by 0x14A7C: AddDLL (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x14C90: do_dynload (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x6A2F73726573552E: ???
+==39403==    by 0x2F646574736D6C6E: ???
+==39403==    by 0x2F7972617262694B: ???
+==39403==    by 0x696C2F302E332F51: ???
+==39403==    by 0x72742F7972617261: ???
+==39403==  Uninitialised value was created by a stack allocation
+==39403==    at 0x7FFF5FC1E204: _simple_salloc (in /usr/lib/dyld)
+==39403== 
+==39403== Use of uninitialised value of size 8
+==39403==    at 0x7FFF5FC1C9A7: memcpy$VARIANT$sse3x (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC23446: strdup (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0172D: dyld::mkstringf(char const*, ...) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0AC07: dlsym (in /usr/lib/dyld)
+==39403==    by 0x1436E75: dlsym (in /usr/lib/system/libdyld.dylib)
+==39403==    by 0x14A7C: AddDLL (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x14C90: do_dynload (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x6A2F73726573552E: ???
+==39403==    by 0x2F646574736D6C6E: ???
+==39403==    by 0x2F7972617262694B: ???
+==39403==    by 0x696C2F302E332F51: ???
+==39403==    by 0x72742F7972617261: ???
+==39403==  Uninitialised value was created by a stack allocation
+==39403==    at 0x7FFF5FC1E204: _simple_salloc (in /usr/lib/dyld)
+==39403== 
+==39403== Conditional jump or move depends on uninitialised value(s)
+==39403==    at 0x7FFF5FC1C9B5: memcpy$VARIANT$sse3x (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC23446: strdup (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0172D: dyld::mkstringf(char const*, ...) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0AC07: dlsym (in /usr/lib/dyld)
+==39403==    by 0x1436E75: dlsym (in /usr/lib/system/libdyld.dylib)
+==39403==    by 0x14A7C: AddDLL (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x14C90: do_dynload (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x6A2F73726573552E: ???
+==39403==    by 0x2F646574736D6C6E: ???
+==39403==    by 0x2F7972617262694B: ???
+==39403==    by 0x696C2F302E332F51: ???
+==39403==    by 0x72742F7972617261: ???
+==39403==  Uninitialised value was created by a stack allocation
+==39403==    at 0x7FFF5FC1E204: _simple_salloc (in /usr/lib/dyld)
+==39403== 
+==39403== Conditional jump or move depends on uninitialised value(s)
+==39403==    at 0x7FFF5FC1C9BA: memcpy$VARIANT$sse3x (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC23446: strdup (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0172D: dyld::mkstringf(char const*, ...) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0AC07: dlsym (in /usr/lib/dyld)
+==39403==    by 0x1436E75: dlsym (in /usr/lib/system/libdyld.dylib)
+==39403==    by 0x14A7C: AddDLL (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x14C90: do_dynload (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x6A2F73726573552E: ???
+==39403==    by 0x2F646574736D6C6E: ???
+==39403==    by 0x2F7972617262694B: ???
+==39403==    by 0x696C2F302E332F51: ???
+==39403==    by 0x72742F7972617261: ???
+==39403==  Uninitialised value was created by a stack allocation
+==39403==    at 0x7FFF5FC1E204: _simple_salloc (in /usr/lib/dyld)
+==39403== 
+==39403== Conditional jump or move depends on uninitialised value(s)
+==39403==    at 0x7FFF5FC1C9C8: memcpy$VARIANT$sse3x (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC23446: strdup (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0172D: dyld::mkstringf(char const*, ...) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0AC07: dlsym (in /usr/lib/dyld)
+==39403==    by 0x1436E75: dlsym (in /usr/lib/system/libdyld.dylib)
+==39403==    by 0x14A7C: AddDLL (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x14C90: do_dynload (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x6A2F73726573552E: ???
+==39403==    by 0x2F646574736D6C6E: ???
+==39403==    by 0x2F7972617262694B: ???
+==39403==    by 0x696C2F302E332F51: ???
+==39403==    by 0x72742F7972617261: ???
+==39403==  Uninitialised value was created by a stack allocation
+==39403==    at 0x7FFF5FC1E204: _simple_salloc (in /usr/lib/dyld)
+==39403== 
+==39403== Conditional jump or move depends on uninitialised value(s)
+==39403==    at 0x7FFF5FC1E42A: _simple_sfree (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC01738: dyld::mkstringf(char const*, ...) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0AC07: dlsym (in /usr/lib/dyld)
+==39403==    by 0x1436E75: dlsym (in /usr/lib/system/libdyld.dylib)
+==39403==    by 0x14A7C: AddDLL (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x14C90: do_dynload (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x6A2F73726573552E: ???
+==39403==    by 0x2F646574736D6C6E: ???
+==39403==    by 0x2F7972617262694B: ???
+==39403==    by 0x696C2F302E332F51: ???
+==39403==    by 0x72742F7972617261: ???
+==39403==    by 0x2F6D726F6E636E74: ???
+==39403==  Uninitialised value was created by a stack allocation
+==39403==    at 0x7FFF5FC1E204: _simple_salloc (in /usr/lib/dyld)
+==39403== 
+==39403== Use of uninitialised value of size 8
+==39403==    at 0x7FFF5FC1E42C: _simple_sfree (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC01738: dyld::mkstringf(char const*, ...) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0AC07: dlsym (in /usr/lib/dyld)
+==39403==    by 0x1436E75: dlsym (in /usr/lib/system/libdyld.dylib)
+==39403==    by 0x14A7C: AddDLL (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x14C90: do_dynload (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x6A2F73726573552E: ???
+==39403==    by 0x2F646574736D6C6E: ???
+==39403==    by 0x2F7972617262694B: ???
+==39403==    by 0x696C2F302E332F51: ???
+==39403==    by 0x72742F7972617261: ???
+==39403==    by 0x2F6D726F6E636E74: ???
+==39403==  Uninitialised value was created by a stack allocation
+==39403==    at 0x7FFF5FC1E204: _simple_salloc (in /usr/lib/dyld)
+==39403== 
+==39403== Conditional jump or move depends on uninitialised value(s)
+==39403==    at 0x7FFF5FC1E439: _simple_sfree (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC01738: dyld::mkstringf(char const*, ...) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0AC07: dlsym (in /usr/lib/dyld)
+==39403==    by 0x1436E75: dlsym (in /usr/lib/system/libdyld.dylib)
+==39403==    by 0x14A7C: AddDLL (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x14C90: do_dynload (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x6A2F73726573552E: ???
+==39403==    by 0x2F646574736D6C6E: ???
+==39403==    by 0x2F7972617262694B: ???
+==39403==    by 0x696C2F302E332F51: ???
+==39403==    by 0x72742F7972617261: ???
+==39403==    by 0x2F6D726F6E636E74: ???
+==39403==  Uninitialised value was created by a stack allocation
+==39403==    at 0x7FFF5FC1E204: _simple_salloc (in /usr/lib/dyld)
+==39403== 
+==39403== Use of uninitialised value of size 8
+==39403==    at 0x7FFF5FC1E45A: _simple_sfree (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC01738: dyld::mkstringf(char const*, ...) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0AC07: dlsym (in /usr/lib/dyld)
+==39403==    by 0x1436E75: dlsym (in /usr/lib/system/libdyld.dylib)
+==39403==    by 0x14A7C: AddDLL (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x14C90: do_dynload (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x6A2F73726573552E: ???
+==39403==    by 0x2F646574736D6C6E: ???
+==39403==    by 0x2F7972617262694B: ???
+==39403==    by 0x696C2F302E332F51: ???
+==39403==    by 0x72742F7972617261: ???
+==39403==    by 0x2F6D726F6E636E74: ???
+==39403==  Uninitialised value was created by a stack allocation
+==39403==    at 0x7FFF5FC1E204: _simple_salloc (in /usr/lib/dyld)
+==39403== 
+==39403== Conditional jump or move depends on uninitialised value(s)
+==39403==    at 0x7FFF5FC016EC: dyld::mkstringf(char const*, ...) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0AC07: dlsym (in /usr/lib/dyld)
+==39403==    by 0x1436E75: dlsym (in /usr/lib/system/libdyld.dylib)
+==39403==    by 0x14AA7: AddDLL (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x14C90: do_dynload (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x6A2F73726573552E: ???
+==39403==    by 0x2F646574736D6C6E: ???
+==39403==    by 0x2F7972617262694B: ???
+==39403==    by 0x696C2F302E332F51: ???
+==39403==    by 0x72742F7972617261: ???
+==39403==    by 0x2F6D726F6E636E74: ???
+==39403==    by 0x7572742F7362696B: ???
+==39403==  Uninitialised value was created by a stack allocation
+==39403==    at 0x7FFF5FC1E204: _simple_salloc (in /usr/lib/dyld)
+==39403== 
+==39403== Invalid read of size 1
+==39403==    at 0x9BADE: do_set (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x223A01: ??? (in /Users/jolmsted/Development/src/R_Packages/RcppTN/debug/debug2.R)
+==39403==    by 0x223B3F: ??? (in /Users/jolmsted/Development/src/R_Packages/RcppTN/debug/debug2.R)
+==39403==    by 0x102461CDF: ???
+==39403==    by 0x100205157: ???
+==39403==    by 0x21AF7F: ??? (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==  Address 0x103deaa90 is 0 bytes inside a block of size 16,040 free'd
+==39403==    at 0x75FA: free (vg_replace_malloc.c:450)
+==39403==    by 0xBB004: R_gc_internal (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x4800A1F: -[NSDirectoryTraversalOperation initWithPath:] (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x138: ???
+==39403== 
+==39403== Invalid write of size 1
+==39403==    at 0x9BAFE: do_set (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x223A01: ??? (in /Users/jolmsted/Development/src/R_Packages/RcppTN/debug/debug2.R)
+==39403==    by 0x223B3F: ??? (in /Users/jolmsted/Development/src/R_Packages/RcppTN/debug/debug2.R)
+==39403==    by 0x102461CDF: ???
+==39403==    by 0x100205157: ???
+==39403==    by 0x21AF7F: ??? (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==  Address 0x103deaa90 is 0 bytes inside a block of size 16,040 free'd
+==39403==    at 0x75FA: free (vg_replace_malloc.c:450)
+==39403==    by 0xBB004: R_gc_internal (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x4800A1F: -[NSDirectoryTraversalOperation initWithPath:] (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x138: ???
+==39403== 
+==39403== Invalid read of size 1
+==39403==    at 0x997AE: Rf_eval (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==  Address 0x103deaa90 is 0 bytes inside a block of size 16,040 free'd
+==39403==    at 0x75FA: free (vg_replace_malloc.c:450)
+==39403==    by 0xBB004: R_gc_internal (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x4800A1F: -[NSDirectoryTraversalOperation initWithPath:] (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x138: ???
+==39403== 
+==39403== Invalid read of size 1
+==39403==    at 0xBA3C7: R_gc_internal (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x1: ???
+==39403==    by 0x7CF: ???
+==39403==    by 0xFFFFFFFF: ???
+==39403==  Address 0x103deaa93 is 3 bytes inside a block of size 16,040 free'd
+==39403==    at 0x75FA: free (vg_replace_malloc.c:450)
+==39403==    by 0xBB004: R_gc_internal (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x4800A1F: -[NSDirectoryTraversalOperation initWithPath:] (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x138: ???
+==39403== 
+==39403== Invalid read of size 8
+==39403==    at 0xBA3D2: R_gc_internal (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x1: ???
+==39403==    by 0x7CF: ???
+==39403==    by 0xFFFFFFFF: ???
+==39403==  Address 0x103deaaa8 is 24 bytes inside a block of size 16,040 free'd
+==39403==    at 0x75FA: free (vg_replace_malloc.c:450)
+==39403==    by 0xBB004: R_gc_internal (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x4800A1F: -[NSDirectoryTraversalOperation initWithPath:] (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x138: ???
+==39403== 
+==39403== Invalid write of size 1
+==39403==    at 0xBA3D6: R_gc_internal (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x1: ???
+==39403==    by 0x7CF: ???
+==39403==    by 0xFFFFFFFF: ???
+==39403==  Address 0x103deaa93 is 3 bytes inside a block of size 16,040 free'd
+==39403==    at 0x75FA: free (vg_replace_malloc.c:450)
+==39403==    by 0xBB004: R_gc_internal (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x4800A1F: -[NSDirectoryTraversalOperation initWithPath:] (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x138: ???
+==39403== 
+==39403== Invalid read of size 8
+==39403==    at 0xBA3D9: R_gc_internal (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x1: ???
+==39403==    by 0x7CF: ???
+==39403==    by 0xFFFFFFFF: ???
+==39403==  Address 0x103deaaa0 is 16 bytes inside a block of size 16,040 free'd
+==39403==    at 0x75FA: free (vg_replace_malloc.c:450)
+==39403==    by 0xBB004: R_gc_internal (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x4800A1F: -[NSDirectoryTraversalOperation initWithPath:] (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x138: ???
+==39403== 
+==39403== Invalid write of size 8
+==39403==    at 0xBA3E5: R_gc_internal (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x1: ???
+==39403==    by 0x7CF: ???
+==39403==    by 0xFFFFFFFF: ???
+==39403==  Address 0x103deaaa0 is 16 bytes inside a block of size 16,040 free'd
+==39403==    at 0x75FA: free (vg_replace_malloc.c:450)
+==39403==    by 0xBB004: R_gc_internal (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x4800A1F: -[NSDirectoryTraversalOperation initWithPath:] (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x138: ???
+==39403== 
+==39403== Invalid read of size 1
+==39403==    at 0xBA1D6: R_gc_internal (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x1: ???
+==39403==    by 0x7CF: ???
+==39403==    by 0xFFFFFFFF: ???
+==39403==  Address 0x103deaa93 is 3 bytes inside a block of size 16,040 free'd
+==39403==    at 0x75FA: free (vg_replace_malloc.c:450)
+==39403==    by 0xBB004: R_gc_internal (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x4800A1F: -[NSDirectoryTraversalOperation initWithPath:] (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x138: ???
+==39403== 
+==39403== Invalid read of size 8
+==39403==    at 0xBA1E0: R_gc_internal (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x1: ???
+==39403==    by 0x7CF: ???
+==39403==    by 0xFFFFFFFF: ???
+==39403==  Address 0x103deaaa0 is 16 bytes inside a block of size 16,040 free'd
+==39403==    at 0x75FA: free (vg_replace_malloc.c:450)
+==39403==    by 0xBB004: R_gc_internal (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x4800A1F: -[NSDirectoryTraversalOperation initWithPath:] (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x138: ???
+==39403== 
+==39403== Invalid write of size 8
+==39403==    at 0xBA207: R_gc_internal (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x1: ???
+==39403==    by 0x7CF: ???
+==39403==    by 0xFFFFFFFF: ???
+==39403==  Address 0x103deaaa0 is 16 bytes inside a block of size 16,040 free'd
+==39403==    at 0x75FA: free (vg_replace_malloc.c:450)
+==39403==    by 0xBB004: R_gc_internal (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x4800A1F: -[NSDirectoryTraversalOperation initWithPath:] (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x138: ???
+==39403== 
+==39403== Invalid write of size 8
+==39403==    at 0xBA218: R_gc_internal (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x1: ???
+==39403==    by 0x7CF: ???
+==39403==    by 0xFFFFFFFF: ???
+==39403==  Address 0x103deaaa8 is 24 bytes inside a block of size 16,040 free'd
+==39403==    at 0x75FA: free (vg_replace_malloc.c:450)
+==39403==    by 0xBB004: R_gc_internal (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x4800A1F: -[NSDirectoryTraversalOperation initWithPath:] (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x138: ???
+==39403== 
+==39403== Invalid read of size 8
+==39403==    at 0xBA220: R_gc_internal (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x1: ???
+==39403==    by 0x7CF: ???
+==39403==    by 0xFFFFFFFF: ???
+==39403==  Address 0x103deaa98 is 8 bytes inside a block of size 16,040 free'd
+==39403==    at 0x75FA: free (vg_replace_malloc.c:450)
+==39403==    by 0xBB004: R_gc_internal (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x4800A1F: -[NSDirectoryTraversalOperation initWithPath:] (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x138: ???
+==39403== 
+==39403== Invalid read of size 1
+==39403==    at 0xBA26E: R_gc_internal (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x1: ???
+==39403==    by 0x7CF: ???
+==39403==    by 0xFFFFFFFF: ???
+==39403==  Address 0x103deaa90 is 0 bytes inside a block of size 16,040 free'd
+==39403==    at 0x75FA: free (vg_replace_malloc.c:450)
+==39403==    by 0xBB004: R_gc_internal (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x4800A1F: -[NSDirectoryTraversalOperation initWithPath:] (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x138: ???
+==39403== 
+==39403== Invalid write of size 8
+==39403==    at 0xB90EC: AgeNodeAndChildren (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==  Address 0x103deaaa0 is 16 bytes inside a block of size 16,040 free'd
+==39403==    at 0x75FA: free (vg_replace_malloc.c:450)
+==39403==    by 0xBB004: R_gc_internal (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x4800A1F: -[NSDirectoryTraversalOperation initWithPath:] (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x138: ???
+==39403== 
+==39403== Invalid read of size 8
+==39403==    at 0xB9889: R_gc_internal (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x1: ???
+==39403==    by 0x7CF: ???
+==39403==    by 0x100000000: ??? (in /opt/local/Library/Frameworks/R.framework/Resources/bin/exec/R)
+==39403==  Address 0x103deaaa0 is 16 bytes inside a block of size 16,040 free'd
+==39403==    at 0x75FA: free (vg_replace_malloc.c:450)
+==39403==    by 0xBB004: R_gc_internal (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x4800A1F: -[NSDirectoryTraversalOperation initWithPath:] (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x138: ???
+==39403== 
+==39403== Invalid read of size 1
+==39403==    at 0xB988F: R_gc_internal (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x1: ???
+==39403==    by 0x7CF: ???
+==39403==    by 0x100000000: ??? (in /opt/local/Library/Frameworks/R.framework/Resources/bin/exec/R)
+==39403==  Address 0x103deaa93 is 3 bytes inside a block of size 16,040 free'd
+==39403==    at 0x75FA: free (vg_replace_malloc.c:450)
+==39403==    by 0xBB004: R_gc_internal (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x4800A1F: -[NSDirectoryTraversalOperation initWithPath:] (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x138: ???
+==39403== 
+==39403== Invalid write of size 1
+==39403==    at 0xB9898: R_gc_internal (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x1: ???
+==39403==    by 0x7CF: ???
+==39403==    by 0x100000000: ??? (in /opt/local/Library/Frameworks/R.framework/Resources/bin/exec/R)
+==39403==  Address 0x103deaa93 is 3 bytes inside a block of size 16,040 free'd
+==39403==    at 0x75FA: free (vg_replace_malloc.c:450)
+==39403==    by 0xBB004: R_gc_internal (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x4800A1F: -[NSDirectoryTraversalOperation initWithPath:] (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x138: ???
+==39403== 
+==39403== Invalid read of size 1
+==39403==    at 0xB989C: R_gc_internal (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x1: ???
+==39403==    by 0x7CF: ???
+==39403==    by 0x100000000: ??? (in /opt/local/Library/Frameworks/R.framework/Resources/bin/exec/R)
+==39403==  Address 0x103deaa93 is 3 bytes inside a block of size 16,040 free'd
+==39403==    at 0x75FA: free (vg_replace_malloc.c:450)
+==39403==    by 0xBB004: R_gc_internal (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x4800A1F: -[NSDirectoryTraversalOperation initWithPath:] (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x138: ???
+==39403== 
+==39403== Invalid write of size 8
+==39403==    at 0xB9AB5: R_gc_internal (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x1: ???
+==39403==    by 0x7CF: ???
+==39403==    by 0x100000000: ??? (in /opt/local/Library/Frameworks/R.framework/Resources/bin/exec/R)
+==39403==  Address 0x103deaaa8 is 24 bytes inside a block of size 16,040 free'd
+==39403==    at 0x75FA: free (vg_replace_malloc.c:450)
+==39403==    by 0xBB004: R_gc_internal (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x4800A1F: -[NSDirectoryTraversalOperation initWithPath:] (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x138: ???
+==39403== 
+==39403== Invalid write of size 8
+==39403==    at 0xBA3DD: R_gc_internal (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x1: ???
+==39403==    by 0x7CF: ???
+==39403==    by 0x100000000: ??? (in /opt/local/Library/Frameworks/R.framework/Resources/bin/exec/R)
+==39403==  Address 0x103deaaa0 is 16 bytes inside a block of size 16,040 free'd
+==39403==    at 0x75FA: free (vg_replace_malloc.c:450)
+==39403==    by 0xBB004: R_gc_internal (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x4800A1F: -[NSDirectoryTraversalOperation initWithPath:] (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x138: ???
+==39403== 
+==39403== Invalid write of size 8
+==39403==    at 0xBAFEB: R_gc_internal (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x1: ???
+==39403==    by 0x7CF: ???
+==39403==    by 0x100000000: ??? (in /opt/local/Library/Frameworks/R.framework/Resources/bin/exec/R)
+==39403==  Address 0x103deaaa8 is 24 bytes inside a block of size 16,040 free'd
+==39403==    at 0x75FA: free (vg_replace_malloc.c:450)
+==39403==    by 0xBB004: R_gc_internal (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x4800A1F: -[NSDirectoryTraversalOperation initWithPath:] (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x138: ???
+==39403== 
+==39403== Invalid read of size 8
+==39403==    at 0xBAED7: R_gc_internal (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x1: ???
+==39403==    by 0x7CF: ???
+==39403==    by 0x100000000: ??? (in /opt/local/Library/Frameworks/R.framework/Resources/bin/exec/R)
+==39403==  Address 0x103deaaa0 is 16 bytes inside a block of size 16,040 free'd
+==39403==    at 0x75FA: free (vg_replace_malloc.c:450)
+==39403==    by 0xBB004: R_gc_internal (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x4800A1F: -[NSDirectoryTraversalOperation initWithPath:] (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x138: ???
+==39403== 
+==39403== Invalid read of size 1
+==39403==    at 0xBAEE2: R_gc_internal (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x1: ???
+==39403==    by 0x7CF: ???
+==39403==    by 0x100000000: ??? (in /opt/local/Library/Frameworks/R.framework/Resources/bin/exec/R)
+==39403==  Address 0x103deaa90 is 0 bytes inside a block of size 16,040 free'd
+==39403==    at 0x75FA: free (vg_replace_malloc.c:450)
+==39403==    by 0xBB004: R_gc_internal (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x4800A1F: -[NSDirectoryTraversalOperation initWithPath:] (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x138: ???
+==39403== 
+==39403== Invalid read of size 4
+==39403==    at 0xBAF99: R_gc_internal (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x1: ???
+==39403==    by 0x7CF: ???
+==39403==    by 0x100000000: ??? (in /opt/local/Library/Frameworks/R.framework/Resources/bin/exec/R)
+==39403==  Address 0x103deaab0 is 32 bytes inside a block of size 16,040 free'd
+==39403==    at 0x75FA: free (vg_replace_malloc.c:450)
+==39403==    by 0xBB004: R_gc_internal (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x4800A1F: -[NSDirectoryTraversalOperation initWithPath:] (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x138: ???
+==39403== 
+==39403== Invalid read of size 8
+==39403==    at 0xBAFD1: R_gc_internal (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x1: ???
+==39403==    by 0x7CF: ???
+==39403==    by 0x100000000: ??? (in /opt/local/Library/Frameworks/R.framework/Resources/bin/exec/R)
+==39403==  Address 0x103deaaa0 is 16 bytes inside a block of size 16,040 free'd
+==39403==    at 0x75FA: free (vg_replace_malloc.c:450)
+==39403==    by 0xBB004: R_gc_internal (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x4800A1F: -[NSDirectoryTraversalOperation initWithPath:] (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x138: ???
+==39403== 
+==39403== Invalid read of size 8
+==39403==    at 0xBAFDB: R_gc_internal (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x1: ???
+==39403==    by 0x7CF: ???
+==39403==    by 0x100000000: ??? (in /opt/local/Library/Frameworks/R.framework/Resources/bin/exec/R)
+==39403==  Address 0x103deaaa8 is 24 bytes inside a block of size 16,040 free'd
+==39403==    at 0x75FA: free (vg_replace_malloc.c:450)
+==39403==    by 0xBB004: R_gc_internal (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x4800A1F: -[NSDirectoryTraversalOperation initWithPath:] (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x138: ???
+==39403== 
+==39403== Invalid read of size 4
+==39403==    at 0xBAFF5: R_gc_internal (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x1: ???
+==39403==    by 0x7CF: ???
+==39403==    by 0x100000000: ??? (in /opt/local/Library/Frameworks/R.framework/Resources/bin/exec/R)
+==39403==  Address 0x103deaab0 is 32 bytes inside a block of size 16,040 free'd
+==39403==    at 0x75FA: free (vg_replace_malloc.c:450)
+==39403==    by 0xBB004: R_gc_internal (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x4800A1F: -[NSDirectoryTraversalOperation initWithPath:] (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x138: ???
+==39403== 
+==39403== Invalid free() / delete / delete[] / realloc()
+==39403==    at 0x75FA: free (vg_replace_malloc.c:450)
+==39403==    by 0xBB004: R_gc_internal (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x1: ???
+==39403==    by 0x7CF: ???
+==39403==    by 0x100000000: ??? (in /opt/local/Library/Frameworks/R.framework/Resources/bin/exec/R)
+==39403==  Address 0x103deaa90 is 0 bytes inside a block of size 16,040 free'd
+==39403==    at 0x75FA: free (vg_replace_malloc.c:450)
+==39403==    by 0xBB004: R_gc_internal (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x4800A1F: -[NSDirectoryTraversalOperation initWithPath:] (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x138: ???
+==39403== 
+==39403== Invalid write of size 8
+==39403==    at 0xB90EC: AgeNodeAndChildren (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x1101: ??? (in /opt/local/lib/valgrind/vgpreload_core-amd64-darwin.so)
+==39403==    by 0x238003227: ???
+==39403==    by 0x1037CAB8F: ???
+==39403==  Address 0x104b84e10 is 16 bytes inside a block of size 16,040 free'd
+==39403==    at 0x75FA: free (vg_replace_malloc.c:450)
+==39403==    by 0xBB004: R_gc_internal (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x4800A1F: -[NSDirectoryTraversalOperation initWithPath:] (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x138: ???
+==39403== 
+==39403== 
+==39403== HEAP SUMMARY:
+==39403==     in use at exit: 44,465,450 bytes in 18,336 blocks
+==39403==   total heap usage: 170,010 allocs, 151,676 frees, 1,809,841,776 bytes allocated
+==39403== 
+==39403== 14 bytes in 1 blocks are definitely lost in loss record 55 of 10,225
+==39403==    at 0x7497: malloc_zone_malloc (vg_replace_malloc.c:276)
+==39403==    by 0x149E804: malloc_set_zone_name (in /usr/lib/system/libsystem_c.dylib)
+==39403==    by 0x7FFF5FC13377: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC13761: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC1006D: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0FFC3: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0FFC3: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0FFC3: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0FFC3: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0FFC3: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0FFC3: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0FFC3: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403== 
+==39403== 18 bytes in 1 blocks are definitely lost in loss record 134 of 10,225
+==39403==    at 0x7497: malloc_zone_malloc (vg_replace_malloc.c:276)
+==39403==    by 0x149E804: malloc_set_zone_name (in /usr/lib/system/libsystem_c.dylib)
+==39403==    by 0x149ED95: _malloc_initialize (in /usr/lib/system/libsystem_c.dylib)
+==39403==    by 0x149E895: malloc_create_zone (in /usr/lib/system/libsystem_c.dylib)
+==39403==    by 0x1407D9C: _dispatch_ccache_init (in /usr/lib/system/libdispatch.dylib)
+==39403==    by 0x14070B5: _dispatch_client_callout (in /usr/lib/system/libdispatch.dylib)
+==39403==    by 0x1407040: dispatch_once_f (in /usr/lib/system/libdispatch.dylib)
+==39403==    by 0x1407D66: _dispatch_continuation_alloc_from_heap (in /usr/lib/system/libdispatch.dylib)
+==39403==    by 0x1407CFC: _dispatch_barrier_async_f_slow (in /usr/lib/system/libdispatch.dylib)
+==39403==    by 0x16950A7: _xpc_dyld_image_callback (in /usr/lib/system/libxpc.dylib)
+==39403==    by 0x7FFF5FC049B3: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*)) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0F039: ImageLoader::link(ImageLoader::LinkContext const&, bool, bool, ImageLoader::RPathChain const&) (in /usr/lib/dyld)
+==39403== 
+==39403== 22 bytes in 1 blocks are definitely lost in loss record 139 of 10,225
+==39403==    at 0x7497: malloc_zone_malloc (vg_replace_malloc.c:276)
+==39403==    by 0x149E804: malloc_set_zone_name (in /usr/lib/system/libsystem_c.dylib)
+==39403==    by 0x14070B5: _dispatch_client_callout (in /usr/lib/system/libdispatch.dylib)
+==39403==    by 0x1407040: dispatch_once_f (in /usr/lib/system/libdispatch.dylib)
+==39403==    by 0x1407D66: _dispatch_continuation_alloc_from_heap (in /usr/lib/system/libdispatch.dylib)
+==39403==    by 0x1407CFC: _dispatch_barrier_async_f_slow (in /usr/lib/system/libdispatch.dylib)
+==39403==    by 0x16950A7: _xpc_dyld_image_callback (in /usr/lib/system/libxpc.dylib)
+==39403==    by 0x7FFF5FC049B3: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*)) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0F039: ImageLoader::link(ImageLoader::LinkContext const&, bool, bool, ImageLoader::RPathChain const&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC04CE3: dyld::link(ImageLoader*, bool, ImageLoader::RPathChain const&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0A819: dlopen (in /usr/lib/dyld)
+==39403==    by 0x1436DD7: dlopen (in /usr/lib/system/libdyld.dylib)
+==39403== 
+==39403== 24 bytes in 1 blocks are possibly lost in loss record 484 of 10,225
+==39403==    at 0x7A55: malloc_zone_calloc (vg_replace_malloc.c:599)
+==39403==    by 0x172866D: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1738324: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1729FC3: look_up_class (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172BBC9: objc_getFutureClass (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x4DA0C0: _CFRuntimeBridgeClasses (in /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation)
+==39403==    by 0x4D1838: __CFInitialize (in /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation)
+==39403==    by 0x7FFF5FC13255: ImageLoaderMachO::doImageInit(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC13756: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC1006D: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0FFC3: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0FFC3: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403== 
+==39403== 24 bytes in 1 blocks are possibly lost in loss record 485 of 10,225
+==39403==    at 0x7A55: malloc_zone_calloc (vg_replace_malloc.c:599)
+==39403==    by 0x172866D: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x173833D: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17375D0: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1729FC3: look_up_class (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172BBC9: objc_getFutureClass (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x4DA0C0: _CFRuntimeBridgeClasses (in /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation)
+==39403==    by 0x4D1860: __CFInitialize (in /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation)
+==39403==    by 0x7FFF5FC13255: ImageLoaderMachO::doImageInit(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC13756: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC1006D: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0FFC3: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403== 
+==39403== 24 bytes in 1 blocks are possibly lost in loss record 486 of 10,225
+==39403==    at 0x7A55: malloc_zone_calloc (vg_replace_malloc.c:599)
+==39403==    by 0x172866D: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1738324: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17375BC: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1729FC3: look_up_class (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x4E9944: __CFMakeNSBlockClasses (in /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation)
+==39403==    by 0x4D198E: __CFInitialize (in /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation)
+==39403==    by 0x7FFF5FC13255: ImageLoaderMachO::doImageInit(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC13756: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC1006D: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0FFC3: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0FFC3: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403== 
+==39403== 24 bytes in 1 blocks are possibly lost in loss record 487 of 10,225
+==39403==    at 0x7A55: malloc_zone_calloc (vg_replace_malloc.c:599)
+==39403==    by 0x172866D: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1738324: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1729FC3: look_up_class (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x4E99BF: __CFMakeNSBlockClasses (in /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation)
+==39403==    by 0x4D198E: __CFInitialize (in /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation)
+==39403==    by 0x7FFF5FC13255: ImageLoaderMachO::doImageInit(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC13756: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC1006D: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0FFC3: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0FFC3: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0FEB9: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403== 
+==39403== 24 bytes in 1 blocks are possibly lost in loss record 488 of 10,225
+==39403==    at 0x7A55: malloc_zone_calloc (vg_replace_malloc.c:599)
+==39403==    by 0x172866D: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172D51B: objc_registerClassPair (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x4E9A80: __CFMakeNSBlockClasses (in /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation)
+==39403==    by 0x4D198E: __CFInitialize (in /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation)
+==39403==    by 0x7FFF5FC13255: ImageLoaderMachO::doImageInit(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC13756: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC1006D: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0FFC3: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0FFC3: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0FEB9: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC01FBF: dyld::initializeMainExecutable() (in /usr/lib/dyld)
+==39403== 
+==39403== 24 bytes in 1 blocks are possibly lost in loss record 489 of 10,225
+==39403==    at 0x7A55: malloc_zone_calloc (vg_replace_malloc.c:599)
+==39403==    by 0x172866D: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172D51B: objc_registerClassPair (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x4E9A8C: __CFMakeNSBlockClasses (in /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation)
+==39403==    by 0x4D198E: __CFInitialize (in /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation)
+==39403==    by 0x7FFF5FC13255: ImageLoaderMachO::doImageInit(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC13756: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC1006D: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0FFC3: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0FFC3: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0FEB9: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC01FBF: dyld::initializeMainExecutable() (in /usr/lib/dyld)
+==39403== 
+==39403== 24 bytes in 1 blocks are possibly lost in loss record 490 of 10,225
+==39403==    at 0x7A55: malloc_zone_calloc (vg_replace_malloc.c:599)
+==39403==    by 0x172866D: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x173833D: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17375D0: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1727E9C: _read_images (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17269EB: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17264F3: map_images (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x7FFF5FC049B3: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*)) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0F039: ImageLoader::link(ImageLoader::LinkContext const&, bool, bool, ImageLoader::RPathChain const&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC04CE3: dyld::link(ImageLoader*, bool, ImageLoader::RPathChain const&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0A819: dlopen (in /usr/lib/dyld)
+==39403==    by 0x1436DD7: dlopen (in /usr/lib/system/libdyld.dylib)
+==39403== 
+==39403== 24 bytes in 1 blocks are possibly lost in loss record 491 of 10,225
+==39403==    at 0x7A55: malloc_zone_calloc (vg_replace_malloc.c:599)
+==39403==    by 0x172866D: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x173833D: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17375D0: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17375BC: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1727F06: _read_images (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17269EB: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17264F3: map_images (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x7FFF5FC049B3: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*)) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0F039: ImageLoader::link(ImageLoader::LinkContext const&, bool, bool, ImageLoader::RPathChain const&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC04CE3: dyld::link(ImageLoader*, bool, ImageLoader::RPathChain const&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0A819: dlopen (in /usr/lib/dyld)
+==39403== 
+==39403== 24 bytes in 1 blocks are possibly lost in loss record 492 of 10,225
+==39403==    at 0x7A55: malloc_zone_calloc (vg_replace_malloc.c:599)
+==39403==    by 0x172866D: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x173833D: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17375D0: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1727F06: _read_images (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17269EB: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17264F3: map_images (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x7FFF5FC049B3: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*)) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0F039: ImageLoader::link(ImageLoader::LinkContext const&, bool, bool, ImageLoader::RPathChain const&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC04CE3: dyld::link(ImageLoader*, bool, ImageLoader::RPathChain const&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0A819: dlopen (in /usr/lib/dyld)
+==39403==    by 0x1436DD7: dlopen (in /usr/lib/system/libdyld.dylib)
+==39403== 
+==39403== 24 bytes in 1 blocks are possibly lost in loss record 493 of 10,225
+==39403==    at 0x7A55: malloc_zone_calloc (vg_replace_malloc.c:599)
+==39403==    by 0x172866D: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x173833D: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17375D0: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1729FC3: look_up_class (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x4734C76: _NSToDoAtProcessStart (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x47349C7: _NSInitializePlatform (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x1729D8F: call_load_methods (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172998E: load_images (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x7FFF5FC01E01: dyld::notifySingle(dyld_image_states, ImageLoader const*) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC10056: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0FFC3: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403== 
+==39403== 24 bytes in 1 blocks are possibly lost in loss record 494 of 10,225
+==39403==    at 0x7A55: malloc_zone_calloc (vg_replace_malloc.c:599)
+==39403==    by 0x172866D: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1738324: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1729FC3: look_up_class (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x4734C9C: _NSToDoAtProcessStart (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x47349C7: _NSInitializePlatform (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x1729D8F: call_load_methods (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172998E: load_images (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x7FFF5FC01E01: dyld::notifySingle(dyld_image_states, ImageLoader const*) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC10056: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0FFC3: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0FFC3: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403== 
+==39403== 24 bytes in 1 blocks are possibly lost in loss record 495 of 10,225
+==39403==    at 0x7A55: malloc_zone_calloc (vg_replace_malloc.c:599)
+==39403==    by 0x172866D: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x173833D: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17375D0: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17375BC: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1729FC3: look_up_class (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x4734CC2: _NSToDoAtProcessStart (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x47349C7: _NSInitializePlatform (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x1729D8F: call_load_methods (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172998E: load_images (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x7FFF5FC01E01: dyld::notifySingle(dyld_image_states, ImageLoader const*) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC10056: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403== 
+==39403== 24 bytes in 1 blocks are possibly lost in loss record 496 of 10,225
+==39403==    at 0x7A55: malloc_zone_calloc (vg_replace_malloc.c:599)
+==39403==    by 0x172866D: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x173833D: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17375D0: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1729FC3: look_up_class (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x4734CC2: _NSToDoAtProcessStart (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x47349C7: _NSInitializePlatform (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x1729D8F: call_load_methods (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172998E: load_images (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x7FFF5FC01E01: dyld::notifySingle(dyld_image_states, ImageLoader const*) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC10056: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0FFC3: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403== 
+==39403== 24 bytes in 1 blocks are possibly lost in loss record 497 of 10,225
+==39403==    at 0x7A55: malloc_zone_calloc (vg_replace_malloc.c:599)
+==39403==    by 0x172866D: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1738324: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17375BC: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1729FC3: look_up_class (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x4734CE8: _NSToDoAtProcessStart (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x47349C7: _NSInitializePlatform (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x1729D8F: call_load_methods (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172998E: load_images (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x7FFF5FC01E01: dyld::notifySingle(dyld_image_states, ImageLoader const*) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC10056: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0FFC3: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403== 
+==39403== 24 bytes in 1 blocks are possibly lost in loss record 498 of 10,225
+==39403==    at 0x7A55: malloc_zone_calloc (vg_replace_malloc.c:599)
+==39403==    by 0x172866D: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1738324: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1729FC3: look_up_class (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x4734CE8: _NSToDoAtProcessStart (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x47349C7: _NSInitializePlatform (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x1729D8F: call_load_methods (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172998E: load_images (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x7FFF5FC01E01: dyld::notifySingle(dyld_image_states, ImageLoader const*) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC10056: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0FFC3: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0FFC3: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403== 
+==39403== 24 bytes in 1 blocks are possibly lost in loss record 499 of 10,225
+==39403==    at 0x7A55: malloc_zone_calloc (vg_replace_malloc.c:599)
+==39403==    by 0x172866D: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x173833D: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17375D0: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17375BC: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1729FC3: look_up_class (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x4734D11: _NSToDoAtProcessStart (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x47349C7: _NSInitializePlatform (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x1729D8F: call_load_methods (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172998E: load_images (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x7FFF5FC01E01: dyld::notifySingle(dyld_image_states, ImageLoader const*) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC10056: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403== 
+==39403== 24 bytes in 1 blocks are possibly lost in loss record 500 of 10,225
+==39403==    at 0x7A55: malloc_zone_calloc (vg_replace_malloc.c:599)
+==39403==    by 0x172866D: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x173833D: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17375D0: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1729FC3: look_up_class (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x4734D6A: _NSToDoAtProcessStart (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x47349C7: _NSInitializePlatform (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x1729D8F: call_load_methods (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172998E: load_images (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x7FFF5FC01E01: dyld::notifySingle(dyld_image_states, ImageLoader const*) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC10056: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0FFC3: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403== 
+==39403== 24 bytes in 1 blocks are possibly lost in loss record 501 of 10,225
+==39403==    at 0x7A55: malloc_zone_calloc (vg_replace_malloc.c:599)
+==39403==    by 0x172866D: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1738324: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1729FC3: look_up_class (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x4734D6A: _NSToDoAtProcessStart (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x47349C7: _NSInitializePlatform (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x1729D8F: call_load_methods (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172998E: load_images (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x7FFF5FC01E01: dyld::notifySingle(dyld_image_states, ImageLoader const*) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC10056: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0FFC3: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0FFC3: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403== 
+==39403== 24 bytes in 1 blocks are possibly lost in loss record 502 of 10,225
+==39403==    at 0x7A55: malloc_zone_calloc (vg_replace_malloc.c:599)
+==39403==    by 0x172866D: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1738324: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1729FC3: look_up_class (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x4734D9C: _NSToDoAtProcessStart (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x47349C7: _NSInitializePlatform (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x1729D8F: call_load_methods (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172998E: load_images (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x7FFF5FC01E01: dyld::notifySingle(dyld_image_states, ImageLoader const*) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC10056: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0FFC3: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0FFC3: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403== 
+==39403== 24 bytes in 1 blocks are possibly lost in loss record 503 of 10,225
+==39403==    at 0x7A55: malloc_zone_calloc (vg_replace_malloc.c:599)
+==39403==    by 0x172866D: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x173833D: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17375D0: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1729FC3: look_up_class (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x4734E12: _NSToDoAtProcessStart (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x47349C7: _NSInitializePlatform (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x1729D8F: call_load_methods (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172998E: load_images (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x7FFF5FC01E01: dyld::notifySingle(dyld_image_states, ImageLoader const*) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC10056: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0FFC3: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403== 
+==39403== 24 bytes in 1 blocks are possibly lost in loss record 504 of 10,225
+==39403==    at 0x7A55: malloc_zone_calloc (vg_replace_malloc.c:599)
+==39403==    by 0x172866D: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x173833D: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17375D0: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17375BC: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1729FC3: look_up_class (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x4734EEA: _NSToDoAtProcessStart (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x47349C7: _NSInitializePlatform (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x1729D8F: call_load_methods (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172998E: load_images (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x7FFF5FC01E01: dyld::notifySingle(dyld_image_states, ImageLoader const*) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC10056: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403== 
+==39403== 24 bytes in 1 blocks are possibly lost in loss record 505 of 10,225
+==39403==    at 0x7A55: malloc_zone_calloc (vg_replace_malloc.c:599)
+==39403==    by 0x172866D: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x173833D: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17375D0: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1729FC3: look_up_class (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x4734EEA: _NSToDoAtProcessStart (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x47349C7: _NSInitializePlatform (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x1729D8F: call_load_methods (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172998E: load_images (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x7FFF5FC01E01: dyld::notifySingle(dyld_image_states, ImageLoader const*) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC10056: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0FFC3: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403== 
+==39403== 24 bytes in 1 blocks are possibly lost in loss record 506 of 10,225
+==39403==    at 0x7A55: malloc_zone_calloc (vg_replace_malloc.c:599)
+==39403==    by 0x172866D: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1738324: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1729FC3: look_up_class (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x4734F03: _NSToDoAtProcessStart (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x47349C7: _NSInitializePlatform (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x1729D8F: call_load_methods (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172998E: load_images (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x7FFF5FC01E01: dyld::notifySingle(dyld_image_states, ImageLoader const*) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC10056: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0FFC3: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0FFC3: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403== 
+==39403== 24 bytes in 1 blocks are possibly lost in loss record 507 of 10,225
+==39403==    at 0x7A55: malloc_zone_calloc (vg_replace_malloc.c:599)
+==39403==    by 0x172866D: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x173833D: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172C09E: prepareForMethodLookup (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172BEEE: lookUpMethod (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172A2FB: objc_msgSend (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x4734F7C: _NSToDoAtProcessStart (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x47349C7: _NSInitializePlatform (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x1729D8F: call_load_methods (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172998E: load_images (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x7FFF5FC01E01: dyld::notifySingle(dyld_image_states, ImageLoader const*) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC10056: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403== 
+==39403== 24 bytes in 1 blocks are possibly lost in loss record 508 of 10,225
+==39403==    at 0x7A55: malloc_zone_calloc (vg_replace_malloc.c:599)
+==39403==    by 0x172866D: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1738324: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172C4B0: _class_getNonMetaClass (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172C0EA: prepareForMethodLookup (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172BEEE: lookUpMethod (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172A2FB: objc_msgSend (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x4734F7C: _NSToDoAtProcessStart (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x47349C7: _NSInitializePlatform (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x1729D8F: call_load_methods (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172998E: load_images (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x7FFF5FC01E01: dyld::notifySingle(dyld_image_states, ImageLoader const*) (in /usr/lib/dyld)
+==39403== 
+==39403== 24 bytes in 1 blocks are possibly lost in loss record 509 of 10,225
+==39403==    at 0x7A55: malloc_zone_calloc (vg_replace_malloc.c:599)
+==39403==    by 0x172866D: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x173833D: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172C09E: prepareForMethodLookup (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172BEEE: lookUpMethod (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172A2FB: objc_msgSend (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x4734A5D: _NSInitializePlatform (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x1729D8F: call_load_methods (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172998E: load_images (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x7FFF5FC01E01: dyld::notifySingle(dyld_image_states, ImageLoader const*) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC10056: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0FFC3: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403== 
+==39403== 24 bytes in 1 blocks are possibly lost in loss record 510 of 10,225
+==39403==    at 0x7A55: malloc_zone_calloc (vg_replace_malloc.c:599)
+==39403==    by 0x172866D: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x173833D: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172C09E: prepareForMethodLookup (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172BEEE: lookUpMethod (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172A2FB: objc_msgSend (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x4B80FD: +[NSDictionary allocWithZone:] (in /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation)
+==39403==    by 0x17455BB: +[NSObject new] (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x4735639: -[NSThread init] (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x473542C: _NSThreadGet0 (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x4734A5D: _NSInitializePlatform (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x1729D8F: call_load_methods (in /usr/lib/libobjc.A.dylib)
+==39403== 
+==39403== 24 bytes in 1 blocks are possibly lost in loss record 511 of 10,225
+==39403==    at 0x7A55: malloc_zone_calloc (vg_replace_malloc.c:599)
+==39403==    by 0x172866D: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x173833D: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172C09E: prepareForMethodLookup (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172BEEE: lookUpMethod (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172A2FB: objc_msgSend (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x4C93BF: -[__NSPlaceholderDictionary initWithCapacity:] (in /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation)
+==39403==    by 0x4735639: -[NSThread init] (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x473542C: _NSThreadGet0 (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x4734A5D: _NSInitializePlatform (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x1729D8F: call_load_methods (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172998E: load_images (in /usr/lib/libobjc.A.dylib)
+==39403== 
+==39403== 24 bytes in 1 blocks are possibly lost in loss record 512 of 10,225
+==39403==    at 0x7A55: malloc_zone_calloc (vg_replace_malloc.c:599)
+==39403==    by 0x172866D: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1738324: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172C4B0: _class_getNonMetaClass (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172C0EA: prepareForMethodLookup (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172BEEE: lookUpMethod (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172A2FB: objc_msgSend (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x4C93BF: -[__NSPlaceholderDictionary initWithCapacity:] (in /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation)
+==39403==    by 0x4735639: -[NSThread init] (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x473542C: _NSThreadGet0 (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x4734A5D: _NSInitializePlatform (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x1729D8F: call_load_methods (in /usr/lib/libobjc.A.dylib)
+==39403== 
+==39403== 24 bytes in 1 blocks are possibly lost in loss record 513 of 10,225
+==39403==    at 0x7A55: malloc_zone_calloc (vg_replace_malloc.c:599)
+==39403==    by 0x172866D: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x173833D: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17375D0: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172BD24: _objc_fixupMessageRef (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172A3AF: objc_msgSend_fixup (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x34BB726: +[NSBinder load] (in /System/Library/Frameworks/AppKit.framework/Versions/C/AppKit)
+==39403==    by 0x1729CA9: call_load_methods (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172998E: load_images (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x7FFF5FC01E01: dyld::notifySingle(dyld_image_states, ImageLoader const*) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC10056: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0FFC3: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403== 
+==39403== 32 bytes in 1 blocks are possibly lost in loss record 581 of 10,225
+==39403==    at 0x7A55: malloc_zone_calloc (vg_replace_malloc.c:599)
+==39403==    by 0x17286EA: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172846C: NXCreateHashTableFromZone (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1727788: _read_images (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17269EB: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17264F3: map_images (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x7FFF5FC04936: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*)) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0467C: dyld::registerImageStateBatchChangeHandler(dyld_image_states, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*)) (in /usr/lib/dyld)
+==39403==    by 0x1436ED9: dyld_register_image_state_change_handler (in /usr/lib/system/libdyld.dylib)
+==39403==    by 0x172504C: _objc_init (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x33DB27: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==39403==    by 0x7FFF5FC13377: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==39403== 
+==39403== 32 bytes in 1 blocks are possibly lost in loss record 582 of 10,225
+==39403==    at 0x7A55: malloc_zone_calloc (vg_replace_malloc.c:599)
+==39403==    by 0x17286EA: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172D532: objc_registerClassPair (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x4E9A68: __CFMakeNSBlockClasses (in /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation)
+==39403==    by 0x4D198E: __CFInitialize (in /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation)
+==39403==    by 0x7FFF5FC13255: ImageLoaderMachO::doImageInit(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC13756: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC1006D: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0FFC3: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0FFC3: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0FEB9: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC01FBF: dyld::initializeMainExecutable() (in /usr/lib/dyld)
+==39403== 
+==39403== 32 bytes in 1 blocks are possibly lost in loss record 583 of 10,225
+==39403==    at 0x7A55: malloc_zone_calloc (vg_replace_malloc.c:599)
+==39403==    by 0x17286EA: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172D51B: objc_registerClassPair (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x4E9A98: __CFMakeNSBlockClasses (in /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation)
+==39403==    by 0x4D198E: __CFInitialize (in /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation)
+==39403==    by 0x7FFF5FC13255: ImageLoaderMachO::doImageInit(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC13756: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC1006D: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0FFC3: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0FFC3: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0FEB9: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC01FBF: dyld::initializeMainExecutable() (in /usr/lib/dyld)
+==39403== 
+==39403== 32 bytes in 1 blocks are possibly lost in loss record 584 of 10,225
+==39403==    at 0x7A55: malloc_zone_calloc (vg_replace_malloc.c:599)
+==39403==    by 0x17286EA: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1738324: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17375BC: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1727E9C: _read_images (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17269EB: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17264F3: map_images (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x7FFF5FC049B3: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*)) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0F039: ImageLoader::link(ImageLoader::LinkContext const&, bool, bool, ImageLoader::RPathChain const&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC04CE3: dyld::link(ImageLoader*, bool, ImageLoader::RPathChain const&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0A819: dlopen (in /usr/lib/dyld)
+==39403==    by 0x1436DD7: dlopen (in /usr/lib/system/libdyld.dylib)
+==39403== 
+==39403== 32 bytes in 1 blocks are possibly lost in loss record 585 of 10,225
+==39403==    at 0x7A55: malloc_zone_calloc (vg_replace_malloc.c:599)
+==39403==    by 0x17286EA: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x173833D: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17375D0: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17375BC: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1729FC3: look_up_class (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x4734C76: _NSToDoAtProcessStart (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x47349C7: _NSInitializePlatform (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x1729D8F: call_load_methods (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172998E: load_images (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x7FFF5FC01E01: dyld::notifySingle(dyld_image_states, ImageLoader const*) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC10056: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403== 
+==39403== 32 bytes in 1 blocks are possibly lost in loss record 586 of 10,225
+==39403==    at 0x7A55: malloc_zone_calloc (vg_replace_malloc.c:599)
+==39403==    by 0x17286EA: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1738324: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1729FC3: look_up_class (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x4734C76: _NSToDoAtProcessStart (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x47349C7: _NSInitializePlatform (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x1729D8F: call_load_methods (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172998E: load_images (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x7FFF5FC01E01: dyld::notifySingle(dyld_image_states, ImageLoader const*) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC10056: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0FFC3: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0FFC3: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403== 
+==39403== 32 bytes in 1 blocks are possibly lost in loss record 587 of 10,225
+==39403==    at 0x7A55: malloc_zone_calloc (vg_replace_malloc.c:599)
+==39403==    by 0x17286EA: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1738324: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17375BC: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1729FC3: look_up_class (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x4734D11: _NSToDoAtProcessStart (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x47349C7: _NSInitializePlatform (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x1729D8F: call_load_methods (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172998E: load_images (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x7FFF5FC01E01: dyld::notifySingle(dyld_image_states, ImageLoader const*) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC10056: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0FFC3: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403== 
+==39403== 32 bytes in 1 blocks are possibly lost in loss record 588 of 10,225
+==39403==    at 0x7A55: malloc_zone_calloc (vg_replace_malloc.c:599)
+==39403==    by 0x17286EA: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x173833D: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17375D0: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1729FC3: look_up_class (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x4734D11: _NSToDoAtProcessStart (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x47349C7: _NSInitializePlatform (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x1729D8F: call_load_methods (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172998E: load_images (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x7FFF5FC01E01: dyld::notifySingle(dyld_image_states, ImageLoader const*) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC10056: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0FFC3: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403== 
+==39403== 32 bytes in 1 blocks are possibly lost in loss record 589 of 10,225
+==39403==    at 0x7A55: malloc_zone_calloc (vg_replace_malloc.c:599)
+==39403==    by 0x17286EA: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1738324: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1729FC3: look_up_class (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x4734D81: _NSToDoAtProcessStart (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x47349C7: _NSInitializePlatform (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x1729D8F: call_load_methods (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172998E: load_images (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x7FFF5FC01E01: dyld::notifySingle(dyld_image_states, ImageLoader const*) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC10056: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0FFC3: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0FFC3: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403== 
+==39403== 32 bytes in 1 blocks are possibly lost in loss record 590 of 10,225
+==39403==    at 0x7A55: malloc_zone_calloc (vg_replace_malloc.c:599)
+==39403==    by 0x17286EA: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x173833D: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17375D0: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1729FC3: look_up_class (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x4734EBB: _NSToDoAtProcessStart (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x47349C7: _NSInitializePlatform (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x1729D8F: call_load_methods (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172998E: load_images (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x7FFF5FC01E01: dyld::notifySingle(dyld_image_states, ImageLoader const*) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC10056: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0FFC3: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403== 
+==39403== 32 bytes in 1 blocks are possibly lost in loss record 591 of 10,225
+==39403==    at 0x7A55: malloc_zone_calloc (vg_replace_malloc.c:599)
+==39403==    by 0x17286EA: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x173833D: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17375D0: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1729FC3: look_up_class (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x4734ED1: _NSToDoAtProcessStart (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x47349C7: _NSInitializePlatform (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x1729D8F: call_load_methods (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172998E: load_images (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x7FFF5FC01E01: dyld::notifySingle(dyld_image_states, ImageLoader const*) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC10056: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0FFC3: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403== 
+==39403== 32 bytes in 1 blocks are possibly lost in loss record 592 of 10,225
+==39403==    at 0x7A55: malloc_zone_calloc (vg_replace_malloc.c:599)
+==39403==    by 0x17286EA: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1738324: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1729FC3: look_up_class (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x4734ED1: _NSToDoAtProcessStart (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x47349C7: _NSInitializePlatform (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x1729D8F: call_load_methods (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172998E: load_images (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x7FFF5FC01E01: dyld::notifySingle(dyld_image_states, ImageLoader const*) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC10056: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0FFC3: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0FFC3: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403== 
+==39403== 32 bytes in 1 blocks are possibly lost in loss record 593 of 10,225
+==39403==    at 0x7A55: malloc_zone_calloc (vg_replace_malloc.c:599)
+==39403==    by 0x17286EA: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1738324: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17375BC: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1729FC3: look_up_class (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x4734EEA: _NSToDoAtProcessStart (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x47349C7: _NSInitializePlatform (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x1729D8F: call_load_methods (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172998E: load_images (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x7FFF5FC01E01: dyld::notifySingle(dyld_image_states, ImageLoader const*) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC10056: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0FFC3: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403== 
+==39403== 32 bytes in 1 blocks are possibly lost in loss record 594 of 10,225
+==39403==    at 0x7A55: malloc_zone_calloc (vg_replace_malloc.c:599)
+==39403==    by 0x17286EA: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1738324: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1729FC3: look_up_class (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x4734EEA: _NSToDoAtProcessStart (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x47349C7: _NSInitializePlatform (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x1729D8F: call_load_methods (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172998E: load_images (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x7FFF5FC01E01: dyld::notifySingle(dyld_image_states, ImageLoader const*) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC10056: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0FFC3: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0FFC3: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403== 
+==39403== 32 bytes in 1 blocks are possibly lost in loss record 595 of 10,225
+==39403==    at 0x7A55: malloc_zone_calloc (vg_replace_malloc.c:599)
+==39403==    by 0x17286EA: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1738324: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172BD24: _objc_fixupMessageRef (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172A3AF: objc_msgSend_fixup (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x34BB726: +[NSBinder load] (in /System/Library/Frameworks/AppKit.framework/Versions/C/AppKit)
+==39403==    by 0x1729CA9: call_load_methods (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172998E: load_images (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x7FFF5FC01E01: dyld::notifySingle(dyld_image_states, ImageLoader const*) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC10056: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0FFC3: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0FEB9: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403== 
+==39403== 40 bytes in 1 blocks are possibly lost in loss record 603 of 10,225
+==39403==    at 0x7A55: malloc_zone_calloc (vg_replace_malloc.c:599)
+==39403==    by 0x17286EA: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1738324: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1729FC3: look_up_class (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x4734E7E: _NSToDoAtProcessStart (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x47349C7: _NSInitializePlatform (in /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation)
+==39403==    by 0x1729D8F: call_load_methods (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172998E: load_images (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x7FFF5FC01E01: dyld::notifySingle(dyld_image_states, ImageLoader const*) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC10056: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0FFC3: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0FFC3: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403== 
+==39403== 48 bytes in 1 blocks are possibly lost in loss record 628 of 10,225
+==39403==    at 0x7A55: malloc_zone_calloc (vg_replace_malloc.c:599)
+==39403==    by 0x17286EA: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1738324: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1727E9C: _read_images (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17269EB: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17264F3: map_images (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x7FFF5FC049B3: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*)) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0F039: ImageLoader::link(ImageLoader::LinkContext const&, bool, bool, ImageLoader::RPathChain const&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC04CE3: dyld::link(ImageLoader*, bool, ImageLoader::RPathChain const&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0A819: dlopen (in /usr/lib/dyld)
+==39403==    by 0x1436DD7: dlopen (in /usr/lib/system/libdyld.dylib)
+==39403==    by 0x149F4: AddDLL (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403== 
+==39403== 64 bytes in 2 blocks are possibly lost in loss record 836 of 10,225
+==39403==    at 0x7A55: malloc_zone_calloc (vg_replace_malloc.c:599)
+==39403==    by 0x17286EA: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17287F6: _NXHashRehashToCapacity (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1728748: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x173833D: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17375D0: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1729FC3: look_up_class (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172BBC9: objc_getFutureClass (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x4DA0C0: _CFRuntimeBridgeClasses (in /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation)
+==39403==    by 0x4D1810: __CFInitialize (in /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation)
+==39403==    by 0x7FFF5FC13255: ImageLoaderMachO::doImageInit(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC13756: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==39403== 
+==39403== 64 bytes in 2 blocks are possibly lost in loss record 837 of 10,225
+==39403==    at 0x7A55: malloc_zone_calloc (vg_replace_malloc.c:599)
+==39403==    by 0x17286EA: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17287F6: _NXHashRehashToCapacity (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1728748: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1738324: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17375BC: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1729FC3: look_up_class (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172BBC9: objc_getFutureClass (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x4DA0C0: _CFRuntimeBridgeClasses (in /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation)
+==39403==    by 0x4D1824: __CFInitialize (in /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation)
+==39403==    by 0x7FFF5FC13255: ImageLoaderMachO::doImageInit(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC13756: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==39403== 
+==39403== 72 bytes in 3 blocks are possibly lost in loss record 863 of 10,225
+==39403==    at 0x7A55: malloc_zone_calloc (vg_replace_malloc.c:599)
+==39403==    by 0x172866D: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17287F6: _NXHashRehashToCapacity (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1728748: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1738324: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17375BC: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1729FC3: look_up_class (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172BBC9: objc_getFutureClass (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x4DA0C0: _CFRuntimeBridgeClasses (in /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation)
+==39403==    by 0x4D1824: __CFInitialize (in /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation)
+==39403==    by 0x7FFF5FC13255: ImageLoaderMachO::doImageInit(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC13756: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==39403== 
+==39403== 208 bytes in 4 blocks are possibly lost in loss record 1,326 of 10,225
+==39403==    at 0x7DE2: malloc_zone_realloc (vg_replace_malloc.c:668)
+==39403==    by 0x17383AC: addUnattachedCategoryForClass(category_t*, class_t*, _header_info*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1727FC0: _read_images (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17269EB: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17264F3: map_images (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x7FFF5FC049B3: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*)) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0F039: ImageLoader::link(ImageLoader::LinkContext const&, bool, bool, ImageLoader::RPathChain const&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC04CE3: dyld::link(ImageLoader*, bool, ImageLoader::RPathChain const&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0A819: dlopen (in /usr/lib/dyld)
+==39403==    by 0x1436DD7: dlopen (in /usr/lib/system/libdyld.dylib)
+==39403==    by 0x149F4: AddDLL (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x14C90: do_dynload (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403== 
+==39403== 240 bytes in 10 blocks are possibly lost in loss record 1,424 of 10,225
+==39403==    at 0x7A55: malloc_zone_calloc (vg_replace_malloc.c:599)
+==39403==    by 0x172866D: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17287F6: _NXHashRehashToCapacity (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1728748: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x173833D: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17375D0: realizeClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1729FC3: look_up_class (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172BBC9: objc_getFutureClass (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x4DA0C0: _CFRuntimeBridgeClasses (in /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation)
+==39403==    by 0x4D1810: __CFInitialize (in /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation)
+==39403==    by 0x7FFF5FC13255: ImageLoaderMachO::doImageInit(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC13756: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==39403== 
+==39403== 264 bytes in 11 blocks are possibly lost in loss record 1,481 of 10,225
+==39403==    at 0x7A55: malloc_zone_calloc (vg_replace_malloc.c:599)
+==39403==    by 0x1738396: addUnattachedCategoryForClass(category_t*, class_t*, _header_info*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1727FC0: _read_images (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17269EB: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17264F3: map_images (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x7FFF5FC049B3: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*)) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0F039: ImageLoader::link(ImageLoader::LinkContext const&, bool, bool, ImageLoader::RPathChain const&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC04CE3: dyld::link(ImageLoader*, bool, ImageLoader::RPathChain const&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0A819: dlopen (in /usr/lib/dyld)
+==39403==    by 0x1436DD7: dlopen (in /usr/lib/system/libdyld.dylib)
+==39403==    by 0x149F4: AddDLL (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x14C90: do_dynload (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403== 
+==39403== 552 bytes in 23 blocks are possibly lost in loss record 2,250 of 10,225
+==39403==    at 0x7A55: malloc_zone_calloc (vg_replace_malloc.c:599)
+==39403==    by 0x1738396: addUnattachedCategoryForClass(category_t*, class_t*, _header_info*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1727F45: _read_images (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17269EB: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17264F3: map_images (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x7FFF5FC049B3: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*)) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0F039: ImageLoader::link(ImageLoader::LinkContext const&, bool, bool, ImageLoader::RPathChain const&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC04CE3: dyld::link(ImageLoader*, bool, ImageLoader::RPathChain const&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0A819: dlopen (in /usr/lib/dyld)
+==39403==    by 0x1436DD7: dlopen (in /usr/lib/system/libdyld.dylib)
+==39403==    by 0x149F4: AddDLL (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x14C90: do_dynload (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403== 
+==39403== 768 bytes in 48 blocks are possibly lost in loss record 2,340 of 10,225
+==39403==    at 0x7497: malloc_zone_malloc (vg_replace_malloc.c:276)
+==39403==    by 0x1728F87: _strdup_internal (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1728F39: NXMapKeyCopyingInsert (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1727D9D: _read_images (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17269EB: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17264F3: map_images (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x7FFF5FC04936: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*)) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0467C: dyld::registerImageStateBatchChangeHandler(dyld_image_states, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*)) (in /usr/lib/dyld)
+==39403==    by 0x1436ED9: dyld_register_image_state_change_handler (in /usr/lib/system/libdyld.dylib)
+==39403==    by 0x172504C: _objc_init (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x33DB27: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==39403==    by 0x7FFF5FC13377: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==39403== 
+==39403== 800 bytes in 14 blocks are possibly lost in loss record 2,350 of 10,225
+==39403==    at 0x7DE2: malloc_zone_realloc (vg_replace_malloc.c:668)
+==39403==    by 0x17383AC: addUnattachedCategoryForClass(category_t*, class_t*, _header_info*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1727F45: _read_images (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17269EB: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17264F3: map_images (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x7FFF5FC049B3: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*)) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0F039: ImageLoader::link(ImageLoader::LinkContext const&, bool, bool, ImageLoader::RPathChain const&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC04CE3: dyld::link(ImageLoader*, bool, ImageLoader::RPathChain const&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0A819: dlopen (in /usr/lib/dyld)
+==39403==    by 0x1436DD7: dlopen (in /usr/lib/system/libdyld.dylib)
+==39403==    by 0x149F4: AddDLL (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403==    by 0x14C90: do_dynload (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403== 
+==39403== 1,040 bytes in 1 blocks are possibly lost in loss record 2,402 of 10,225
+==39403==    at 0x7497: malloc_zone_malloc (vg_replace_malloc.c:276)
+==39403==    by 0x1728293: NXCreateMapTableFromZone (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1736ABC: futureNamedClasses() (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17277FB: _read_images (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17269EB: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17264F3: map_images (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x7FFF5FC04936: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*)) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0467C: dyld::registerImageStateBatchChangeHandler(dyld_image_states, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*)) (in /usr/lib/dyld)
+==39403==    by 0x1436ED9: dyld_register_image_state_change_handler (in /usr/lib/system/libdyld.dylib)
+==39403==    by 0x172504C: _objc_init (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x33DB27: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==39403==    by 0x7FFF5FC13377: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==39403== 
+==39403== 1,040 bytes in 1 blocks are possibly lost in loss record 2,403 of 10,225
+==39403==    at 0x7497: malloc_zone_malloc (vg_replace_malloc.c:276)
+==39403==    by 0x1728293: NXCreateMapTableFromZone (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x173CDC4: remappedClasses(signed char) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1736957: remapClass(class_t*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17279A1: _read_images (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17269EB: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17264F3: map_images (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x7FFF5FC04936: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*)) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0467C: dyld::registerImageStateBatchChangeHandler(dyld_image_states, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*)) (in /usr/lib/dyld)
+==39403==    by 0x1436ED9: dyld_register_image_state_change_handler (in /usr/lib/system/libdyld.dylib)
+==39403==    by 0x172504C: _objc_init (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x33DB27: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==39403== 
+==39403== 1,040 bytes in 1 blocks are possibly lost in loss record 2,404 of 10,225
+==39403==    at 0x7497: malloc_zone_malloc (vg_replace_malloc.c:276)
+==39403==    by 0x1728293: NXCreateMapTableFromZone (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x173BD40: nonMetaClasses() (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172D537: objc_registerClassPair (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x4E9A68: __CFMakeNSBlockClasses (in /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation)
+==39403==    by 0x4D198E: __CFInitialize (in /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation)
+==39403==    by 0x7FFF5FC13255: ImageLoaderMachO::doImageInit(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC13756: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC1006D: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0FFC3: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0FFC3: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0FEB9: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==39403== 
+==39403== 2,064 bytes in 1 blocks are possibly lost in loss record 9,557 of 10,225
+==39403==    at 0x7497: malloc_zone_malloc (vg_replace_malloc.c:276)
+==39403==    by 0x1731C81: _NXMapRehash(_NXMapTable*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1728A80: NXMapInsert (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1727FC0: _read_images (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17269EB: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17264F3: map_images (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x7FFF5FC049B3: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*)) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0F039: ImageLoader::link(ImageLoader::LinkContext const&, bool, bool, ImageLoader::RPathChain const&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC04CE3: dyld::link(ImageLoader*, bool, ImageLoader::RPathChain const&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0A819: dlopen (in /usr/lib/dyld)
+==39403==    by 0x1436DD7: dlopen (in /usr/lib/system/libdyld.dylib)
+==39403==    by 0x149F4: AddDLL (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403== 
+==39403== 3,363 bytes in 150 blocks are possibly lost in loss record 9,705 of 10,225
+==39403==    at 0x7497: malloc_zone_malloc (vg_replace_malloc.c:276)
+==39403==    by 0x1728F87: _strdup_internal (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1728F39: NXMapKeyCopyingInsert (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1727D9D: _read_images (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17269EB: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17264F3: map_images (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x7FFF5FC049B3: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*)) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0F039: ImageLoader::link(ImageLoader::LinkContext const&, bool, bool, ImageLoader::RPathChain const&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC04CE3: dyld::link(ImageLoader*, bool, ImageLoader::RPathChain const&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0A819: dlopen (in /usr/lib/dyld)
+==39403==    by 0x1436DD7: dlopen (in /usr/lib/system/libdyld.dylib)
+==39403==    by 0x149F4: AddDLL (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403== 
+==39403== 8,208 bytes in 1 blocks are possibly lost in loss record 9,992 of 10,225
+==39403==    at 0x7497: malloc_zone_malloc (vg_replace_malloc.c:276)
+==39403==    by 0x1731C81: _NXMapRehash(_NXMapTable*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1728A80: NXMapInsert (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1728F47: NXMapKeyCopyingInsert (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1727D9D: _read_images (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17269EB: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17264F3: map_images (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x7FFF5FC049B3: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*)) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0F039: ImageLoader::link(ImageLoader::LinkContext const&, bool, bool, ImageLoader::RPathChain const&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC04CE3: dyld::link(ImageLoader*, bool, ImageLoader::RPathChain const&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0A819: dlopen (in /usr/lib/dyld)
+==39403==    by 0x1436DD7: dlopen (in /usr/lib/system/libdyld.dylib)
+==39403== 
+==39403== 65,552 bytes in 1 blocks are possibly lost in loss record 10,199 of 10,225
+==39403==    at 0x7497: malloc_zone_malloc (vg_replace_malloc.c:276)
+==39403==    by 0x1731C81: _NXMapRehash(_NXMapTable*) (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x1728A80: NXMapInsert (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x172781F: _read_images (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17269EB: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x17264F3: map_images (in /usr/lib/libobjc.A.dylib)
+==39403==    by 0x7FFF5FC049B3: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*)) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0F039: ImageLoader::link(ImageLoader::LinkContext const&, bool, bool, ImageLoader::RPathChain const&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC04CE3: dyld::link(ImageLoader*, bool, ImageLoader::RPathChain const&) (in /usr/lib/dyld)
+==39403==    by 0x7FFF5FC0A819: dlopen (in /usr/lib/dyld)
+==39403==    by 0x1436DD7: dlopen (in /usr/lib/system/libdyld.dylib)
+==39403==    by 0x149F4: AddDLL (in /opt/local/Library/Frameworks/R.framework/Versions/3.0/Resources/lib/libR.dylib)
+==39403== 
+==39403== LEAK SUMMARY:
+==39403==    definitely lost: 54 bytes in 3 blocks
+==39403==    indirectly lost: 0 bytes in 0 blocks
+==39403==      possibly lost: 86,627 bytes in 320 blocks
+==39403==    still reachable: 44,378,769 bytes in 18,013 blocks
+==39403==         suppressed: 0 bytes in 0 blocks
+==39403== Reachable blocks (those to which a pointer was found) are not shown.
+==39403== To see them, rerun with: --leak-check=full --show-reachable=yes
+==39403== 
+==39403== For counts of detected and suppressed errors, rerun with: -v
+==39403== ERROR SUMMARY: 1310 errors from 142 contexts (suppressed: 0 from 0)
