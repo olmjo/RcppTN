@@ -3,10 +3,11 @@
 
 # include <Rcpp.h>
   
-Rcpp::NumericVector& rtn(const Rcpp::NumericVector &Mean,
-                         const Rcpp::NumericVector &Sd,
-                         const Rcpp::NumericVector &Low,
-                         const Rcpp::NumericVector &High
+void rtn(const Rcpp::NumericVector &Mean,
+         const Rcpp::NumericVector &Sd,
+         const Rcpp::NumericVector &Low,
+         const Rcpp::NumericVector &High,
+         Rcpp::NumericVector &Draws
     ) ;
 
 # endif

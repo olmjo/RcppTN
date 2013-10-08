@@ -41,6 +41,8 @@ RcppExport SEXP rtnRcpp(const SEXP mean, ///< vector of length K
   //
 
   // Init, Populate, and Return
-  return rtn(Mean, Sd, Low, High) ;
+  NumericVector Draws(Mean.size(), 0.0) ;
+  rtn(Mean, Sd, Low, High, Draws) ;
+  return Draws;
   //
 }
