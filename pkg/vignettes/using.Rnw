@@ -1,0 +1,297 @@
+% \VignetteEngine{knitr::knitr}
+% \VignetteIndexEntry{Using rtn()}
+% \VignetteKeyword{RNG}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PREAMBLE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%% CLASS %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[11pt,letterpaper]{article}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%% PACKAGES %%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[T1]{fontenc}
+
+\usepackage{graphicx}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{hyperref}
+\usepackage[top=1in,left=1in,bottom=1in,right=1in]{geometry}
+\usepackage{fancyhdr}
+
+\newcommand{\R}{\textsf{R}}
+\newcommand{\RcppTN}{\textbf{RcppTN}}
+\newcommand{\Rcpp}{\textbf{Rcpp}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%% SETTINGS %%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagestyle{fancy}
+\lhead{}
+\chead{Using \RcppTN{} in \R{}}
+\rhead{}
+\cfoot{\thepage}
+
+\author{Jonathan Olmsted\\
+  \texttt{jpolmsted\@gmail.com}
+}
+\title{Using \RcppTN{} in \R{}}
+\date{August 30, 2013}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CONTENT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\maketitle
+
+\thispagestyle{plain}
+
+This brief document shows simple usage of the function \texttt{rtn()} provided
+by the \R{} package \RcppTN{} for drawing from an arbitrary sequence of
+truncated Normal distributions. Although much of the value added by the
+\RcppTN{} package comes from providing a library to link against in development
+of other \Rcpp{}-based C++ codes, \RcppTN{} does expose a perfectly valid
+\R{}-level RNG. Existing implementations for drawing from a truncated Normal
+distribution include \textbf{truncnorm} and \textbf{msm}.
+
+\section{Installation}
+
+Currently, there is no CRAN version of the package, so the simplest installation
+mechanism is using the \texttt{install\_github()} function from the
+\texttt{devtools} package.
+
+<<eval=FALSE>>=
+library(devtools)
+install_github("RcppTN", username = "olmjo", subdir = "pkg")
+@
+
+\section{Usage}
+
+Usage of the \texttt{rtn()} function is straightforward (albeit not
+feature-rich). Without any options, we get a single draw from the standard
+Normal distribution. And, this draw respects R's RNG state so the stream of
+output is reproducible.
+
+<<>>=
+library(RcppTN)
+set.seed(1)
+rtn()
+set.seed(1)
+rtn()
+@
+
+Under this implementation of the Robert (1995) algorithm, a request for a single
+draw from a Standard Normal distribution truncated from $-\infty$ to $\infty$
+--- the default behavior of the function without passing any arguments ---
+results in the same return value as a single draw from a Standard Normal
+distribution using \texttt{rnorm()}. This is just a by-product of the
+implementation and holds no practical significance.\footnote{See the R package
+  documentation for the citation to the algorithm.}
+
+<<>>=
+set.seed(1)
+rtn()
+set.seed(1)
+rtn(.mean = 0, .sd = 1, .low = -Inf, .high = Inf)
+set.seed(1)
+rtn()
+set.seed(1)
+rnorm(1)
+@
+
+Of course, \texttt{rtn()}'s behavior given RNG seeds is exactly as you would
+expect for any other generator in \textbf{R}.
+
+<<>>=
+set.seed(11)
+rtn()
+rtn()
+set.seed(1)
+rtn()
+rtn()
+set.seed(11)
+rtn()
+rtn()
+@
+
+\noindent In practice, this \textbf{R}-level function will likely be used in either of two
+ways:
+
+\begin{enumerate}
+\item drawing many values from the same truncated Normal distribution
+\item drawing many values from different truncated Normal distributions
+\end{enumerate}
+
+\noindent For the \texttt{rtn()} function, these two uses look very similar. The
+function accepts a \texttt{.mean} argument, an \texttt{.sd} argument, a
+\texttt{.low} argument, and a \texttt{.high} argument. Each should be a vector
+of length $K$ corresponding to the $K$ distributions of interest. The function
+does not handle value recycling for the user, so the construction of these
+vectors must be done \textit{before or during} the call of the \texttt{rtn()}
+function. \textit{\textbf{Importantly, this function currently does not provide
+    any sanity checks on a user's input and will not necessarily exit gracefully
+    if input is mistaken.  } }
+
+\subsection{Multiple Draws from a Single Distribution}
+
+Multiple draws from the same distribution may be requested with a function call
+like the following:
+
+<<tidy=FALSE>>=
+set.seed(1)
+output <- rtn(.mean = rep(0, 1000),
+              .sd = rep(1, 1000),
+              .low = rep(1, 1000),
+              .high = rep(2, 1000)
+              )
+length(output)
+mean(output)
+@
+
+Here, we are generating 1,000 draws, with each draw, $x$, coming from $N(0, 1)$
+truncated below at 1 and above at 2. The population mean of this distribution is
+\[
+E[x] = \mu + \frac{\phi(b) - \phi(a)}{\Phi(b) - \Phi(a)}\cdot \sigma,
+\]
+
+where $\mu=0$, $\sigma=1$, $\phi$ denotes the pdf of the standard Normal
+distribution, $\Phi$ denotes the standard cdf of the standard Normal
+distribution, and $a$ and $b$ are the lower and upper bounds of truncation,
+respectively. So, for the above parameter values we have
+
+\begin{align*}
+  E[x]
+  &= \mu + \frac{\phi(a) - \phi(b)}{\Phi(b) - \Phi(a)}\cdot \sigma \\
+  &= 0 + \frac{.242 - .054}{.977 - .841}\cdot 1 \\
+  &\approx 1.383
+\end{align*}
+
+Our sample mean for the 1,000 draws (1.389) is close to the population mean
+(1.383). To get a better sense of how dispersed the sampling distribution for
+the mean of a sample of 1,000 draws from this distribution is, we can simulate
+it.
+
+<<tidy=FALSE, out.height = ".7\\textwidth", out.width= ".7\\textwidth">>=
+bigoutput <- replicate(1000,
+                       mean(rtn(.mean = rep(0, 1000),
+                                .sd = rep(1, 1000),
+                                .low = rep(1, 1000),
+                                .high = rep(2, 1000)
+                                )
+                            )
+                       )
+summary(bigoutput)
+@
+
+Looking at the summary of the sample means, we see that the sampling
+distribution of sample means is centered directly on the population mean.
+
+As shown above, valid input for \texttt{rtn()} includes \texttt{-Inf} and
+\texttt{Inf}. Below are histograms for four different truncated Normal
+distributions. The \texttt{rtn()} function works perfectly well in simulating
+draws from regions that have a low (read nearly 0) density in a non-truncated
+Normal distribution.
+
+\begin{center}
+<<tidy=FALSE, out.height = ".7\\textwidth", out.width= ".7\\textwidth">>=
+library(ggplot2)
+outputA <- rtn(.mean = rep(0, 5000),
+               .sd = rep(1, 5000),
+               .low = rep(-1, 5000),
+               .high = rep(Inf, 5000)
+               )
+outputB <- rtn(.mean = rep(0, 5000),
+               .sd = rep(1, 5000),
+               .low = rep(0, 5000),
+               .high = rep(1, 5000)
+               )
+outputC <- rtn(.mean = rep(0, 5000),
+               .sd = rep(1, 5000),
+               .low = rep(-Inf, 5000),
+               .high = rep(Inf, 5000)
+               )
+outputD <- rtn(.mean = rep(0, 5000),
+               .sd = rep(1, 5000),
+               .low = rep(5, 5000),
+               .high = rep(Inf, 5000)
+               )
+
+dfOutput <- rbind(data.frame(value = outputA, dist = "A"),
+                  data.frame(value = outputB, dist = "B"),
+                  data.frame(value = outputC, dist = "C"),
+                  data.frame(value = outputD, dist = "D")
+                 )
+
+ggplot(dfOutput) +
+    geom_histogram(aes(x=value,
+                       y=..density..,
+                       fill = dist
+                       ),
+                   alpha = 1/3,
+                   position = "identity"
+                   )
+@
+\end{center}
+
+\subsection{Multiple Draws from Different Distributions}
+
+Taking multiple draws from different distributions proceeds in a similar way,
+though the construction of the arguments passed to \texttt{rtn()} changes a
+bit. If we were interested in characterizing a distribution of draws from a
+truncated Normal distribution where one (or more) of the parameters was, itself,
+stochastic, \texttt{rtn()} could easily be put to use. Here, the vector of lower
+bounds and upper bounds are each the result of an \texttt{rtn()} function call
+(notice that they are valid by construction.
+
+Then, we cam sample 1000 draws from this truncated Normal distribution of
+interest where the mean and standard deviation are fixed, but the bounds of
+truncation, themselves, are taken from a distribution (in this case, a truncated
+Normal distribution).
+
+\begin{center}
+<<tidy=FALSE, out.height = ".65\\textwidth", out.width= ".65\\textwidth">>=
+lows <- rtn(rep(0, 1000),
+            rep(3, 1000),
+            rep(-10, 1000),
+            rep(3, 1000)
+            )
+highs <- rtn(rep(0, 1000),
+             rep(3, 1000),
+             rep(3, 1000),
+             rep(4, 1000)
+             )
+all(lows < highs)
+
+outputD <- rtn(.mean = rep(0, 1000),
+               .sd = rep(3, 1000),
+               .low = lows,
+               .high = highs
+               )
+
+ggplot() +
+    geom_histogram(aes(x = outputD))
+
+@
+\end{center}
+
+This sampling distribution is non-standard and the easiest way to characterize
+it would be through a simulation like that above and not through analytical
+means.
+
+
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
