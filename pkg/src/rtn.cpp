@@ -20,10 +20,6 @@ void rtn(const Rcpp::NumericVector &Mean, ///< vector of means
   using namespace Rcpp ;
   //
 
-  // Calculate Useful Qtys
-  const int N = Mean.size() ;
-  //
-
   // Init Storage  
   NumericVector::iterator itD = Draws.begin() ;
   NumericVector::iterator itM = Mean.begin() ;
