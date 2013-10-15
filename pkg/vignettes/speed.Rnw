@@ -1,5 +1,5 @@
 % \VignetteEngine{knitr::knitr}
-% \VignetteIndexEntry{rtn()'s Performance}
+% \VignetteIndexEntry{Performance}
 % \VignetteKeyword{RNG}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -46,7 +46,7 @@
 
 \title{Benchmarking \texttt{rtn()}'s Performance}
 
-\date{August 30, 2013}
+\date{October 15, 2013}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -198,7 +198,7 @@ compare the R-level performance of the two, a more complete set of conditions is
 considered.
 
 <<tidy=FALSE>>=
-
+library(microbenchmark)
 for (case in 1:length(lows)) {
     cat("=======================\n")
     cat("Lower Bound:", lows[case], "\n")
@@ -206,18 +206,18 @@ for (case in 1:length(lows)) {
 
     for (s in sizes) {
         cat("  [ Sample Size per Call:", s,  "]\n")
-        out <- benchmark(
-            "rtn" = rtn(.mean = rep(0, s),
-            .low = rep(lows[1], s),
-            .high = rep(highs[1], s)
+        out <- microbenchmark(
+            rtn = rtn(.mean = rep(0, s),
+            .low = rep(lows[case], s),
+            .high = rep(highs[case], s)
             ),
-            "rtruncnorm" = rtruncnorm(n = s,
-            a = rep(lows[1], s),
-            b = rep(highs[1], s)
+            rtruncnorm = rtruncnorm(n = s,
+            a = rep(lows[case], s),
+            b = rep(highs[case], s)
             ),
-            replications = 50,
-            columns = c("test", "elapsed", "relative")
+            times = 100L
             )
+
         print(out)
         cat("\n")
     }
@@ -225,7 +225,9 @@ for (case in 1:length(lows)) {
 }
 @
 
-
+The motivation for \RcppTN{} isn't speed, but the \Rcpp{}-based implementation
+performs quite-well. For larger sample sizes (e.g., $\geq 10^6$), \texttt{rtn()}
+does not necessarily keep its efficiency edge.
 
 \end{document}
 

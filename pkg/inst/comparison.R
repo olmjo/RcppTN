@@ -5,8 +5,8 @@ library(microbenchmark)
 set.seed(1)
 
 sizes <- c(1e1, 1e3, 1e5)
-lows <- c(-1, 5, -Inf, 4, 4, -Inf)
-highs <- c(1, Inf, 10, 7, 4.1, Inf)
+lows <- c(-1, 5, -Inf, 4, 4, -Inf, 50)
+highs <- c(1, Inf, 10, 7, 4.1, Inf, 100)
 
 
 for (case in 1:length(lows)) {
