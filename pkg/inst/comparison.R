@@ -1,10 +1,10 @@
 library(RcppTN)
-library(rbenchmark)
 library(msm)
+library(microbenchmark)
 
 set.seed(1)
 
-sizes <- c(1e0, 1e2, 1e4, 1e6)
+sizes <- c(1e1, 1e3, 1e5)
 lows <- c(-1, 5, -Inf, 4, 4, -Inf)
 highs <- c(1, Inf, 10, 7, 4.1, Inf)
 
@@ -16,20 +16,22 @@ for (case in 1:length(lows)) {
 
     for (s in sizes) {
         cat("  [ Sample Size per Call:", s,  "]\n")
-        out <- benchmark(
-            "rtn" = rtn(.mean = rep(0, s),
-            .low = rep(lows[1], s),
-            .high = rep(highs[1], s)
+        out <- microbenchmark(
+            rtn = rtn(.mean = rep(0, s),
+            .low = rep(lows[case], s),
+            .high = rep(highs[case], s)
             ),
-            "rtruncnorm" = rtruncnorm(n = s,
-            a = rep(lows[1], s),
-            b = rep(highs[1], s)
+            rtruncnorm = rtruncnorm(n = s,
+            a = rep(lows[case], s),
+            b = rep(highs[case], s)
             ),
-            replications = 100,
-            columns = c("test", "elapsed", "relative")
+            times = 200L
             )
+
         print(out)
         cat("\n")
     }
     cat("=======================\n\n")
 }
+
+
