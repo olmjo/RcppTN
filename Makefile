@@ -18,6 +18,7 @@ clean :
 	rm -f ./pkg/src/*.o
 	rm -f ./pkg/src/*.so
 	rm -f ./pkg/src/*.rds
+	rm -f ./pkg/inst/lib/*
 	rm -f ./pkg.pdf
 	rm -Rf ./RcppTN/
 
