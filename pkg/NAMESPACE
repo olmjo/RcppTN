@@ -1,2 +1,3 @@
+## useDynLib(RcppTN, 'rtnRcpp')
 useDynLib(RcppTN)
-exportPattern("^[[:alpha:]]+")
+exportPattern("rtn")
