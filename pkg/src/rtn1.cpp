@@ -6,9 +6,9 @@
 # include <Rcpp.h>
 
 /// Check if simpler subalgorithm is appropriate.
-bool CheckSimple(const double low, ///< lower bound of distribution
-		 const double high ///< upper bound of distribution
-		 ) {
+inline bool CheckSimple(const double low, ///< lower bound of distribution
+                        const double high ///< upper bound of distribution
+                        ) {
   // Init Values Used in Inequality of Interest
   double val1 = (2 * sqrt(exp(1))) / (low + sqrt(pow(low, 2) + 4));
   double val2 = exp((pow(low, 2) - low * sqrt(pow(low, 2) + 4)) / (4)) ;
@@ -27,9 +27,9 @@ bool CheckSimple(const double low, ///< lower bound of distribution
 /// 
 /// Naive Accept-Reject algorithm.
 /// 
-double UseAlg1(const double low, ///< lower bound of distribution
-	       const double high ///< upper bound of distribution
-	       ) {
+inline double UseAlg1(const double low, ///< lower bound of distribution
+                      const double high ///< upper bound of distribution
+                      ) {
   // Init Valid Flag
   int valid = 0 ;
   //
@@ -59,8 +59,8 @@ double UseAlg1(const double low, ///< lower bound of distribution
 ///  Accept-Reject Algorithm
 ///
 
-double UseAlg2(const double low ///< lower bound of distribution
-	       ) {
+inline double UseAlg2(const double low ///< lower bound of distribution
+                      ) {
   // Init Values
   const double alphastar = (low +
 			    sqrt(pow(low, 2) + 4.0)
@@ -101,9 +101,9 @@ double UseAlg2(const double low ///< lower bound of distribution
 /// Accept-Reject Algorithm
 /// 
 
-double UseAlg3(const double low, ///< lower bound of distribution
-	       const double high ///< upper bound of distribution
-	       ) {
+inline double UseAlg3(const double low, ///< lower bound of distribution
+                      const double high ///< upper bound of distribution
+                      ) {
   // Init Valid Flag
   int valid = 0 ;
   //
@@ -159,10 +159,10 @@ double UseAlg3(const double low, ///< lower bound of distribution
 ///
 
 double rtn1(const double mean,	///< mean of distribution
-	    const double sd,	///< standard deviation of distribution
-	    const double low,	///< lower bound of distribution
-	    const double high	///< upper bound of distribution
-	    ) {
+            const double sd,	///< standard deviation of distribution
+            const double low,	///< lower bound of distribution
+            const double high	///< upper bound of distribution
+            ) {
   // Namespace
   using namespace Rcpp ;
   //
