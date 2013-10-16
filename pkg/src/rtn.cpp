@@ -3,7 +3,7 @@
 ///
 /// This code wraps the rtn1() C++ function to call the Truncated
 /// Normal RNG multiple times in a vectorized fashion with Rcpp inputs
-/// and outputs
+/// and no output
 ///
 
 # include <Rcpp.h>
@@ -21,11 +21,11 @@ void rtn(const Rcpp::NumericVector &Mean, ///< vector of means
   //
 
   // Init Storage  
-  NumericVector::iterator itD = Draws.begin() ;
   NumericVector::iterator itM = Mean.begin() ;
   NumericVector::iterator itS = Sd.begin() ;
   NumericVector::iterator itL = Low.begin() ;
   NumericVector::iterator itH = High.begin() ;
+  NumericVector::iterator itD = Draws.begin() ;
   //
 
   // Draw from TN
