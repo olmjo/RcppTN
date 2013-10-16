@@ -26,6 +26,6 @@ bigtest : install
 	Rscript ./pkg/inst/bigtest.R
 	Rscript ./pkg/inst/comparison.R
 
-.PHONEY : clean
+.PHONEY : clean bigtest
 
 
