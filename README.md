@@ -4,7 +4,7 @@ Rcpp-based Truncated Normal RNG by Jonathan Olmsted (jpolmsted@gmail.com)
 
 **Warning:** This R package should be considered a development version. For
 the time being, changes to the codebase will occur without version number
-changes.
+changes. Be aware there is a development branch.
 
 ## Installation
 
