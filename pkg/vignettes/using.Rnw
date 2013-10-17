@@ -1,6 +1,7 @@
 % \VignetteEngine{knitr::knitr}
 % \VignetteIndexEntry{Using-RcppTN}
 % \VignetteKeyword{RNG}
+% \VignetteDepends{ggplot2, Rcpp}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PREAMBLE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
