@@ -1,5 +1,5 @@
 % \VignetteEngine{knitr::knitr}
-% \VignetteIndexEntry{Using rtn()}
+% \VignetteIndexEntry{Using-RcppTN}
 % \VignetteKeyword{RNG}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -26,6 +26,7 @@
 \usepackage{fancyhdr}
 
 \newcommand{\R}{\textsf{R}}
+\newcommand{\Cpp}{\textsf{C++}}
 \newcommand{\RcppTN}{\textbf{RcppTN}}
 \newcommand{\Rcpp}{\textbf{Rcpp}}
 
@@ -36,15 +37,15 @@
 
 \pagestyle{fancy}
 \lhead{}
-\chead{Using \RcppTN{} in \R{}}
+\chead{Using \RcppTN{} in \R{} and \Cpp{}}
 \rhead{}
 \cfoot{\thepage}
 
 \author{Jonathan Olmsted\\
-  \texttt{jpolmsted\@gmail.com}
+  \texttt{jpolmsted@gmail.com}
 }
-\title{Using \RcppTN{} in \R{}}
-\date{August 30, 2013}
+\title{Using \RcppTN{} in \R{} and \Cpp{}}
+\date{October 17, 2013}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -59,11 +60,12 @@
 
 This brief document shows simple usage of the function \texttt{rtn()} provided
 by the \R{} package \RcppTN{} for drawing from an arbitrary sequence of
-truncated Normal distributions. Although much of the value added by the
-\RcppTN{} package comes from providing a library to link against in development
-of other \Rcpp{}-based C++ codes, \RcppTN{} does expose a perfectly valid
-\R{}-level RNG. Existing implementations for drawing from a truncated Normal
-distribution include \textbf{truncnorm} and \textbf{msm}.
+truncated Normal distributions. Much of the value added by the \RcppTN{} package
+comes from providing a \Cpp{}-level API to call in development of other
+\Rcpp{}-based \Cpp{} codes. Use of this API is also demonstrated.  While no
+other \R{} packages currently provide this functionality in an API, some
+existing implementations for drawing from a truncated Normal distribution at the
+\R{}-level include \textbf{truncnorm} and \textbf{msm}.
 
 \section{Installation}
 
@@ -76,9 +78,9 @@ library(devtools)
 install_github("RcppTN", username = "olmjo", subdir = "pkg")
 @
 
-\section{Usage}
+\section{\R{}-level Usage}
 
-Usage of the \texttt{rtn()} function is straightforward (albeit not
+Usage of the \texttt{rtn()} function in \R{} is straightforward (albeit not
 feature-rich). Without any options, we get a single draw from the standard
 Normal distribution. And, this draw respects R's RNG state so the stream of
 output is reproducible.
@@ -93,7 +95,7 @@ rtn()
 
 Under this implementation of the Robert (1995) algorithm, a request for a single
 draw from a Standard Normal distribution truncated from $-\infty$ to $\infty$
---- the default behavior of the function without passing any arguments ---
+--- the default behavior of the function when called without any arguments ---~
 results in the same return value as a single draw from a Standard Normal
 distribution using \texttt{rnorm()}. This is just a by-product of the
 implementation and holds no practical significance.\footnote{See the R package
@@ -125,8 +127,8 @@ rtn()
 rtn()
 @
 
-\noindent In practice, this \textbf{R}-level function will likely be used in either of two
-ways:
+\noindent In practice, this \textbf{R}-level function will likely be used in one
+of two ways:
 
 \begin{enumerate}
 \item drawing many values from the same truncated Normal distribution
@@ -162,7 +164,9 @@ mean(output)
 Here, we are generating 1,000 draws, with each draw, $x$, coming from $N(0, 1)$
 truncated below at 1 and above at 2. The population mean of this distribution is
 \[
-E[x] = \mu + \frac{\phi(b) - \phi(a)}{\Phi(b) - \Phi(a)}\cdot \sigma,
+E[x] = \mu +
+\frac{\phi(\frac{a - \mu}{\sigma}) - \phi(\frac{b - \mu}{\sigma})}{\Phi(\frac{b - \mu}{\sigma}) - \Phi(\frac{a-\mu}{\sigma})}
+\cdot \sigma,
 \]
 
 where $\mu=0$, $\sigma=1$, $\phi$ denotes the pdf of the standard Normal
@@ -172,7 +176,9 @@ respectively. So, for the above parameter values we have
 
 \begin{align*}
   E[x]
-  &= \mu + \frac{\phi(a) - \phi(b)}{\Phi(b) - \Phi(a)}\cdot \sigma \\
+  &= \mu +
+  \frac{\phi(\frac{a - \mu}{\sigma}) - \phi(\frac{b - \mu}{\sigma})}{\Phi(\frac{b - \mu}{\sigma}) - \Phi(\frac{a-\mu}{\sigma})}
+  \cdot \sigma \\
   &= 0 + \frac{.242 - .054}{.977 - .841}\cdot 1 \\
   &\approx 1.383
 \end{align*}
@@ -201,7 +207,7 @@ As shown above, valid input for \texttt{rtn()} includes \texttt{-Inf} and
 \texttt{Inf}. Below are histograms for four different truncated Normal
 distributions. The \texttt{rtn()} function works perfectly well in simulating
 draws from regions that have a low (read nearly 0) density in a non-truncated
-Normal distribution.
+Normal distribution. Distribution ``D'' is an example of this.
 
 \begin{center}
 <<tidy=FALSE, out.height = ".7\\textwidth", out.width= ".7\\textwidth">>=
@@ -252,9 +258,9 @@ bit. If we were interested in characterizing a distribution of draws from a
 truncated Normal distribution where one (or more) of the parameters was, itself,
 stochastic, \texttt{rtn()} could easily be put to use. Here, the vector of lower
 bounds and upper bounds are each the result of an \texttt{rtn()} function call
-(notice that they are valid by construction.
+(notice that $a < b$ by construction).
 
-Then, we cam sample 1000 draws from this truncated Normal distribution of
+Then, we cam sample 1,000 draws from this truncated Normal distribution of
 interest where the mean and standard deviation are fixed, but the bounds of
 truncation, themselves, are taken from a distribution (in this case, a truncated
 Normal distribution).
@@ -286,10 +292,68 @@ ggplot() +
 \end{center}
 
 This sampling distribution is non-standard and the easiest way to characterize
-it would be through a simulation like that above and not through analytical
-means.
+it would be through a simulation like the above.
 
+\section{\Cpp{}-level Usage}
 
+This section documents how to use the \Cpp{}-level functionality in subsequent
+\Cpp{} development. Specifically, using the \RcppTN{} \Cpp{} API in an
+\Rcpp{}-based \R{} package is shown. Presently, only a single function is
+exposed at the \Cpp{} level. So, the API is composed entirely of the function
+\texttt{rtn1()} with the following signature:
+\begin{verbatim}
+double rtn1(double mean, double sd, double low, double high) ;
+\end{verbatim}
+
+The \R{}-level function ultimate calls this very \Cpp{}-level function
+repeatedly. So, all of the features of the \R{}-level function apply here (e.g.,
+respecting \R{}'s RNG state). However, as is true in \Rcpp{}, this is left to
+the user to enforce.
+
+\subsection{An Example}
+
+In \R{}, use \texttt{Rcpp.package.skeleton()} from \Rcpp{} to create an empty,
+but functional, \R{} package.
+
+<<eval=FALSE>>=
+library(Rcpp)
+Rcpp.package.skeleton(path="~/Desktop")
+@
+
+Navigate inside the newly created \texttt{anRpackage} directory and edit the
+\texttt{DESCRIPTION} file. Add \texttt{RcppTN} to the \texttt{Depends:} and
+\texttt{LinkingTo:} lines of the file as in
+\begin{verbatim}
+Depends: Rcpp (>= 0.10.5), RcppTN
+LinkingTo: Rcpp, RcppTN
+\end{verbatim}
+
+Now, edit the \Cpp{} function \texttt{rcpp\_hello\_world()} in
+\texttt{anRpackage/src/rcpp\_hello\_world.cpp} to read
+\begin{verbatim}
+#include <Rcpp.h>
+#include <RcppTN.h>
+
+using namespace Rcpp;
+
+// [[Rcpp::export]]
+List rcpp_hello_world() {
+    double a = RcppTN::rtn1(0.0, 1.0, 3.5, 3.7) ;
+
+    CharacterVector x = CharacterVector::create( "foo", "bar" )  ;
+    NumericVector y   = NumericVector::create( a, 1.0 ) ;
+    List z            = List::create( x, y ) ;
+
+    return z ;
+}
+\end{verbatim}
+
+Notice both the inclusion of the \RcppTN{} header and the use of the \RcppTN{}
+namespace when calling \texttt{rtn1()}. To see the effect of this, install the
+``anRpackage'' package and the load it in \R{}. From there, make subsequent
+calls to the \texttt{rcpp\_hello\_world()} function. With a similar approach,
+the \texttt{rtn1()} function can be called in a more useful way within other
+\Cpp{}-level codes without the need for re-coding the wheel.
 \end{document}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
