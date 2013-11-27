@@ -1,5 +1,5 @@
 build : clean
-	R CMD BUILD pkg
+	R CMD build pkg
 	R CMD Rd2pdf pkg
 	tar -xvf RcppTN_*	
 
