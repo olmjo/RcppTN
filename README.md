@@ -2,9 +2,9 @@
 
 Rcpp-based Truncated Normal RNG by Jonathan Olmsted (jpolmsted@gmail.com)
 
-**Warning:** This R package should be considered a development version. For
-the time being, changes to the codebase will occur without version number
-changes. Be aware there is a development branch.
+**Warning:** This R package should be considered a development
+version. Be aware there is a development branch where most features
+will first hit.
 
 ## Installation
 
@@ -39,3 +39,10 @@ rtn(c(0, 0),
     ) ## multiple draws, each from a different distribution
 ```
 
+The R package also provides a C++-level API for reproducible RNG from
+a truncated normal distribution.
+
+## More Information
+
+Detailed information on usage (at the R-level and C++-level) and on
+performance can be found in the vignettes.
