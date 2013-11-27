@@ -1,0 +1,8 @@
+2013-11-27  Jonathan Olmsted <jpolmsted@gmail.com>
+
+	* ChangeLog: ChangeLog added. Previous changes not explicitly
+	documented beyond commits.
+	* src/rtn.cpp: rnt() checks for valid inputs and returns NA_REAL
+	for invalid inputs.
+	* vignettes/using.Rnw: shows new NA return values.
+	* DESCRIPTION: version 0.1-2
