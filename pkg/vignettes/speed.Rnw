@@ -112,7 +112,7 @@ truncnorm::rtruncnorm(n=1, mean = 0, sd = 1, a = 5, b = Inf)
 
 \section{Compiled Code is faster than  Interpreted Code}
 
-<<tidy=FALSE>>=
+<<tidy=FALSE, message=FALSE>>=
 library(RcppTN)
 library(truncnorm)
 library(msm)
@@ -130,7 +130,7 @@ the RNG in \textbf{msm} is written in \R{}. As a result, the performance cost
 that one would expect manifests in even the a simple case where the standard
 Normal distribution is truncated below at -1 and above at 1. Here, a naive
 Accept-Reject sampler works perfectly fine. Yet, the C(++)-based implementations
-are over 20 times faster in drawing samples of size 100
+are over 20 times faster in drawing samples of size 1,000
 
 <<tidy=FALSE>>=
 s <- sizes[2]
@@ -158,7 +158,7 @@ benchmark(
 
 A similarly large performance cost due to writing the RNG in \R{} is seen in a
 slightly harder case: a standard Normal distribution truncated below at 4 and
-above at 4.1. The sample size is still 100.
+above at 4.1. The sample size is still 1,000.
 
 <<tidy=FALSE>>=
 lows[5]

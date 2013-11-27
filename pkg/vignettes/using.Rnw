@@ -136,15 +136,25 @@ of two ways:
 \item drawing many values from different truncated Normal distributions
 \end{enumerate}
 
-\noindent For the \texttt{rtn()} function, these two uses look very similar. The
-function accepts a \texttt{.mean} argument, an \texttt{.sd} argument, a
-\texttt{.low} argument, and a \texttt{.high} argument. Each should be a vector
-of length $K$ corresponding to the $K$ distributions of interest. The function
-does not handle value recycling for the user, so the construction of these
-vectors must be done \textit{before or during} the call of the \texttt{rtn()}
-function. \textit{\textbf{Importantly, this function currently does not provide
-    any sanity checks on a user's input and will not necessarily exit gracefully
-    if input is mistaken.  } }
+\noindent For the \texttt{rtn()} function, these two uses look very
+similar. The function accepts a \texttt{.mean} argument, an
+\texttt{.sd} argument, a \texttt{.low} argument, and a \texttt{.high}
+argument. Each should be a vector of length $K$ corresponding to the
+$K$ distributions of interest. The function does not handle value
+recycling for the user, so the construction of these vectors must be
+done \textit{before or during} the call of the \texttt{rtn()}
+function. \textit{\textbf{Importantly, this function quietly returns
+    an \texttt{NA} value for invalid input parameters.}}
+\texttt{NA}-inducing input parameters don't interfere with other valid
+parameters and a vector of the requested length is returned.
+
+For example,
+
+<<tidy=FALSE>>=
+rtn(0, -1, 0, 1)
+rtn(0, 1, 0, -1)
+rtn(c(0,0), c(1,1), c(0,0), c(-Inf,Inf))
+@
 
 \subsection{Multiple Draws from a Single Distribution}
 
@@ -211,7 +221,7 @@ draws from regions that have a low (read nearly 0) density in a non-truncated
 Normal distribution. Distribution ``D'' is an example of this.
 
 \begin{center}
-<<tidy=FALSE, out.height = ".7\\textwidth", out.width= ".7\\textwidth">>=
+<<tidy=FALSE, out.height = ".7\\textwidth", out.width= ".7\\textwidth", message=FALSE>>=
 library(ggplot2)
 outputA <- rtn(.mean = rep(0, 5000),
                .sd = rep(1, 5000),
@@ -267,7 +277,7 @@ truncation, themselves, are taken from a distribution (in this case, a truncated
 Normal distribution).
 
 \begin{center}
-<<tidy=FALSE, out.height = ".65\\textwidth", out.width= ".65\\textwidth">>=
+<<tidy=FALSE, out.height = ".65\\textwidth", out.width= ".65\\textwidth", message=FALSE>>=
 lows <- rtn(rep(0, 1000),
             rep(3, 1000),
             rep(-10, 1000),
