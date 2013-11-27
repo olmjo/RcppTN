@@ -8,6 +8,7 @@
 
 # include <Rcpp.h>
 # include "rtn1.h"
+# include "check1.h"
 
 void rtn(const Rcpp::NumericVector &Mean, ///< vector of means
          const Rcpp::NumericVector &Sd, ///< vector of standard deviations
@@ -30,12 +31,16 @@ void rtn(const Rcpp::NumericVector &Mean, ///< vector of means
 
   // Draw from TN
   while (itD != Draws.end()) {
-    *itD = rtn1(*itM, *itS, *itL, *itH);
-    itD++ ;
-    itM++ ;
-    itS++ ;
-    itL++ ;
-    itH++ ;
+    if (check1(*itM, *itS, *itL, *itH)) {
+      *itD = rtn1(*itM, *itS, *itL, *itH);
+    } else {
+      *itD = NA_REAL ;
+    }
+      itD++ ;
+      itM++ ;
+      itS++ ;
+      itL++ ;
+      itH++ ;
   }
   //
 }
