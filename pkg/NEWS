@@ -4,7 +4,8 @@ RcppTN 0.1-3
 * Added etn() function for calculation of 
   theoretical expectation from Truncated Normal distributions.
 * The rtn() function warns on NA return values.
-* Checks for valid inputs include a finite mean.
+* Checks for valid inputs include a finite mean and finite sd of the 
+  parent Normal distribution.
 
 RcppTN 0.1-2
 ------------

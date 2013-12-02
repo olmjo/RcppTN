@@ -3,7 +3,7 @@
 	* DESCRIPTION: version 0.1-3
 	* R/rtn.R: R warning on NA return values. Negligible effect on
 	performance.
-	* R/check1.cpp: Check for finite mean.
+	* R/check1.cpp: Check for finite mean. Check for finite sd.
 	* src/etn.cpp: Add expectation calculation at the C++ level.
 	* R/etn.R: Add expectation calculation at the R level.
 
