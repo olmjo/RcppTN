@@ -20,11 +20,12 @@ RcppExport SEXP rtnRcpp(const SEXP mean, ///< vector of length K
 				       ///number]
 			const SEXP low, ///< vector of length K
 					///containing the lower bound
-					///for each draw; [real number
+					///for each draw [real number
 					///or '-Inf']
 			const SEXP high ///< vector of length K
-					///containing [real number or
-					///'Inf']
+					///containing the upper bound
+					///for each draw [real number
+					///or 'Inf']
 			) {
 
   // Namespace
