@@ -20,4 +20,4 @@ bool check1(const double mean,
   }
 
   return(flag) ;
-} ;
+}
