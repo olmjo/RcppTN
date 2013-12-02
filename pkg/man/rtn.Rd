@@ -4,7 +4,7 @@
   Draw from a Truncated Normal Distribution.
 }
 \description{
-  Returns a vector of draws from the user-provided sequence of truncated
+  Returns a vector of draws from the user-provided sequence of Truncated
   Normal distributions. The implementation is that from Robert
   (1995). The computation is written in Rcpp-based C++ code, but
   respects R's RNG state.  
@@ -32,7 +32,7 @@ rtn(.mean = rep(0, 1),
 \item{.high}{
   vector of length \eqn{K}, with each element \eqn{k} containing the
   upper bound of the \eqn{k}th distribution, Inf is a valid value for the
-  lower bound
+  upper bound
 }
 }
 
