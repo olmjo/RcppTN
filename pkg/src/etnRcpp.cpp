@@ -32,8 +32,6 @@ RcppExport SEXP etnRcpp(const SEXP mean, ///< vector of length K
   using namespace Rcpp ;
   //
 
-  RNGScope scope ;
-
   // Conversion of Inputs
   const NumericVector Mean(mean) ;
   const NumericVector Sd(sd) ;

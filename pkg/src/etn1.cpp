@@ -89,7 +89,7 @@ double etn1(const double mean,
   } else if (high == R_PosInf) {
 
     // Truncation Below
-    out = e3(mean, sd, low) ;
+    out = e2(mean, sd, low) ;
 
   } else {
 
