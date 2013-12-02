@@ -67,7 +67,7 @@ test_that("RNG returns draws correctly", {
                                              )
                                          )
                 popmean <- etn(.low = lows[case], .high = highs[case])
-                expect_true(mean(samplemeans - popmean) < .002)
+                expect_true(mean(samplemeans - popmean) < .005)
             }
         }
     }
