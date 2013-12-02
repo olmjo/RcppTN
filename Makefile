@@ -4,7 +4,10 @@ build : clean
 	tar -xvf RcppTN_*	
 
 check :
-	R CMD CHECK pkg
+	R CMD check pkg
+
+smallcheck :
+	R CMD check --no-vignettes pkg
 
 install :
 	R CMD INSTALL pkg
