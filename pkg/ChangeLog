@@ -1,3 +1,9 @@
+2013-12-02  Jonathan Olmsted <jpolmsted@gmail.com>
+
+	* DESCRIPTION: version 0.1-3
+	* R/rtn.R: R warning on NA return values. Negligible effect on
+	performance.
+
 2013-11-27  Jonathan Olmsted <jpolmsted@gmail.com>
 
 	* ChangeLog: ChangeLog added. Previous changes not explicitly

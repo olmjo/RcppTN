@@ -9,5 +9,6 @@ rtn <- function(.mean = rep(0, 1),
                  low = .low,
                  high = .high
                  )
+    if (any(is.na(out))) warning("NAs returned in place of invalid parameters")
     return(out)
 }
