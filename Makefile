@@ -12,10 +12,10 @@ vigns :
 check : clean
 	R CMD check pkg
 
-smallcheck :
+smallcheck : clean
 	R CMD check --no-vignettes pkg
 
-install :
+install : clean
 	R CMD INSTALL pkg
 
 remove :
@@ -35,7 +35,3 @@ clean :
 	rm -f pkg/vignettes/*log
 	rm -f pkg/vignettes/*out
 	rm -f pkg/vignettes/*tex
-
-.PHONEY : clean bigtest
-
-
