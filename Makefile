@@ -1,9 +1,15 @@
 build : clean
 	R CMD build pkg
 	R CMD Rd2pdf pkg
-	tar -xvf RcppTN_*	
+	tar -xvf RcppTN_*
 
-check :
+vigns : 
+	cd pkg/vignettes/; Rscript -e "library(knitr); knit('using.Rnw')"
+	cd pkg/vignettes/; pdflatex using.tex
+	cd pkg/vignettes/; Rscript -e "library(knitr); knit('speed.Rnw')"
+	cd pkg/vignettes/; pdflatex speed.tex
+
+check : clean
 	R CMD check pkg
 
 smallcheck :
@@ -24,10 +30,11 @@ clean :
 	rm -f ./pkg/inst/lib/*
 	rm -f ./pkg.pdf
 	rm -Rf ./RcppTN/
-
-bigtest : install
-	Rscript ./pkg/inst/bigtest.R
-	Rscript ./pkg/inst/comparison.R
+	rm -Rf pkg/vignettes/figure
+	rm -f pkg/vignettes/*aux
+	rm -f pkg/vignettes/*log
+	rm -f pkg/vignettes/*out
+	rm -f pkg/vignettes/*tex
 
 .PHONEY : clean bigtest
 
