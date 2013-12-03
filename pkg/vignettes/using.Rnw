@@ -1,3 +1,4 @@
+% -*- mode: noweb; ess-noweb-default-code-mode: R; ess-noweb-doc-mode: LaTeX-mode; -*-
 % \VignetteEngine{knitr::knitr}
 % \VignetteIndexEntry{Using-RcppTN}
 % \VignetteKeyword{RNG}
@@ -200,14 +201,15 @@ the mean of a sample of 1,000 draws from this distribution is, we can simulate
 it.
 
 <<tidy=FALSE, out.height = ".7\\textwidth", out.width= ".7\\textwidth">>=
-bigoutput <- replicate(1000,
-                       mean(rtn(.mean = rep(0, 1000),
-                                .sd = rep(1, 1000),
-                                .low = rep(1, 1000),
-                                .high = rep(2, 1000)
-                                )
-                            )
-                       )
+bigoutput <- rep(NA, 1000)
+for (i in 1:length(bigoutput)) {
+    bigoutput[i] <- mean(rtn(.mean = rep(0, 1000),
+                             .sd = rep(1, 1000),
+                             .low = rep(1, 1000),
+                             .high = rep(2, 1000)
+                             )
+                         )
+}
 summary(bigoutput)
 @
 
@@ -221,7 +223,7 @@ draws from regions that have a low (read nearly 0) density in a non-truncated
 Normal distribution. Distribution ``D'' is an example of this.
 
 \begin{center}
-<<tidy=FALSE, out.height = ".7\\textwidth", out.width= ".7\\textwidth", message=FALSE>>=
+<<"diffdists", tidy=FALSE, out.height = ".7\\textwidth", out.width= ".7\\textwidth", message=FALSE>>=
 library(ggplot2)
 outputA <- rtn(.mean = rep(0, 5000),
                .sd = rep(1, 5000),
@@ -277,7 +279,7 @@ truncation, themselves, are taken from a distribution (in this case, a truncated
 Normal distribution).
 
 \begin{center}
-<<tidy=FALSE, out.height = ".65\\textwidth", out.width= ".65\\textwidth", message=FALSE>>=
+<<"randombounds", tidy=FALSE, out.height = ".65\\textwidth", out.width= ".65\\textwidth", message=FALSE>>=
 lows <- rtn(rep(0, 1000),
             rep(3, 1000),
             rep(-10, 1000),
@@ -307,24 +309,66 @@ it would be through a simulation like the above.
 
 \section{\Cpp{}-level Usage}
 
-This section documents how to use the \Cpp{}-level functionality in subsequent
-\Cpp{} development. Specifically, using the \RcppTN{} \Cpp{} API in an
-\Rcpp{}-based \R{} package is shown. Presently, only a single function is
-exposed at the \Cpp{} level. So, the API is composed entirely of the function
-\texttt{rtn1()} with the following signature:
+This section documents how to use the \Cpp{}-level functionality in
+subsequent \Cpp{} development. Specifically, using the \RcppTN{}
+\Cpp{} API via \verb=sourceCpp()= and an \Rcpp{}-based \R{} package
+are shown. Presently, only two functions are exposed at the \Cpp{}
+level: \texttt{rtn1()} and \texttt{etn1()}.
+
+\begin{description}
+\item[\textsf{rtn1}] ~
 \begin{verbatim}
-double rtn1(double mean, double sd, double low, double high) ;
+double rtn1(double mean, double sd, double low, double high) ; 
 \end{verbatim}
+\item[\textsf{etn1}] ~
+\begin{verbatim}
+double etn1(double mean, double sd, double low, double high) ; 
+\end{verbatim}
+\end{description}
 
-The \R{}-level function ultimate calls this very \Cpp{}-level function
-repeatedly. So, all of the features of the \R{}-level function apply here (e.g.,
-respecting \R{}'s RNG state). However, as is true in \Rcpp{}, this is left to
-the user to enforce.
+\paragraph{Caveats. }The \R{}-level function ultimately calls these
+\Cpp{}-level functions. So, all of the features of the \R{}-level
+function apply here (e.g., respecting \R{}' RNG state). However, as is
+true in \Rcpp{}, this is left to the user to enforce. No checking or
+error handling is provided with these functions. These functions live
+in the \texttt{RcppTN} namespace.
 
-\subsection{An Example}
+\subsection{Examples}
 
-In \R{}, use \texttt{Rcpp.package.skeleton()} from \Rcpp{} to create an empty,
-but functional, \R{} package.
+\paragraph{Via \texttt{sourceCpp()}.} In non-package \R{} code, use is
+very straightforward due to the mechanisms provided by
+\Rcpp{}. Include the appropriate header file as you would for
+\Rcpp{}. In addition, use the depends pseudo-attribute with
+``\verb=// [[Rcpp::depends(RcppTN)]]='' to ensure that linker finds
+the symbols. From there, use is as you would expect.
+
+<<tidy = FALSE>>=
+library(Rcpp)
+sourceCpp(code = "
+#include <Rcpp.h>
+
+#include <RcppTN.h>
+// [[Rcpp::depends(RcppTN)]]
+
+using namespace Rcpp ;
+
+// [[Rcpp::export]]
+List rcpp_hello_world() {
+  double a = RcppTN::rtn1(0.0, 1.0, 3.5, 3.7) ;
+  double b = RcppTN::etn1(0.0, 1.0, 3.5, 3.7) ;
+  NumericVector y = NumericVector::create( a, b ) ;
+  List z = List::create( y ) ;
+  return(z) ;
+}
+"
+          )
+
+rcpp_hello_world()
+@ 
+
+\paragraph{Via an Rcpp-based package.} In \R{}, use
+\texttt{Rcpp.package.skeleton()} from \Rcpp{} to create an empty, but
+functional, \R{} package.
 
 <<eval=FALSE>>=
 library(Rcpp)
@@ -349,22 +393,23 @@ using namespace Rcpp;
 
 // [[Rcpp::export]]
 List rcpp_hello_world() {
-    double a = RcppTN::rtn1(0.0, 1.0, 3.5, 3.7) ;
-
-    CharacterVector x = CharacterVector::create( "foo", "bar" )  ;
-    NumericVector y   = NumericVector::create( a, 1.0 ) ;
-    List z            = List::create( x, y ) ;
-
-    return z ;
+  double a = RcppTN::rtn1(0.0, 1.0, 3.5, 3.7) ;
+  double b = RcppTN::etn1(0.0, 1.0, 3.5, 3.7) ;
+  NumericVector y = NumericVector::create( a, b ) ;
+  List z = List::create( y ) ;
+  return(z) ;
 }
 \end{verbatim}
 
-Notice both the inclusion of the \RcppTN{} header and the use of the \RcppTN{}
-namespace when calling \texttt{rtn1()}. To see the effect of this, install the
-``anRpackage'' package and the load it in \R{}. From there, make subsequent
-calls to the \texttt{rcpp\_hello\_world()} function. With a similar approach,
-the \texttt{rtn1()} function can be called in a more useful way within other
-\Cpp{}-level codes without the need for re-coding the wheel.
+To see the effect of this, install the ``anRpackage'' package and the
+load it in \R{}. From there, make subsequent calls to the
+\texttt{rcpp\_hello\_world()} function. With a similar approach, the
+\texttt{rtn1()} function can be called in a more useful way within
+other \Cpp{}-level codes without the need for re-coding the wheel. The
+only difference between this approach and the \texttt{sourceCpp()}
+approach is that the \texttt{depends} pseudo-attribute is no longer
+needed and is replaced by the modification to the \texttt{LinkingTo:}
+field of the \texttt{DESCRIPTION} file.
 \end{document}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
