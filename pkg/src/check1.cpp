@@ -9,10 +9,10 @@ bool check1(const double mean,
   if (sd <= 0) {
     flag = false ;
   }
-  if (sd == R_NegInf | sd == R_PosInf) {
+  if ((sd == R_NegInf) | (sd == R_PosInf)) {
     flag = false ;
   }
-  if (mean == R_NegInf | mean == R_PosInf) {
+  if ((mean == R_NegInf) | (mean == R_PosInf)) {
     flag = false ;
   }
   if (low >= high) {
