@@ -19,7 +19,7 @@ install_github("RcppTN", username = "olmjo", subdir = "pkg")
 
 ## Example Usage
 
-This is taken from the documentation on the single function provided
+This is taken from the documentation on the main function provided
 in `RcppTN`, `rtn()`.
 
 ```
@@ -37,8 +37,10 @@ rtn(c(0, 0),
     c(1, 1),
     c(-Inf, 5),
     c(1, Inf)
-    ) ## multiple draws, each from a different distribution
+    ) ## multiple draws, each from a different distribution	
 ```
+
+Functions for calculating moments are also available.
 
 The R package also provides a C++-level API for reproducible RNG from
 a truncated normal distribution.
