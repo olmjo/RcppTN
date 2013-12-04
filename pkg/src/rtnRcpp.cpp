@@ -31,19 +31,20 @@ RcppExport SEXP rtnRcpp(const SEXP mean, ///< vector of length K
   // Namespace
   using namespace Rcpp ;
   //
-
-  RNGScope scope ;
-
+  
   // Conversion of Inputs
   const NumericVector Mean(mean) ;
   const NumericVector Sd(sd) ;
   const NumericVector Low(low) ;
   const NumericVector High(high) ;
   //
-
+  
   // Init, Populate, and Return
   NumericVector Draws(Mean.size(), 0.0) ;
-  rtn(Mean, Sd, Low, High, Draws) ;
-  return Draws;
+  {
+    RNGScope scope ;
+    rtn(Mean, Sd, Low, High, Draws) ;
+  }
+  return Draws ;
   //
 }
