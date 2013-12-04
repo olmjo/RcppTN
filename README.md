@@ -1,4 +1,4 @@
-# RcppTN
+# RcppTN 0.1-3
 
 Rcpp-based Truncated Normal RNG by Jonathan Olmsted (jpolmsted@gmail.com)
 
