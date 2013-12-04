@@ -1,5 +1,7 @@
-N <- 2000
-MC <- 20000
+gctorture(TRUE)
+
+N <- 20
+MC <- 20
 
 
 cat("\nPre\n")
