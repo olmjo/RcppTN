@@ -52,7 +52,7 @@ test_that("RNG returns draws in bounds", {
 }
           )
 
-test_that("RNG returns draws correctly", {
+test_that("RNG returns draws correctly [Exp]", {
     sizes <- c(1000000)
     reps <- 1
     lows <- c(-1, 5, -Inf, 4, 4, -Inf, 7)
@@ -60,7 +60,7 @@ test_that("RNG returns draws correctly", {
     samplemeans <- rep(NA, reps)
     for (rep in 1:reps) {
         for (case in 1:length(lows)) {
-            for(size in sizes) {                
+            for(size in sizes) {
                 samplemeans[rep] <- mean(rtn(.mean = rep(0, size),
                                              .low = rep(lows[case], size),
                                              .high = rep(highs[case], size)
@@ -68,6 +68,28 @@ test_that("RNG returns draws correctly", {
                                          )
                 popmean <- etn(.low = lows[case], .high = highs[case])
                 expect_true(mean(samplemeans - popmean) < .005)
+            }
+        }
+    }
+}
+          )
+
+test_that("RNG returns draws correctly [Var]", {
+    sizes <- c(1000000)
+    reps <- 1
+    lows <- c(-1, 5, -Inf, 4, 4, -Inf, 7)
+    highs <- c(1, Inf, 10, 7, 4.1, Inf, 100)
+    samplevars <- rep(NA, reps)
+    for (rep in 1:reps) {
+        for (case in 1:length(lows)) {
+            for(size in sizes) {
+                samplevars[rep] <- var(rtn(.mean = rep(0, size),
+                                           .low = rep(lows[case], size),
+                                           .high = rep(highs[case], size)
+                                           )
+                                       )
+                popvar <- vtn(.low = lows[case], .high = highs[case])
+                expect_true(mean(samplevars - popvar) < .005)
             }
         }
     }
