@@ -1,3 +1,8 @@
+2013-12-04 Jonathan Olmsted <jpolmsted@gmail.com>
+	* R/rtn.R, R/etn.R: Errors on wrongly sized inputs.
+	* src/rtnRcpp.cpp: Memory bug-inducing scope issue fixed.
+	* src/check1.cpp: Parens added for compiler happiness.
+
 2013-12-02  Jonathan Olmsted <jpolmsted@gmail.com>
 
 	* DESCRIPTION: version 0.1-3
