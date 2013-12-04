@@ -5,8 +5,10 @@ build : clean
 
 vigns : 
 	cd pkg/vignettes/; Rscript -e "library(knitr); knit('using.Rnw')"
+	cd pkg/vignettes/; Rscript -e "library(knitr); purl('using.Rnw')"
 	cd pkg/vignettes/; pdflatex using.tex
 	cd pkg/vignettes/; Rscript -e "library(knitr); knit('speed.Rnw')"
+	cd pkg/vignettes/; Rscript -e "library(knitr); purl('speed.Rnw')"
 	cd pkg/vignettes/; pdflatex speed.tex
 
 check : clean
@@ -14,6 +16,9 @@ check : clean
 
 smallcheck : clean
 	R CMD check --no-vignettes pkg
+
+fullinstall : clean build
+	R CMD INSTALL RcppTN*.tar.gz
 
 install : clean
 	R CMD INSTALL pkg
