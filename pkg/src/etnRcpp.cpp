@@ -1,4 +1,4 @@
-/// R-accessible Vectorized Expectation Calculationg for Truncated Normals
+/// R-accessible Vectorized Expectation Calculation for Truncated Normals
 
 ///
 /// This code is a wrapper for the etn() C++ function to be called
