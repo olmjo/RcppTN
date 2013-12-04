@@ -10,6 +10,6 @@ checkInputs <- function(m, s, l, h) {
 
 checkOutputs <- function(out) {
     if (any(is.na(out))) {
-        warning("NAs returned in place of invalid parameters.")
+        warning("NAs returned. Check for invalid parameters.")
     }
 }
