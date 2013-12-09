@@ -1,4 +1,5 @@
 2013-12-09 Jonathan Olmsted <jpolmsted@gmail.com>
+	* vignettes/using.Rnw: Shows variance API usage.
 	* inst/include/RcppTN.h, src/RcppTN_init.cpp: Add variance
 	function to C++ API.
 	* tests/testthat/test-API.R: Add variance function to API tests.
