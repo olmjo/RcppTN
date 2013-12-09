@@ -1,3 +1,7 @@
+RcppTN 0.1-4
+------------
+* Added vtn1() to C++ API.
+
 RcppTN 0.1-3
 ------------
 

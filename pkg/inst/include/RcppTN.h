@@ -12,4 +12,9 @@ namespace RcppTN {
     static Fun etn1_ = (Fun)R_GetCCallable("RcppTN", "RcppTN_etn1") ;
     return etn1_(mean, sd, low, high) ;
   }
+
+  inline double vtn1(double mean, double sd, double low, double high){
+    static Fun vtn1_ = (Fun)R_GetCCallable("RcppTN", "RcppTN_vtn1") ;
+    return vtn1_(mean, sd, low, high) ;
+  }
 }
