@@ -2,6 +2,7 @@
 	* inst/include/RcppTN.h, src/RcppTN_init.cpp: Add variance
 	function to C++ API.
 	* tests/testthat/test-API.R: Add variance function to API tests.
+	* DESCRIPTION: version 0.1-4
 
 2013-12-04 Jonathan Olmsted <jpolmsted@gmail.com>
 	* src/vtn1.cpp, src/vtn.cpp, src/vtnRcpp.cpp, R/vtn.R: Add

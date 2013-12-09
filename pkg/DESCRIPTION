@@ -1,7 +1,7 @@
 Package: RcppTN
 Type: Package
 Title: Rcpp-based Truncated Normal Distribution RNG and Family
-Version: 0.1-3
+Version: 0.1-4
 Date: 2013-12-02
 Author: Jonathan Olmsted
 Maintainer: Jonathan Olmsted <jpolmsted@gmail.com>
@@ -15,4 +15,3 @@ Depends: Rcpp (>= 0.10.2)
 Suggests: knitr (>= 1.1), ggplot2, msm, truncnorm, testthat
 LinkingTo: Rcpp
 VignetteBuilder: knitr
-
