@@ -4,6 +4,8 @@
 # see the wiki:
 #   https://github.com/craigcitro/r-travis/wiki
 
+env: p2pkg=./
+
 language: c
 
 before_install:
@@ -12,7 +14,9 @@ before_install:
   - ./travis-tool.sh bootstrap
 
 install:
-  - ./travis-tool.sh install_deps
+  - cd pkg
+  - ../travis-tool.sh install_deps
+
 
 script: ./travis-tool.sh run_tests
 
