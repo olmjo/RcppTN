@@ -42,8 +42,8 @@ rtn(c(0, 0),
 
 Functions for calculating moments are also available.
 
-The R package also provides a C++-level API for reproducible RNG from
-a truncated normal distribution.
+The R package also provides a C++--level API for reproducible RNG (and moment
+calculation) from a truncated normal distribution.
 
 ## More Information
 
