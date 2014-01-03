@@ -1,7 +1,11 @@
+// -*- mode: C++; c-indent-level: 4; c-basic-offset: 4; tab-width: 4 -*-
+
 // This C++ code implements an Accept/Reject sampler for a single
 // Truncated Normal random variable with a mixture of algorithms
 // depending on distributional parameters. 
 
+
+// [[Rcpp::interfaces(cpp)]]
 
 # include <Rcpp.h>
 
@@ -158,10 +162,12 @@ inline double UseAlg3(const double low, ///< lower bound of distribution
 /// Doi: 10.1007/BF00143942 <br />
 ///
 
-double rtn1(const double mean,	///< mean of distribution
-            const double sd,	///< standard deviation of distribution
-            const double low,	///< lower bound of distribution
-            const double high	///< upper bound of distribution
+
+// [[Rcpp::export]]
+double rtn1(const double mean,
+            const double sd,
+            const double low,
+            const double high
             ) {
   // Namespace
   using namespace Rcpp ;
@@ -249,7 +255,8 @@ double rtn1(const double mean,	///< mean of distribution
   if (type == 4) {
     if (CheckSimple(c_stdlow, c_stdhigh)) {
       while (valid == 0) {
-	draw = UseAlg2(c_stdlow) ; // use the simple
+	draw = UseAlg2(c_stdlow) ;
+        // use the simple
 	// algorithm if it is more
 	// efficient
 	if (draw <= c_stdhigh) {
@@ -263,7 +270,7 @@ double rtn1(const double mean,	///< mean of distribution
     }
   }
   
-
+  
 
   // Returns
   return  c_mean + c_sd * draw ;

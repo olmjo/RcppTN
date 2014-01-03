@@ -1,3 +1,7 @@
+// -*- mode: C++; c-indent-level: 4; c-basic-offset: 4; tab-width: 4 -*-
+
+// [[Rcpp::interfaces(cpp)]]
+
 # include <Rcpp.h>
 
 /// No Truncation
@@ -61,6 +65,8 @@ double v3 (const double mean,
 
 
 /// Main Function
+
+// [[Rcpp::export]]
 double vtn1(const double mean,
 	    const double sd,
 	    const double low,
