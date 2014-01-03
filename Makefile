@@ -1,30 +1,44 @@
-build : clean
+## Input Files
+VIGN_RNW := $(wildcard ./pkg/vignettes/*.Rnw)
+VIGN_TEX := $(patsubst ./pkg/vignettes/%.Rnw, ./pkg/vignettes/%.tex, ${VIGN_RNW})
+VIGN_PDF := $(patsubst ./pkg/vignettes/%.Rnw, ./pkg/vignettes/%.pdf, ${VIGN_RNW})
+VIGN_R := $(patsubst ./pkg/vignettes/%.Rnw, ./pkg/vignettes/%.R, ${VIGN_RNW})
+
+attrs :
+	cd pkg ; Rscript -e "library(Rcpp) ; compileAttributes(verbose=TRUE)"
+
+build : attrs vigns clean
 	R CMD build pkg
 	R CMD Rd2pdf pkg
 	tar -xvf RcppTN_*
 
-vigns : 
-	cd pkg/vignettes/; Rscript -e "library(knitr); knit('using.Rnw')"
-	cd pkg/vignettes/; Rscript -e "library(knitr); purl('using.Rnw')"
-	cd pkg/vignettes/; pdflatex using.tex
-	cd pkg/vignettes/; Rscript -e "library(knitr); knit('speed.Rnw')"
-	cd pkg/vignettes/; Rscript -e "library(knitr); purl('speed.Rnw')"
-	cd pkg/vignettes/; pdflatex speed.tex
-
-check : clean
+check : attrs vigns clean
 	R CMD check pkg
 
-smallcheck : clean
-	R CMD check --no-vignettes pkg
-
-fullinstall : clean build
+fullinstall : build
 	R CMD INSTALL RcppTN*.tar.gz
 
-install : clean
+install : attrs clean
 	R CMD INSTALL pkg
 
 remove :
 	R CMD REMOVE RcppTN
+
+test : attrs
+	cd pkg/tests ; Rscript test-all.R
+
+## Vignette Stuff
+vigns : $(VIGN_TEX) $(VIGN_R) $(VIGN_PDF)
+
+%.tex : %.Rnw
+	cd $(dir $<) ; Rscript -e "library(knitr) ; knit('$(notdir $<)')"
+
+%.R : %.Rnw
+	cd $(dir $<) ; Rscript -e "library(knitr) ; purl('$(notdir $<)')"
+
+%.pdf : %.tex
+	cd $(dir $<) ; pdflatex $(notdir $<)
+## 
 
 clean :
 	rm -f RcppTN*.tar.gz
@@ -39,4 +53,3 @@ clean :
 	rm -f pkg/vignettes/*aux
 	rm -f pkg/vignettes/*log
 	rm -f pkg/vignettes/*out
-	rm -f pkg/vignettes/*tex
