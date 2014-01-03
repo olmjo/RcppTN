@@ -51,4 +51,5 @@ Detailed information on usage (at the R-level and C++-level) and on
 performance can be found in the vignettes.
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/olmjo/rcpptn/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
 [![Build Status](https://travis-ci.org/olmjo/RcppTN.png?branch=development)](https://travis-ci.org/olmjo/RcppTN)
