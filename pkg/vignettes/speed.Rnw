@@ -116,7 +116,7 @@ truncnorm::rtruncnorm(n=1, mean = 0, sd = 1, a = 5, b = Inf)
 library(RcppTN)
 library(truncnorm)
 library(msm)
-library(rbenchmark)
+library(microbenchmark)
 
 sizes <- c(1e1, 1e3, 1e5)
 
@@ -138,7 +138,7 @@ lows[1]
 highs[1]
 s
 
-benchmark(
+microbenchmark(
     "rtn" = rtn(.mean = rep(0, s),
     .low = rep(lows[1], s),
     .high = rep(highs[1], s)
@@ -151,8 +151,7 @@ benchmark(
     lower = rep(lows[1], s),
     upper = rep(highs[1], s)
     ),
-    replications = 100,
-    columns = c("test", "elapsed", "relative")
+    times = 100
     )
 @
 
@@ -164,7 +163,8 @@ above at 4.1. The sample size is still 1,000.
 lows[5]
 highs[5]
 s
-benchmark(
+
+microbenchmark(
     "rtn" = rtn(.mean = rep(0, s),
     .low = rep(lows[5], s),
     .high = rep(highs[5], s)
@@ -177,8 +177,7 @@ benchmark(
     lower = rep(lows[5], s),
     upper = rep(highs[5], s)
     ),
-    replications = 100,
-    columns = c("test", "elapsed", "relative")
+    times = 100
     )
 @
 
@@ -198,7 +197,6 @@ compare the R-level performance of the two, a more complete set of conditions is
 considered.
 
 <<tidy=FALSE>>=
-library(microbenchmark)
 for (case in 1:length(lows)) {
     cat("=======================\n")
     cat("Lower Bound:", lows[case], "\n")
