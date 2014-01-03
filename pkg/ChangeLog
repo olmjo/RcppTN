@@ -1,3 +1,7 @@
+2014-01-03 Jonathan Olmsted <jpolmsted@gmail.com>
+	* src/rtn1.cpp, src/etn1.cpp, src/vtn1.cpp, inst/include/* : use Rcpp Attributes
+	for C++--level export.
+
 2013-12-09 Jonathan Olmsted <jpolmsted@gmail.com>
 	* vignettes/using.Rnw: Shows variance API usage.
 	* inst/include/RcppTN.h, src/RcppTN_init.cpp: Add variance
