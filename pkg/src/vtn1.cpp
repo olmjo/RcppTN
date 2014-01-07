@@ -66,7 +66,7 @@ double v3 (const double mean,
 
 /// Main Function
 
-// [[Rcpp::export]]
+// dd // [[Rcpp::export]]
 double vtn1(const double mean,
 	    const double sd,
 	    const double low,
