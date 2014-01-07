@@ -1,3 +1,7 @@
+2014-01-07 Jonathan Olmsted <jpolmsted@gmail.com>
+	* src/rtn1.cpp, src/etn1.cpp, src/vtn1.cpp, inst/include/*, inst/include/RcppTN.h, src/RcppTN_init.cpp :
+	do not use Rcpp Attributes for C++--level export, causes memory bugs with repeated calls.
+
 2014-01-03 Jonathan Olmsted <jpolmsted@gmail.com>
 	* src/rtn1.cpp, src/etn1.cpp, src/vtn1.cpp, inst/include/* : use Rcpp Attributes
 	for C++--level export.

@@ -1,8 +1,8 @@
 Package: RcppTN
 Type: Package
 Title: Rcpp-based Truncated Normal Distribution RNG and Family
-Version: 0.1-4
-Date: 2013-12-02
+Version: 0.1-5
+Date: 2013-01-07
 Author: Jonathan Olmsted
 Maintainer: Jonathan Olmsted <jpolmsted@gmail.com>
 Description: This package provides R-level and C++-level functionality
