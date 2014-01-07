@@ -29,6 +29,7 @@ test : attrs
 
 ## Vignette Stuff
 vigns : $(VIGN_TEX) $(VIGN_R) $(VIGN_PDF)
+	rm -f $(VIGN_TEX) $(VIGN_R)
 
 %.tex : %.Rnw
 	cd $(dir $<) ; Rscript -e "library(knitr) ; knit('$(notdir $<)')"
