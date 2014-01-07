@@ -5,15 +5,16 @@ VIGN_PDF := $(patsubst ./pkg/vignettes/%.Rnw, ./pkg/vignettes/%.pdf, ${VIGN_RNW}
 VIGN_R := $(patsubst ./pkg/vignettes/%.Rnw, ./pkg/vignettes/%.R, ${VIGN_RNW})
 
 attrs :
-	## cd pkg ; Rscript -e "library(Rcpp) ; compileAttributes(verbose=TRUE)"
-	
+	# cd pkg ; Rscript -e "library(Rcpp) ; compileAttributes(verbose=TRUE)"
+
 build : attrs vigns clean
 	R CMD build pkg
 	R CMD Rd2pdf pkg
 	tar -xvf RcppTN_*
 
-check : attrs vigns clean
-	R CMD check pkg
+check : build
+	R CMD check RcppTN_*
+	R CMD check --as-cran RcppTN_*
 
 fullinstall : build
 	R CMD INSTALL RcppTN*.tar.gz
