@@ -64,7 +64,7 @@ double e3 (const double mean,
 
 /// Main Function
 
-// [[Rcpp::export]]
+//dddd  // [[Rcpp::export]]
 double etn1(const double mean,
 	    const double sd,
 	    const double low,
