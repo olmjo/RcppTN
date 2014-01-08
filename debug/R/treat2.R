@@ -1,6 +1,6 @@
 library(Rcpp)
 
-gctorture(FALSE)
+gctorture(TRUE)
 
 MC <- 2000
 
