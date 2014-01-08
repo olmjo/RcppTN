@@ -5,8 +5,6 @@
 // depending on distributional parameters. 
 
 
-// [[Rcpp::interfaces(cpp)]]
-
 # include <Rcpp.h>
 
 /// Check if simpler subalgorithm is appropriate.
@@ -162,8 +160,6 @@ inline double UseAlg3(const double low, ///< lower bound of distribution
 /// Doi: 10.1007/BF00143942 <br />
 ///
 
-
-// dd // [[Rcpp::export]]
 double rtn1(const double mean,
             const double sd,
             const double low,

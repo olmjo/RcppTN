@@ -7,9 +7,9 @@ aware there is a development branch where fixes and features will first hit.
 
 ## Installation
 
-Using `install_github()` from the `devtools` package will install this
-for you. Alternatively, you could clone the repository and build with
-the Makefile that is included.
+Using `install_github()` from the `devtools` package will install this for
+you. Alternatively, you could clone this repository and build/install with the
+Makefile that is included.
 
 ```
 library(devtools)

@@ -1,7 +1,5 @@
 # include <Rcpp.h>
 
-// [[Rcpp::interfaces(cpp)]]
-
 /// No Truncation
 double e0 (const double mean,
 	   const double sd,
@@ -63,8 +61,6 @@ double e3 (const double mean,
 
 
 /// Main Function
-
-//dddd  // [[Rcpp::export]]
 double etn1(const double mean,
 	    const double sd,
 	    const double low,
