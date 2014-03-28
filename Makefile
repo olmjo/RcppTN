@@ -45,7 +45,7 @@ vigns : $(VIGN_TEX) $(VIGN_R) $(VIGN_PDF)
 clean :
 	rm -f RcppTN*.tar.gz
 	rm -fr RcppTN.Rcheck
-	rm -fr pkg.Rcheck/*
+	rm -fr pkg.Rcheck
 	rm -f ./pkg/src/*.o
 	rm -f ./pkg/src/*.so
 	rm -f ./pkg/src/*.rds
@@ -54,5 +54,6 @@ clean :
 	rm -Rf ./RcppTN/
 	rm -Rf pkg/vignettes/figure
 	rm -f pkg/vignettes/*aux
+	rm -f pkg/vignettes/*tex
 	rm -f pkg/vignettes/*log
 	rm -f pkg/vignettes/*out
