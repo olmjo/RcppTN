@@ -1,6 +1,9 @@
 useDynLib(RcppTN, rtnRcpp, .registration = TRUE)
 useDynLib(RcppTN, etnRcpp, .registration = TRUE)
 useDynLib(RcppTN, vtnRcpp, .registration = TRUE)
+useDynLib(RcppTN, dtnRcpp, .registration = TRUE)
+
 export(rtn)
 export(etn)
 export(vtn)
+export(dtn)
