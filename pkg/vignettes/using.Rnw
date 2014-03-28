@@ -1,4 +1,5 @@
 % -*- mode: noweb; ess-noweb-default-code-mode: R; ess-noweb-doc-mode: LaTeX-mode; -*-
+
 % \VignetteEngine{knitr::knitr}
 % \VignetteIndexEntry{Using RcppTN}
 % \VignetteKeyword{RNG}
@@ -47,7 +48,7 @@
   \texttt{jpolmsted@gmail.com}
 }
 \title{Using \RcppTN{} in \R{} and \Cpp{}}
-\date{October 17, 2013}
+\date{March 28, 2014}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -137,17 +138,23 @@ of two ways:
 \item drawing many values from different truncated Normal distributions
 \end{enumerate}
 
-\noindent For the \texttt{rtn()} function, these two uses look very
-similar. The function accepts a \texttt{.mean} argument, an
-\texttt{.sd} argument, a \texttt{.low} argument, and a \texttt{.high}
-argument. Each should be a vector of length $K$ corresponding to the
-$K$ distributions of interest. The function does not handle value
-recycling for the user, so the construction of these vectors must be
-done \textit{before or during} the call of the \texttt{rtn()}
-function. \textit{\textbf{Importantly, this function quietly returns
-    an \texttt{NA} value for invalid input parameters.}}
-\texttt{NA}-inducing input parameters don't interfere with other valid
-parameters and a vector of the requested length is returned.
+\noindent For the \texttt{rtn()} function, these two uses look very similar. The
+function accepts a \texttt{.mean} argument, an \texttt{.sd} argument, a
+\texttt{.low} argument, and a \texttt{.high} argument. Each should be a vector
+of length $K$ corresponding to the $K$ distributions of interest. The function
+does not handle value recycling for the user, so the construction of these
+vectors must be done \textit{before or during} the call of the \texttt{rtn()}
+function. Incorrectly sized inputs result in an error.
+
+<<>>=
+rtn(.mean = c(0, 1), .sd = 1)
+@
+
+
+Importantly, this function returns an \texttt{NA} value for draws corresponding
+to invalid input parameters along with a warning. \texttt{NA}-inducing input
+parameters don't interfere with other valid parameters and a vector of the
+requested length is returned.
 
 For example,
 
@@ -156,6 +163,16 @@ rtn(0, -1, 0, 1)
 rtn(0, 1, 0, -1)
 rtn(c(0,0), c(1,1), c(0,0), c(-Inf,Inf))
 @
+
+To suppress input and output checks, use the following:
+
+<<>>=
+rtn(0, -1, 0, 1, .checks = FALSE)
+@
+
+However, this is not recommended unless inputs are being checked before use.
+Skipping checks in \texttt{rtn()} provides a slight performance advantage, but
+most applications will benefit more from safer code.
 
 \subsection{Multiple Draws from a Single Distribution}
 
@@ -320,9 +337,15 @@ level: \texttt{rtn1()} and \texttt{etn1()}.
 \begin{verbatim}
 double rtn1(double mean, double sd, double low, double high) ;
 \end{verbatim}
+
 \item[\textsf{etn1}] ~
 \begin{verbatim}
 double etn1(double mean, double sd, double low, double high) ;
+\end{verbatim}
+
+\item[\textsf{vtn1}] ~
+\begin{verbatim}
+double vtn1(double mean, double sd, double low, double high) ;
 \end{verbatim}
 \end{description}
 
@@ -414,6 +437,6 @@ needed and is replaced by the modification to the \texttt{LinkingTo:}
 field of the \texttt{DESCRIPTION} file.
 \end{document}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -1,5 +1,7 @@
 2014-03-28 Jonathan Olmsted <jpolmsted@gmail.com>
 	* R/rtn.R, R/etn.R, R/vtn.R: make checks optional, default behavior unchanged
+	* vignettes/speed.Rnw: add graphical output to vignette
+	* vignettes/using.Rnw: update re: checks, document vtn1()
 
 2014-01-07 Jonathan Olmsted <jpolmsted@gmail.com>
 	* src/rtn1.cpp, src/etn1.cpp, src/vtn1.cpp, inst/include/*, inst/include/RcppTN.h, src/RcppTN_init.cpp :
