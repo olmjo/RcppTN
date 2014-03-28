@@ -70,18 +70,18 @@ This brief document shows some performance benchmarks of \rpack{RcppTN}'s
 
 Broadly speaking, calls to the three different \R{} functions are similar. In
 the simplest case (no truncation), they even identical return values.
-<<>>=
+<<message = FALSE>>=
 library(RcppTN)
 library(truncnorm)
 library(msm)
 library(microbenchmark)
 
 set.seed(1)
-rtn()
+rtn() # RcppTN
 set.seed(1)
-msm::rtnorm(n=1)
+rtnorm(n=1) # msm
 set.seed(1)
-truncnorm::rtruncnorm(n=1)
+rtruncnorm(n=1) # truncnorm
 @
 
 But, this is not true in general. Differences in return values result from the
@@ -94,9 +94,9 @@ above 4.1. Here, the output from the \rpack{RcppTN} package and the
 set.seed(1)
 rtn(.mean = 0, .sd = 1, .low = 4, .high = 4.1)
 set.seed(1)
-msm::rtnorm(n=1, mean = 0, sd = 1, lower = 4, upper = 4.1)
+rtnorm(n=1, mean = 0, sd = 1, lower = 4, upper = 4.1)
 set.seed(1)
-truncnorm::rtruncnorm(n=1, mean = 0, sd = 1, a = 4, b = 4.1)
+rtruncnorm(n=1, mean = 0, sd = 1, a = 4, b = 4.1)
 @
 
 Yet, in the case of truncation below 5 without any truncation from above, the
@@ -110,37 +110,37 @@ valid RNG's for the same distribution.
 set.seed(1)
 rtn(.mean = 0, .sd = 1, .low = 5, .high = Inf)
 set.seed(1)
-msm::rtnorm(n=1, mean = 0, sd = 1, lower = 5, upper = Inf)
+rtnorm(n=1, mean = 0, sd = 1, lower = 5, upper = Inf)
 set.seed(1)
-truncnorm::rtruncnorm(n=1, mean = 0, sd = 1, a = 5, b = Inf)
+rtruncnorm(n=1, mean = 0, sd = 1, a = 5, b = Inf)
 @
 
 
 
 \section{Compiled Code is faster than  Interpreted Code}
 
+In setting up a series of conditions under which to compare performance, we will
+consider drawing samples of size 10, 1,000, and 100,000. And will consider
+standard Normal distributions restricted to the intervals $[-1, 1]$, $[5,
+\infty]$, $[-\infty, 10]$, $[4, 7]$, $[4, 4.1]$, $[-\infty, \infty]$, and $[50,
+100]$.
+
 <<tidy=FALSE, message=FALSE>>=
-
-
 sizes <- c(1e1, 1e3, 1e5)
-
 lows <- c(-1, 5, -Inf, 4, 4, -Inf, 50)
 highs <- c(1, Inf, 10, 7, 4.1, Inf, 100)
 @
 
-
-Both \rpack{RcppTN} and \rpack{truncnorm} use compiled code for their RNG. However,
-the RNG in \rpack{msm} is written in \R{}. As a result, the performance cost
-that one would expect manifests in even the a simple case where the standard
-Normal distribution is truncated below at -1 and above at 1. Here, a naive
-Accept-Reject sampler works perfectly fine. Yet, the C(++)-based implementations
-are over 20 times faster in drawing samples of size 1,000
+Both \rpack{RcppTN} and \rpack{truncnorm} use compiled code for their
+RNG. However, the RNG in \rpack{msm} is written in \R{}. As a result, the
+performance cost that one would expect manifests in even the a simple case where
+the standard Normal distribution is truncated below at -1 and above at 1. This
+case is sufficiently easy that even a naive Accept-Reject sampler works
+perfectly fine. Yet, the C(++)-based implementations are over 15 times faster in
+drawing samples of size 1,000
 
 <<tidy=FALSE>>=
 s <- sizes[2]
-lows[1]
-highs[1]
-s
 
 microbenchmark(
     "rtn" = rtn(.mean = rep(0, s),
@@ -161,14 +161,10 @@ microbenchmark(
 @
 
 A similarly large performance cost due to writing the RNG in \R{} is seen in a
-slightly harder case: a standard Normal distribution truncated below at 4 and
-above at 4.1. The sample size is still 1,000.
+harder case: a standard Normal distribution truncated below at 4 and above at
+4.1. The sample size is still 1,000.
 
 <<tidy=FALSE>>=
-lows[5]
-highs[5]
-s
-
 microbenchmark(
     "rtn" = rtn(.mean = rep(0, s),
     .low = rep(lows[5], s),
@@ -199,36 +195,93 @@ will just take too long to build the vignette if it is included.
 The RNG's in \rpack{RcppTN} and \rpack{truncnorm} are written in \Rcpp{}-based
 C++ and C, respectively. However, they implement different mathematical
 algorithms. The former uses Robert (1995) and the latter uses Geweke (1991). To
-compare the R-level performance of the two, a more complete set of conditions is
-considered.
+compare the R-level performance of the two, the full set of conditions described
+above is considered.
 
 <<tidy=FALSE, echo = FALSE, cache = USECACHE>>=
+cnt <- 1
 for (case in 1:length(lows)) {
-    cat("=======================\n")
-    cat("Lower Bound:", lows[case], "\n")
-    cat("Upper Bound:", highs[case], "\n\n")
+    ## cat("=======================\n")
+    ## cat("Lower Bound:", lows[case], "\n")
+    ## cat("Upper Bound:", highs[case], "\n\n")
 
     for (s in sizes) {
-        cat("  [ Sample Size per Call:", s,  "]\n")
-        out <- microbenchmark(
-            rtn = rtn(.mean = rep(0, s),
-            .low = rep(lows[case], s),
-            .high = rep(highs[case], s),
-            .checks = FALSE
-            ),
-            rtruncnorm = rtruncnorm(n = s,
-            a = rep(lows[case], s),
-            b = rep(highs[case], s)
-            ),
-            times = 100L
-            )
+        ## cat("  [ Sample Size per Call:", s,  "]\n")
 
-        print(out)
-        cat("\n")
+        out <- {microbenchmark(rtn = rtn(.mean = rep(0, s),
+                               .low = rep(lows[case], s),
+                               .high = rep(highs[case], s),
+                               .checks = FALSE
+                               ),
+                               rtruncnorm = rtruncnorm(n = s,
+                               a = rep(lows[case], s),
+                               b = rep(highs[case], s)
+                               ),
+                               times = 100L
+                               )
+            }
+        out$case <- case
+        out$size <- s
+        if (cnt == 1) {
+            dfOut <- out
+        } else {
+            dfOut <- rbind(dfOut,
+                           out
+                           )
+        }
+
+        ## print(out)
+        ## cat("\n")
+        cnt <- cnt + 1
     }
-    cat("=======================\n\n")
+    ## cat("=======================\n\n")
 }
 @
+
+\begin{center}
+
+<<echo = FALSE, message = FALSE, out.width = "\\linewidth">>=
+library(ggplot2)
+theme_set(theme_bw())
+
+dfOut$case2 <- paste("[", lows[dfOut$case], ",", highs[dfOut$case], "]", sep = " ")
+dfOut$size2 <- format(dfOut$size, scientific = 2)
+
+
+ggplot(as.data.frame(dfOut)) +
+    geom_boxplot(aes(x = case2,
+                     y = time / 10000,
+                     color = expr
+                     ),
+                 position = position_dodge(width = .75),
+                 alpha = .5,
+                 size = .5,
+                 outlier.size = 1
+                 ) +
+    scale_y_log10(breaks = c(2, 4, 8, 10, 15, 30, 1000, 2500, 10000)) +
+    scale_color_discrete("R Function",
+                         labels = c("rtn()", "rtruncnorm()")
+                         ) +
+    labs(x = "Interval",
+         y = "Microseconds / 10"
+         ) +
+    theme(legend.position = "bottom") +
+    ## scale_x_discrete("Sample Size",
+    ##                  limits = c("10", "1000", "1e+05"),
+    ##                  labels = c("1e1", "1e3", "1e5")
+    ##                  ) +
+    facet_grid(size2 ~ ., scales = "free")
+@
+\begin{flushleft}
+  \begin{small}
+    \textit{
+      Results of benchmarking comparing RNG performance for Truncated Normal
+      distributions from \rpack{RcppTN} and \rpack{truncnorm}.
+      }
+  \end{small}
+\end{flushleft}
+
+\end{center}
 
 The motivation for \rpack{RcppTN} isn't speed, but the \Rcpp{}-based implementation
 performs quite-well. For larger sample sizes (e.g., $\geq 10^6$), \texttt{rtn()}
