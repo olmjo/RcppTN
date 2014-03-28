@@ -1,15 +1,20 @@
 rtn <- function(.mean = rep(0, 1),
                 .sd = rep(1, length(.mean)),
                 .low = rep(-Inf, length(.mean)),
-                .high = rep(Inf, length(.mean))
+                .high = rep(Inf, length(.mean)),
+                .checks = TRUE
                 ) {
-    checkInputs(.mean, .sd, .low, .high)
-    out <- .Call(rtnRcpp,
+    if (.checks) {
+        checkInputs(.mean, .sd, .low, .high)
+    }
+    out <- .Call("rtnRcpp",
                  mean = .mean,
                  sd = .sd,
                  low = .low,
                  high = .high
                  )
-    checkOutputs(out)
+    if (.checks) {
+        checkOutputs(out)
+    }
     return(out)
 }
