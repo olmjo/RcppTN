@@ -1,7 +1,7 @@
 2014-03-28 Jonathan Olmsted <jpolmsted@gmail.com>
 	* R/rtn.R, R/etn.R, R/vtn.R: make checks optional, default behavior unchanged
 	* vignettes/speed.Rnw: add graphical output to vignette
-	* vignettes/using.Rnw: update re: checks, document vtn1()
+	* vignettes/using.Rnw: update re: checks, document vtn1() dtn1()
 	* R/dtn.R, src/dtn*: add density calculation
 	* test/testthat/test-API.R, test/testthat/test-Density.R: add density tests, incl API
 

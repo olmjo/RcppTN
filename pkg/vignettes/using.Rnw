@@ -349,6 +349,12 @@ double etn1(double mean, double sd, double low, double high) ;
 \begin{verbatim}
 double vtn1(double mean, double sd, double low, double high) ;
 \end{verbatim}
+
+\item[\textsf{dtn1}] ~
+\begin{verbatim}
+double dtn1(double x, double mean, double sd, double low, double high) ;
+\end{verbatim}
+
 \end{description}
 
 \paragraph{Caveats. }The \R{}-level function ultimately calls these
