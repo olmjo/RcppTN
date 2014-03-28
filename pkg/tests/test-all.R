@@ -1,5 +1,6 @@
 library("RcppTN")
 library("testthat")
+library("methods")
 
 set.seed(1)
 test_dir("./testthat/")
