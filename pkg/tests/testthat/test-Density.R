@@ -18,3 +18,25 @@ test_that("1/2 Normal densities are 2 times Normal Densities", {
 }
           )
 
+test_that("Densities identical across shifts", {
+
+    vShifts <- c(-10:10)
+    vMs <- c(0, 1, 2, 5)
+    vLs <- c(-Inf, -2, 3)
+    vHs <- c(0, 2, 5)
+
+    for (m in vMs) {
+        for (b in 1:length(vLs)) {
+            mD <- sapply(vShifts,
+                         function(S) dtn(.x = vX + S,
+                                         .mean = rep(m + S, N),
+                                         .sd = rep(1, N),
+                                         .low = rep(vLs[b] + S, N),
+                                         .high = rep(vHs[b] + S, N)
+                                         )
+                         )
+            expect_true(all(apply(mD, 1, sd) == 0))
+        }
+    }
+}
+          )
