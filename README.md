@@ -13,7 +13,11 @@ Makefile that is included.
 
 ```
 library(devtools)
-install_github("RcppTN", username = "olmjo", subdir = "pkg")
+install_github(repo = "RcppTN",
+               username = "olmjo",
+               subdir = "pkg",
+               ref = "development"
+               )
 ```
 
 ## Example Usage
