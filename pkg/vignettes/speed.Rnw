@@ -44,7 +44,7 @@
 
 \title{Benchmarking \texttt{rtn()}'s Performance}
 
-\date{March 28, 2014}
+\date{September 3, 2014}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CONTENT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -57,8 +57,12 @@
 
 \thispagestyle{plain}
 
-<<echo = FALSE>>=
-USECACHE <- TRUE
+<<echo = FALSE, results = "hide", message = FALSE, purl = FALSE>>=
+opts_chunk$set(tidy = FALSE,
+               fig.align = "center",
+               background = '#EEEEEE',
+               cache = TRUE
+               )
 @
 
 This brief document shows some performance benchmarks of \rpack{RcppTN}'s
@@ -71,10 +75,10 @@ This brief document shows some performance benchmarks of \rpack{RcppTN}'s
 Broadly speaking, calls to the three different \R{} functions are similar. In
 the simplest case (no truncation), they even identical return values.
 <<message = FALSE>>=
-library(RcppTN)
-library(truncnorm)
-library(msm)
-library(microbenchmark)
+library("RcppTN")
+library("truncnorm")
+library("msm")
+library("microbenchmark")
 
 set.seed(1)
 rtn() # RcppTN
@@ -125,7 +129,7 @@ standard Normal distributions restricted to the intervals $[-1, 1]$, $[5,
 \infty]$, $[-\infty, 10]$, $[4, 7]$, $[4, 4.1]$, $[-\infty, \infty]$, and $[50,
 100]$.
 
-<<tidy=FALSE, message=FALSE>>=
+<<tidy=FALSE>>=
 sizes <- c(1e1, 1e3, 1e5)
 lows <- c(-1, 5, -Inf, 4, 4, -Inf, 50)
 highs <- c(1, Inf, 10, 7, 4.1, Inf, 100)
@@ -198,16 +202,10 @@ algorithms. The former uses Robert (1995) and the latter uses Geweke (1991). To
 compare the R-level performance of the two, the full set of conditions described
 above is considered.
 
-<<tidy=FALSE, echo = FALSE, cache = USECACHE>>=
+<<"bigbench", tidy=FALSE, echo = FALSE>>=
 cnt <- 1
 for (case in 1:length(lows)) {
-    ## cat("=======================\n")
-    ## cat("Lower Bound:", lows[case], "\n")
-    ## cat("Upper Bound:", highs[case], "\n\n")
-
     for (s in sizes) {
-        ## cat("  [ Sample Size per Call:", s,  "]\n")
-
         out <- {microbenchmark(rtn = rtn(.mean = rep(0, s),
                                .low = rep(lows[case], s),
                                .high = rep(highs[case], s),
@@ -229,24 +227,17 @@ for (case in 1:length(lows)) {
                            out
                            )
         }
-
-        ## print(out)
-        ## cat("\n")
         cnt <- cnt + 1
     }
-    ## cat("=======================\n\n")
 }
 @
 
-\begin{center}
-
 <<echo = FALSE, message = FALSE, out.width = "\\linewidth">>=
-library(ggplot2)
+library("ggplot2")
 theme_set(theme_bw())
 
-dfOut$case2 <- paste("[", lows[dfOut$case], ",", highs[dfOut$case], "]", sep = " ")
+dfOut$case2 <- paste("(", lows[dfOut$case], ",", highs[dfOut$case], ")", sep = " ")
 dfOut$size2 <- format(dfOut$size, scientific = 2)
-
 
 ggplot(as.data.frame(dfOut)) +
     geom_boxplot(aes(x = case2,
@@ -258,7 +249,7 @@ ggplot(as.data.frame(dfOut)) +
                  size = .5,
                  outlier.size = 1
                  ) +
-    scale_y_log10(breaks = c(2, 4, 8, 10, 15, 30, 1000, 2500, 10000)) +
+    scale_y_log10(breaks = c(2, 4, 8, 10, 15, 20, 30, 1000, 2500, 10000)) +
     scale_color_discrete("R Function",
                          labels = c("rtn()", "rtruncnorm()")
                          ) +
@@ -272,20 +263,20 @@ ggplot(as.data.frame(dfOut)) +
     ##                  ) +
     facet_grid(size2 ~ ., scales = "free")
 @
-\begin{flushleft}
-  \begin{small}
-    \textit{
-      Results of benchmarking comparing RNG performance for Truncated Normal
-      distributions from \rpack{RcppTN} and \rpack{truncnorm}.
-      }
-  \end{small}
-\end{flushleft}
 
+\begin{center}
+  \begin{flushleft}
+    \begin{small}
+      \textit{
+        Results of benchmarking comparing RNG performance for Truncated Normal
+        distributions from \rpack{RcppTN} and \rpack{truncnorm}.
+      }
+    \end{small}
+  \end{flushleft}
 \end{center}
 
 The motivation for \rpack{RcppTN} isn't speed, but the \Rcpp{}-based implementation
-performs quite-well. For larger sample sizes (e.g., $\geq 10^6$), \texttt{rtn()}
-does not necessarily keep its efficiency edge.
+performs quite-well.
 
 \end{document}
 

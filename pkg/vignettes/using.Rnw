@@ -48,7 +48,7 @@
   \texttt{jpolmsted@gmail.com}
 }
 \title{Using \RcppTN{} in \R{} and \Cpp{}}
-\date{March 28, 2014}
+\date{September 3, 2014}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -56,6 +56,14 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
+
+<<echo = FALSE, results = "hide", message = FALSE, purl = FALSE>>=
+opts_chunk$set(tidy = FALSE,
+               fig.align = "center",
+               background = '#EEEEEE',
+               cache = FALSE
+               )
+@
 
 \maketitle
 
@@ -77,8 +85,12 @@ mechanism is using the \texttt{install\_github()} function from the
 \texttt{devtools} package.
 
 <<eval=FALSE>>=
-library(devtools)
-install_github("RcppTN", username = "olmjo", subdir = "pkg")
+library("devtools")
+install_github(repo = "RcppTN",
+               username = "olmjo",
+               subdir = "pkg",
+               ref = "development"
+               )
 @
 
 \section{\R{}-level Usage}
@@ -89,7 +101,7 @@ Normal distribution. And, this draw respects R's RNG state so the stream of
 output is reproducible.
 
 <<>>=
-library(RcppTN)
+library("RcppTN")
 set.seed(1)
 rtn()
 set.seed(1)
@@ -374,7 +386,7 @@ very straightforward due to the mechanisms provided by
 the symbols. From there, use is as you would expect.
 
 <<tidy = FALSE>>=
-library(Rcpp)
+library("Rcpp")
 sourceCpp(code = "
 #include <Rcpp.h>
 
@@ -404,7 +416,7 @@ rcpp_hello_world()
 functional, \R{} package.
 
 <<eval=FALSE>>=
-library(Rcpp)
+library("Rcpp")
 Rcpp.package.skeleton(path="~/Desktop")
 @
 
@@ -412,7 +424,7 @@ Navigate inside the newly created \texttt{anRpackage} directory and edit the
 \texttt{DESCRIPTION} file. Add \texttt{RcppTN} to the \texttt{Depends:} and
 \texttt{LinkingTo:} lines of the file as in
 \begin{verbatim}
-Depends: Rcpp (>= 0.10.5), RcppTN
+Depends: RcppTN
 LinkingTo: Rcpp, RcppTN
 \end{verbatim}
 
