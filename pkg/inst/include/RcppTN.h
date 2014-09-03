@@ -28,6 +28,11 @@ namespace RcppTN {
         static Fun5 dtn1_ = (Fun5)R_GetCCallable("RcppTN", "RcppTN_dtn1") ;
         return dtn1_(x, mean, sd, low, high) ;
     }
+    
+    inline double enttn1(double mean, double sd, double low, double high){
+        static Fun4 enttn1_ = (Fun4)R_GetCCallable("RcppTN", "RcppTN_enttn1") ;
+        return enttn1_(mean, sd, low, high) ;
+    }
 }
 
 # endif
