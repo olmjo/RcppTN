@@ -5,7 +5,7 @@ gctorture(TRUE)
 N <- 20
 MC <- 20
 
-funcs <- c("rtn", "etn", "vtn")
+funcs <- c("rtn", "etn", "vtn", "enttn")
 
 for (f in funcs) {
     for (i in 1:MC) {
