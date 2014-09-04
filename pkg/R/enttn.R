@@ -15,12 +15,13 @@
 ##' @examples
 ##' lows <- c(-1, 5, -100, 4, 4, -100, 7)
 ##' highs <- c(1, 100, 10, 7, 4.1, 100, 100)
-##' enttn(.mean = rep(0, length(lows),
-##'       .sd = rep(1, length(lows),
+##' enttn(.mean = rep(0, length(lows)),
+##'       .sd = rep(1, length(lows)),
 ##'       .low = lows,
 ##'       .high = highs
 ##'       )
 ##'
+
 enttn <- function(.mean = rep(0, 1),
                   .sd = rep(1, length(.mean)),
                   .low = rep(-Inf, length(.mean)),
