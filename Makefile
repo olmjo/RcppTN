@@ -4,10 +4,12 @@ VIGN_TEX := $(patsubst ./pkg/vignettes/%.Rnw, ./pkg/vignettes/%.tex, ${VIGN_RNW}
 VIGN_PDF := $(patsubst ./pkg/vignettes/%.Rnw, ./pkg/vignettes/%.pdf, ${VIGN_RNW})
 VIGN_R := $(patsubst ./pkg/vignettes/%.Rnw, ./pkg/vignettes/%.R, ${VIGN_RNW})
 
+default : rdocs install
+
 attrs :
 	# cd pkg ; Rscript -e "library(Rcpp) ; compileAttributes(verbose=TRUE)"
 
-build : attrs vigns clean
+build : attrs rdocs vigns clean
 	R CMD build pkg
 	R CMD Rd2pdf pkg
 	tar -xvf RcppTN_*
@@ -21,6 +23,9 @@ fullinstall : build
 
 install : attrs clean
 	R CMD INSTALL pkg
+
+rdocs :
+	./make_rdocs.R
 
 remove :
 	R CMD REMOVE RcppTN
@@ -52,7 +57,7 @@ clean :
 	rm -f ./pkg/inst/lib/*
 	rm -f ./pkg.pdf
 	rm -Rf ./RcppTN/
-	rm -Rf pkg/vignettes/figure
+	## rm -Rf pkg/vignettes/figure
 	rm -f pkg/vignettes/*aux
 	rm -f pkg/vignettes/*tex
 	rm -f pkg/vignettes/*log
