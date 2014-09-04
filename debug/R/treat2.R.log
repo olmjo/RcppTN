@@ -1,27 +1,27 @@
-==11726== Memcheck, a memory error detector
-==11726== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.
-==11726== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info
-==11726== Command: /usr/lib/R/bin/exec/R --vanilla
-==11726== Parent PID: 11724
-==11726== 
-==11726== 
-==11726== HEAP SUMMARY:
-==11726==     in use at exit: 32,488,782 bytes in 15,629 blocks
-==11726==   total heap usage: 47,888 allocs, 32,259 frees, 151,451,757 bytes allocated
-==11726== 
-==11726== LEAK SUMMARY:
-==11726==    definitely lost: 0 bytes in 0 blocks
-==11726==    indirectly lost: 0 bytes in 0 blocks
-==11726==      possibly lost: 0 bytes in 0 blocks
-==11726==    still reachable: 32,488,782 bytes in 15,629 blocks
-==11726==         suppressed: 0 bytes in 0 blocks
-==11726== Reachable blocks (those to which a pointer was found) are not shown.
-==11726== To see them, rerun with: --leak-check=full --show-reachable=yes
-==11726== 
-==11726== For counts of detected and suppressed errors, rerun with: -v
-==11726== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 2 from 2)
+==14243== Memcheck, a memory error detector
+==14243== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==14243== Using Valgrind-3.10.0.SVN and LibVEX; rerun with -h for copyright info
+==14243== Command: /usr/lib/R/bin/exec/R --vanilla
+==14243== Parent PID: 14241
+==14243== 
+==14243== 
+==14243== HEAP SUMMARY:
+==14243==     in use at exit: 32,343,712 bytes in 15,612 blocks
+==14243==   total heap usage: 47,382 allocs, 31,770 frees, 149,960,867 bytes allocated
+==14243== 
+==14243== LEAK SUMMARY:
+==14243==    definitely lost: 0 bytes in 0 blocks
+==14243==    indirectly lost: 0 bytes in 0 blocks
+==14243==      possibly lost: 0 bytes in 0 blocks
+==14243==    still reachable: 32,343,712 bytes in 15,612 blocks
+==14243==         suppressed: 0 bytes in 0 blocks
+==14243== Reachable blocks (those to which a pointer was found) are not shown.
+==14243== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==14243== 
+==14243== For counts of detected and suppressed errors, rerun with: -v
+==14243== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 
 
 
 
-Wed Jan 8 15:50:31 EST 2014
+Thu Sep 4 12:22:20 EDT 2014
