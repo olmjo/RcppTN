@@ -1,7 +1,9 @@
-/pkg/vignettes/speed.aux
+*.aux
+*.log
+*.out
 /pkg/vignettes/figure/
-/pkg/vignettes/speed.log
-/pkg/vignettes/using.aux
-/pkg/vignettes/using.log
-/pkg/vignettes/using.out
 /pkg/vignettes/cache/
+/pkg/vignettes/speed.R
+/pkg/vignettes/using.R
+*.o
+*.so
