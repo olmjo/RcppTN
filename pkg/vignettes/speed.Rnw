@@ -1,6 +1,10 @@
+% -*- mode: noweb; ess-noweb-default-code-mode: R; ess-noweb-doc-mode: LaTeX-mode; -*-
+
 % \VignetteEngine{knitr::knitr}
 % \VignetteIndexEntry{Performance}
 % \VignetteKeyword{RNG}
+
+% \VignetteDepends{ggplot2, Rcpp, knitr}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PREAMBLE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -58,6 +62,7 @@
 \thispagestyle{plain}
 
 <<echo = FALSE, results = "hide", message = FALSE, purl = FALSE>>=
+library("knitr")
 opts_chunk$set(tidy = FALSE,
                fig.align = "center",
                background = '#EEEEEE',
@@ -202,7 +207,7 @@ algorithms. The former uses Robert (1995) and the latter uses Geweke (1991). To
 compare the R-level performance of the two, the full set of conditions described
 above is considered.
 
-<<"bigbench", tidy=FALSE, echo = FALSE>>=
+<<"bigbench", echo = FALSE>>=
 cnt <- 1
 for (case in 1:length(lows)) {
     for (s in sizes) {
@@ -232,9 +237,10 @@ for (case in 1:length(lows)) {
 }
 @
 
-<<echo = FALSE, message = FALSE, out.width = "\\linewidth">>=
+<<"bigbenchfig", echo = FALSE, message = FALSE, out.width = "\\linewidth">>=
 library("ggplot2")
 theme_set(theme_bw())
+
 
 dfOut$case2 <- paste("(", lows[dfOut$case], ",", highs[dfOut$case], ")", sep = " ")
 dfOut$size2 <- format(dfOut$size, scientific = 2)
@@ -279,6 +285,8 @@ The motivation for \rpack{RcppTN} isn't speed, but the \Rcpp{}-based implementat
 performs quite-well.
 
 \end{document}
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
