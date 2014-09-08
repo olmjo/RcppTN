@@ -95,6 +95,8 @@ install_github(repo = "RcppTN",
 
 \section{\R{}-level Usage}
 
+\subsection{RNG}
+
 Usage of the \texttt{rtn()} function in \R{} is straightforward (albeit not
 feature-rich). Without any options, we get a single draw from the standard
 Normal distribution. And, this draw respects R's RNG state so the stream of
@@ -188,7 +190,7 @@ However, this is not recommended unless inputs are being checked before use.
 Skipping checks in \texttt{rtn()} provides a slight performance advantage, but
 most applications will benefit more from safer code.
 
-\subsection{Multiple Draws from a Single Distribution}
+\subsubsection{Multiple Draws from a Single Distribution}
 
 Multiple draws from the same distribution may be requested with a function call
 like the following:
@@ -294,7 +296,7 @@ ggplot(dfOutput) +
 @
 \end{center}
 
-\subsection{Multiple Draws from Different Distributions}
+\subsubsection{Multiple Draws from Different Distributions}
 
 Taking multiple draws from different distributions proceeds in a similar way,
 though the construction of the arguments passed to \texttt{rtn()} changes a
@@ -338,13 +340,67 @@ ggplot() +
 This sampling distribution is non-standard and the easiest way to characterize
 it would be through a simulation like the above.
 
+\subsection{Other Functions}
+
+In additional to random number generation, functions are provided for
+calculating other quantities of interest.
+
+To calculate the expectation of a given truncated Normal distribution, use
+\texttt{etn()}:
+
+<<>>=
+etn(.mean = 0,
+    .sd = 1,
+    .low = 0,
+    .high = 10
+    )
+
+etn(0, 1, 3.5, 3.7)
+@
+
+
+The variance can be found in a similar way using \texttt{vtn()}:
+<<>>=
+vtn(.mean = 0,
+    .sd = 1,
+    .low = 0,
+    .high = 10
+    )
+
+vtn(0, 1, 3.5, 3.7)
+@
+
+The density at a specific value for a given Truncated normal distribution is
+found with \texttt{dtn()}:
+
+<<>>=
+dtn(.x = 4,
+    .mean = 0,
+    .sd = 1,
+    .low = 0,
+    .high = 10
+    )
+
+dtn(3.6, 0, 1, 3.5, 3.7)
+@
+
+Finally, the entropy of a given truncation Normal distribution is found with
+\texttt{enttn()}:
+
+<<>>=
+enttn(.mean = rep(0, 2),
+      .sd = c(.01, 100),
+      .low = rep(-1, 2),
+      .high = rep(1, 2)
+      )
+@
+
 \section{\Cpp{}-level Usage}
 
-This section documents how to use the \Cpp{}-level functionality in
-subsequent \Cpp{} development. Specifically, using the \RcppTN{}
-\Cpp{} API via \verb=sourceCpp()= and an \Rcpp{}-based \R{} package
-are shown. Presently, only two functions are exposed at the \Cpp{}
-level: \texttt{rtn1()} and \texttt{etn1()}.
+This section documents how to use the \Cpp{}-level functionality in subsequent
+\Cpp{} development. Specifically, using the \RcppTN{} \Cpp{} API via
+\verb=sourceCpp()= and an \Rcpp{}-based \R{} package are shown. Presently, the
+following functions are exposed at the \Cpp{} level.
 
 \begin{description}
 \item[\textsf{rtn1}] ~
@@ -365,6 +421,11 @@ double vtn1(double mean, double sd, double low, double high) ;
 \item[\textsf{dtn1}] ~
 \begin{verbatim}
 double dtn1(double x, double mean, double sd, double low, double high) ;
+\end{verbatim}
+
+\item[\textsf{enttn1}] ~
+\begin{verbatim}
+double enttn1(double mean, double sd, double low, double high) ;
 \end{verbatim}
 
 \end{description}
@@ -401,7 +462,8 @@ List rcpp_hello_world() {
   double b = RcppTN::etn1(0.0, 1.0, 3.5, 3.7) ;
   double c = RcppTN::vtn1(0.0, 1.0, 3.5, 3.7) ;
   double d = RcppTN::dtn1(3.6, 0.0, 1.0, 3.5, 3.7) ;
-  NumericVector y = NumericVector::create(a, b, c, d) ;
+  double e = RcppTN::enttn1(0.0, 1.0, 3.5, 3.7) ;
+  NumericVector y = NumericVector::create(a, b, c, d, e) ;
   List z = List::create(y) ;
   return(z) ;
 }
@@ -441,7 +503,9 @@ List rcpp_hello_world() {
   double a = RcppTN::rtn1(0.0, 1.0, 3.5, 3.7) ;
   double b = RcppTN::etn1(0.0, 1.0, 3.5, 3.7) ;
   double c = RcppTN::vtn1(0.0, 1.0, 3.5, 3.7) ;
-  NumericVector y = NumericVector::create( a, b, c ) ;
+  double d = RcppTN::dtn1(3.6, 0.0, 1.0, 3.5, 3.7) ;
+  double e = RcppTN::enttn1(0.0, 1.0, 3.5, 3.7) ;
+  NumericVector y = NumericVector::create(a, b, c, d, e) ;
   List z = List::create( y ) ;
   return(z) ;
 }

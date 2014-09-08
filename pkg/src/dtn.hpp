@@ -8,11 +8,11 @@
 # define DTN_HPP
 
 void dtn(const Rcpp::NumericVector &X,
-          const Rcpp::NumericVector &Mean,
-          const Rcpp::NumericVector &Sd,
-          const Rcpp::NumericVector &Low,
-          const Rcpp::NumericVector &High,
-          Rcpp::NumericVector &Dens
-          ) ;
+         const Rcpp::NumericVector &Mean,
+         const Rcpp::NumericVector &Sd,
+         const Rcpp::NumericVector &Low,
+         const Rcpp::NumericVector &High,
+         Rcpp::NumericVector &Dens
+         ) ;
 
 # endif
