@@ -7,18 +7,24 @@ MC <- 20
 
 funcs <- c("rtn", "etn", "vtn", "enttn")
 
-for (f in funcs) {
-    for (i in 1:MC) {
+for (i in 1:MC) {
+    dtn(.x = 2,
+        .mean = 0,
+        .sd = 1,
+        .low = -Inf,
+        .high = Inf
+        )
+    for (f in funcs) {
         get(f)(.mean = rep(0, N),
                .sd = rep(1, N),
                .low = rep(-1, N),
                .high = rep(1, N)
                )
         get(f)(.mean = rep(0, N),
-            .sd = rep(1, N),
-            .low = rep(5, N),
-            .high = rep(Inf, N)
-            )
+               .sd = rep(1, N),
+               .low = rep(5, N),
+               .high = rep(Inf, N)
+               )
         get(f)(.mean = rep(0, N),
                .sd = rep(1, N),
                .low = rep(-Inf, N),
