@@ -1,3 +1,7 @@
+2014-09-09 Jonathan Olmsted <jpolmsted@gmail.com>
+	* DESCRIPTION: version 0.1-7
+	* src/enttn1.cpp: Entropy supports infinite truncation bounds.
+
 2014-09-03 Jonathan Olmsted <jpolmsted@gmail.com>
 	* src/enttn*: Add entropy calculation at all levels of the chain.
 	* src/RcppTN_init.cpp: Registare entropy functions.

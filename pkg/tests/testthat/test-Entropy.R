@@ -34,3 +34,21 @@ test_that("Analytic \approx Simulation",
       }
           )
 
+
+test_that("Infinite bounds work.",
+      {
+          q1 <- enttn(.mean = c(0, 0),
+                      .sd = c(1, 1),
+                      .low = c(-1000, -Inf),
+                      .high = c(0, 0)
+                      )
+          expect_true(identical(q1[1], q1[2]))
+
+          q2 <- enttn(.mean = c(0, 0),
+                      .sd = c(1, 1),
+                      .high = c(1000, Inf),
+                      .low = c(0, 0)
+                      )
+          expect_true(identical(q2[1], q2[2]))
+      }
+          )

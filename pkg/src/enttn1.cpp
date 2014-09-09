@@ -2,7 +2,7 @@
 
 const double PI = 3.141592653589793238463 ;
 
-# include <Rcpp.h>
+#include <Rcpp.h>
 
 double enttn1(const double mean,
               const double sd,
@@ -11,9 +11,6 @@ double enttn1(const double mean,
               ) {
     double alpha = (low - mean) / sd ;
     double beta = (high - mean) / sd ;
-    
-    // Rcpp::Rcout << alpha << std::endl ;
-    // Rcpp::Rcout << beta << std::endl ;
 
     double q1 = R::pnorm(beta, 0.0, 1.0, true, false) ;
     double q2 = R::pnorm(alpha, 0.0, 1.0, true, false) ;
@@ -22,15 +19,24 @@ double enttn1(const double mean,
     double q4 = R::dnorm(alpha, 0.0, 1.0, false) ;
     double q5 = R::dnorm(beta, 0.0, 1.0, false) ;
 
+    double num1 = alpha * q4 ;
+    double num2 = beta * q5 ;
+    if (alpha == R_NegInf) {
+        num1 = 0.0 ;
+    }
+    if (beta == R_PosInf) {
+        num2 = 0.0 ;
+    }
 
-    // currently requires finite alpha and finite beta
-    double num = alpha * q4 - beta * q5 ;
+    double num = num1 - num2 ;
     double denom = 2 * q3 ;
+    double temp = (.5 * log(2 * PI * exp(1)) +
+                   log(sd * q3)
+                   ) ;
 
-    double res = (.5 * log(2 * PI * exp(1)) +
-                  log(sd * q3) +
+    double res = (temp +
                   num / denom
-                  );
+                  ) ;
 
     return(res) ;
 }
