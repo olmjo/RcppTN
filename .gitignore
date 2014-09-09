@@ -7,3 +7,6 @@
 /pkg/vignettes/using.R
 *.o
 *.so
+/pkg/vignettes/speed.tex
+/pkg/vignettes/using.tex
+/.DS_Store
