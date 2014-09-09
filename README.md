@@ -1,4 +1,4 @@
-# RcppTN 0.1-6
+# RcppTN 0.1-7
 
 Rcpp-based Truncated Normal RNG by Jonathan Olmsted (jpolmsted@gmail.com)
 
@@ -40,7 +40,7 @@ rtn(c(0, 0),
     c(1, 1),
     c(-Inf, 5),
     c(1, Inf)
-    ) ## multiple draws, each from a different distribution	
+    ) ## multiple draws, each from a different distribution
 ```
 
 Functions for calculating moments are also available.
