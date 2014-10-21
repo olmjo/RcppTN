@@ -17,3 +17,24 @@ for(case in 1:length(lows)) {
 }
 }
           )
+
+
+test_that("Extreme expectation are defined.", {
+    means <- seq(0, -37, by = -1)
+    for (case in 1:length(means)) {
+        out1 <- vtn(.mean = means[case],
+                    .low = 0,
+                    .high = Inf
+                    )
+        expect_true(is.finite(out1))
+    }
+    means <- seq(0, 37, by = 1)
+    for (case in 1:length(means)) {
+        out1 <- vtn(.mean = means[case],
+                    .low = -Inf,
+                    .high = 0
+                    )
+        expect_true(is.finite(out1))
+    }
+}
+          )
