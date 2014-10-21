@@ -94,7 +94,7 @@ double vtn1(const double mean,
         out = v1(mean, sd, low, high) ;
     }
     // Check if Mirror Problem is Numerically Better
-    if (!std::isfinite(out)) {
+    if (!std::isfinite(out) | (out < 0)) {
         if (low == R_NegInf) {
             out2 = v2(-mean, sd, -high) ;
         } else if (high == R_PosInf) {
