@@ -18,8 +18,27 @@ for(case in 1:length(lows)) {
 }
           )
 
+test_that("Variances are positive.", {
+    means <- seq(0, -37, by = -1)
+    for (case in 1:length(means)) {
+        out1 <- vtn(.mean = means[case],
+                    .low = 0,
+                    .high = Inf
+                    )
+        expect_true(out1 > 0)
+    }
+    means <- seq(0, 37, by = 1)
+    for (case in 1:length(means)) {
+        out1 <- vtn(.mean = means[case],
+                    .low = -Inf,
+                    .high = 0
+                    )
+        expect_true(out1 > 0)
+    }
+}
+          )
 
-test_that("Extreme expectation are defined.", {
+test_that("Extreme variances are defined.", {
     means <- seq(0, -37, by = -1)
     for (case in 1:length(means)) {
         out1 <- vtn(.mean = means[case],
