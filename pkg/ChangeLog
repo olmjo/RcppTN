@@ -1,4 +1,9 @@
 2014-09-09 Jonathan Olmsted <jpolmsted@gmail.com>
+	* DESCRIPTION: version 0.1-8
+	* src/vtn1.cpp: Variance calculation now supports extreme cases
+	* src/etn1.cpp: Expectation calculation now supports extreme cases
+
+2014-09-09 Jonathan Olmsted <jpolmsted@gmail.com>
 	* DESCRIPTION: version 0.1-7
 	* src/enttn1.cpp: Entropy supports infinite truncation bounds.
 

@@ -1,3 +1,9 @@
+RcppTN 0.1-8
+------------
+* Variance and expectation calculations are numerically stable for
+  distributions truncated to be as far as 37 sds away from the mean in
+  both directions.
+
 RcppTN 0.1-7
 ------------
 * Entropy calculations now support infinite truncation bounds.
