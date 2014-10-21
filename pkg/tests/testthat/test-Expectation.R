@@ -26,5 +26,14 @@ test_that("Extreme expectation are defined.", {
                     )
         expect_true(is.finite(out1))
     }
+    means <- seq(0, 37, by = 1)
+    for (case in 1:length(means)) {
+        out1 <- etn(.mean = means[case],
+                    .low = -Inf,
+                    .high = 0
+                    )
+        expect_true(is.finite(out1))
+    }
+
 }
           )
