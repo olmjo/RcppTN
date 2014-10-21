@@ -16,3 +16,15 @@ test_that("Expectations are symmetric", {
     }
 }
           )
+
+test_that("Extreme expectation are defined.", {
+    means <- seq(0, -37, by = -1)
+    for (case in 1:length(means)) {
+        out1 <- etn(.mean = means[case],
+                    .low = 0,
+                    .high = Inf
+                    )
+        expect_true(is.finite(out1))
+    }
+}
+          )
