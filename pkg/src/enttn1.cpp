@@ -9,9 +9,11 @@ double enttn1(const double mean,
               const double low,
               const double high
               ) {
+    // Normalize bounds
     double alpha = (low - mean) / sd ;
     double beta = (high - mean) / sd ;
 
+    // Calculate Intermediate Qtys
     double q1 = R::pnorm(beta, 0.0, 1.0, true, false) ;
     double q2 = R::pnorm(alpha, 0.0, 1.0, true, false) ;
     double q3 = q1 - q2 ;
