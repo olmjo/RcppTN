@@ -61,7 +61,10 @@
 opts_chunk$set(tidy = FALSE,
                fig.align = "center",
                background = '#EEEEEE',
-               cache = FALSE
+               cache = FALSE,
+               center = TRUE,
+               out.height = ".7\\textwidth",
+               out.width= ".7\\textwidth"
                )
 @
 
@@ -255,9 +258,7 @@ distributions. The \texttt{rtn()} function works perfectly well in simulating
 draws from regions that have a low (read nearly 0) density in a non-truncated
 Normal distribution. Distribution ``D'' is an example of this.
 
-\begin{center}
-<<"diffdists", tidy=FALSE, out.height = ".7\\textwidth", out.width= ".7\\textwidth", message=FALSE>>=
-library(ggplot2)
+<<>>=
 outputA <- rtn(.mean = rep(0, 5000),
                .sd = rep(1, 5000),
                .low = rep(-1, 5000),
@@ -284,6 +285,10 @@ dfOutput <- rbind(data.frame(value = outputA, dist = "A"),
                   data.frame(value = outputC, dist = "C"),
                   data.frame(value = outputD, dist = "D")
                  )
+@
+
+<<"diffdists", echo = FALSE, message = FALSE>>=
+library("ggplot2")
 
 ggplot(dfOutput) +
     geom_histogram(aes(x=value,
@@ -292,9 +297,10 @@ ggplot(dfOutput) +
                        ),
                    alpha = 1/3,
                    position = "identity"
-                   )
+                   ) +
+    scale_fill_discrete("Distribution") +
+    theme(legend.position = "bottom")
 @
-\end{center}
 
 \subsubsection{Multiple Draws from Different Distributions}
 
