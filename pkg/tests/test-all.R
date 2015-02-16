@@ -1,3 +1,4 @@
+library("Rcpp")
 library("RcppTN")
 library("testthat")
 library("methods")
