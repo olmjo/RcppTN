@@ -2,11 +2,11 @@
 # define ETN_H
 
 # include <Rcpp.h>
-  
-void etn(const Rcpp::NumericVector &Mean,
-         const Rcpp::NumericVector &Sd,
-         const Rcpp::NumericVector &Low,
-         const Rcpp::NumericVector &High,
+
+void etn(Rcpp::NumericVector &Mean,
+         Rcpp::NumericVector &Sd,
+         Rcpp::NumericVector &Low,
+         Rcpp::NumericVector &High,
          Rcpp::NumericVector &Exps
     ) ;
 

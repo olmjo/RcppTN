@@ -10,18 +10,18 @@
 # include "vtn1.h"
 # include "check1.h"
 
-void vtn(const Rcpp::NumericVector &Mean, ///< vector of means
-         const Rcpp::NumericVector &Sd, ///< vector of standard deviations
-         const Rcpp::NumericVector &Low,	///< vector of lower bounds
-         const Rcpp::NumericVector &High,	///< vector of upper bounds
+void vtn(Rcpp::NumericVector &Mean, ///< vector of means
+         Rcpp::NumericVector &Sd, ///< vector of standard deviations
+         Rcpp::NumericVector &Low,	///< vector of lower bounds
+         Rcpp::NumericVector &High,	///< vector of upper bounds
          Rcpp::NumericVector &Vars
          ) {
-  
+
   // Namespace
   using namespace Rcpp ;
   //
 
-  // Init Storage  
+  // Init Storage
   NumericVector::iterator itM = Mean.begin() ;
   NumericVector::iterator itS = Sd.begin() ;
   NumericVector::iterator itL = Low.begin() ;

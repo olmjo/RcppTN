@@ -11,25 +11,25 @@
 # include <Rcpp.h>
 # include "enttn1.hpp"
 
-void enttn(const Rcpp::NumericVector &Mean, ///< vector of means
-           const Rcpp::NumericVector &Sd, ///< vector of standard deviations
-           const Rcpp::NumericVector &Low,	///< vector of lower bounds
-           const Rcpp::NumericVector &High,	///< vector of upper bounds
+void enttn(Rcpp::NumericVector &Mean, ///< vector of means
+           Rcpp::NumericVector &Sd, ///< vector of standard deviations
+           Rcpp::NumericVector &Low,	///< vector of lower bounds
+           Rcpp::NumericVector &High,	///< vector of upper bounds
            Rcpp::NumericVector &Ents
            ) {
-    
+
     // Namespace
     using namespace Rcpp ;
     //
 
-    // Init Storage  
+    // Init Storage
     NumericVector::iterator itM = Mean.begin() ;
     NumericVector::iterator itS = Sd.begin() ;
     NumericVector::iterator itL = Low.begin() ;
     NumericVector::iterator itH = High.begin() ;
     NumericVector::iterator itE = Ents.begin() ;
     //
-    
+
     // Expectations for TNs
     while (itE != Ents.end()) {
         // if (check1(*itM, *itS, *itL, *itH)) {

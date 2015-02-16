@@ -2,11 +2,11 @@
 # define ENTTN_HPP
 
 # include <Rcpp.h>
-  
-void enttn(const Rcpp::NumericVector &Mean,
-           const Rcpp::NumericVector &Sd,
-           const Rcpp::NumericVector &Low,
-           const Rcpp::NumericVector &High,
+
+void enttn(Rcpp::NumericVector &Mean,
+           Rcpp::NumericVector &Sd,
+           Rcpp::NumericVector &Low,
+           Rcpp::NumericVector &High,
            Rcpp::NumericVector &Ents
            ) ;
 

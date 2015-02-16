@@ -2,11 +2,11 @@
 # define VTN_H
 
 # include <Rcpp.h>
-  
-void vtn(const Rcpp::NumericVector &Mean,
-         const Rcpp::NumericVector &Sd,
-         const Rcpp::NumericVector &Low,
-         const Rcpp::NumericVector &High,
+
+void vtn(Rcpp::NumericVector &Mean,
+         Rcpp::NumericVector &Sd,
+         Rcpp::NumericVector &Low,
+         Rcpp::NumericVector &High,
          Rcpp::NumericVector &Vars
     ) ;
 

@@ -33,10 +33,10 @@ RcppExport SEXP vtnRcpp(const SEXP mean, ///< vector of length K
   //
 
   // Conversion of Inputs
-  const NumericVector Mean(mean) ;
-  const NumericVector Sd(sd) ;
-  const NumericVector Low(low) ;
-  const NumericVector High(high) ;
+  NumericVector Mean(mean) ;
+  NumericVector Sd(sd) ;
+  NumericVector Low(low) ;
+  NumericVector High(high) ;
   //
 
   // Init, Populate, and Return

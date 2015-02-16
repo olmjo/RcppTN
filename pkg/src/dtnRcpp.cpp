@@ -11,19 +11,19 @@ RcppExport SEXP dtnRcpp(const SEXP x,
                         const SEXP low,
                         const SEXP high
                         ) {
-    
+
   // Namespace
     using namespace Rcpp ;
     //
-    
+
     // Conversion of Inputs
-    const NumericVector X(x) ;
-    const NumericVector Mean(mean) ;
-    const NumericVector Sd(sd) ;
-    const NumericVector Low(low) ;
-    const NumericVector High(high) ;
+    NumericVector X(x) ;
+    NumericVector Mean(mean) ;
+    NumericVector Sd(sd) ;
+    NumericVector Low(low) ;
+    NumericVector High(high) ;
     //
-    
+
     // Init, Populate, and Return
     NumericVector Dens(X.size(), 0.0) ;
     {
