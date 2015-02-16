@@ -11,6 +11,7 @@ Description: This package provides R-level and C++-level functionality
     Functions for calculating moments, densities, and entropies are provided
     at both levels.
 License: GPL (>= 2)
+Depends: Rcpp
 Suggests:
     knitr (>= 1.1),
     ggplot2,
