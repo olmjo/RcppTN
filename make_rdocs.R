@@ -2,4 +2,4 @@
 library("methods")
 library("utils")
 library("devtools")
-document('pkg')
+document('.')

@@ -1,0 +1,7 @@
+.git
+.gitignore
+.travis.yml
+
+make_rdocs.R
+debug
+Makefile
