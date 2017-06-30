@@ -1,3 +1,5 @@
+import(Rcpp)
+
 useDynLib(RcppTN, rtnRcpp, .registration = TRUE)
 useDynLib(RcppTN, etnRcpp, .registration = TRUE)
 useDynLib(RcppTN, vtnRcpp, .registration = TRUE)
