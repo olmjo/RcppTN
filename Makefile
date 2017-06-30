@@ -54,7 +54,7 @@ vign_clean :
 
 %.pdf : %.tex
 	cd $(dir $<) ; pdflatex $(notdir $<)
-## 
+##
 
 clean :
 	rm -f RcppTN*.tar.gz
