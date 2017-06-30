@@ -15,7 +15,6 @@ Makefile that is included.
 library(devtools)
 install_github(repo = "RcppTN",
                username = "olmjo",
-               subdir = "pkg",
                ref = "development"
                )
 ```
