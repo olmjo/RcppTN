@@ -8,7 +8,7 @@
 ///
 
 # include <Rcpp.h>
-# include "enttn.hpp"
+# include "enttn.h"
 
 RcppExport SEXP enttnRcpp(const SEXP mean, ///< vector of length K
                           ///containing the mean of the

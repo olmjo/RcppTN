@@ -9,7 +9,7 @@
 ///
 
 # include <Rcpp.h>
-# include "enttn1.hpp"
+# include "enttn1.h"
 
 void enttn(Rcpp::NumericVector &Mean, ///< vector of means
            Rcpp::NumericVector &Sd, ///< vector of standard deviations

@@ -3,7 +3,7 @@
 /// Vectorized Truncated Normal Density Function
 
 # include <Rcpp.h>
-# include "dtn1.hpp"
+# include "dtn1.h"
 # include "check1.h"
 
 void dtn(Rcpp::NumericVector &X,

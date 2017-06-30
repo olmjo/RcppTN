@@ -3,7 +3,7 @@
 /// R-accessible Vectorized Truncated Normal Density Function
 
 # include <Rcpp.h>
-# include "dtn.hpp"
+# include "dtn.h"
 
 RcppExport SEXP dtnRcpp(const SEXP x,
                         const SEXP mean,
