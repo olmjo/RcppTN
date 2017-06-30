@@ -6,8 +6,8 @@
 #include "etn1.h"
 #include "rtn1.h"
 #include "vtn1.h"
-#include "dtn1.hpp"
-#include "enttn1.hpp"
+#include "dtn1.h"
+#include "enttn1.h"
 
 RcppExport void R_init_RcppTN (DllInfo *info) {
     R_RegisterCCallable("RcppTN", "RcppTN_etn1", (DL_FUNC) etn1) ;
