@@ -1,7 +1,8 @@
+README.md
 .git
 .gitignore
 .travis.yml
-
 make_rdocs.R
 debug
 Makefile
+vignettes/figure
