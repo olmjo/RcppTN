@@ -1,15 +1,15 @@
 Package: RcppTN
 Type: Package
-Title: Rcpp-based Truncated Normal Distribution RNG and Family
-Version: 0.1-9
-Date: 2015-02-16
+Title: Rcpp-Based Truncated Normal Distribution RNG and Family
+Version: 0.2-0
+Date: 2017-07-02
 Author: Jonathan Olmsted
 Maintainer: Jonathan Olmsted <jpolmsted@gmail.com>
-Description: This package provides R-level and C++-level functionality
+Description: R-level and C++-level functionality
     to generate random deviates from and calculate moments of a
     Truncated Normal distribution using the Robert (1995) algorithm.
-    Functions for calculating moments, densities, and entropies are provided
-    at both levels.
+    In addition to RNG, functions for calculating moments, densities,
+    and entropies are provided at both levels.
 License: GPL (>= 2)
 Depends:
 Suggests:
