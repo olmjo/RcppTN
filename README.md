@@ -1,9 +1,17 @@
-# RcppTN 0.1-8
+# RcppTN
 
 Rcpp-based Truncated Normal RNG by Jonathan Olmsted (jpolmsted@gmail.com)
 
-**Warning:** This R package should currently be considered in development. Be
-aware there is a development branch where fixes and features will first hit.
+This package provides functions for generating random numbers from a Truncated
+Normal distribution with integration to R's usual RNG seed. Functions can be
+called at either the R or C++ level (with similar structures).
+
+In addition to RNG, functions to calculate the density, moments of the
+distribution, and the entropy are also provided.
+
+The goal of this package is to provide consistent and straightforward functions
+for working with Truncated Normal distributions for users in R-land and C++-land.
+
 
 ## Installation
 
