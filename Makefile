@@ -17,7 +17,7 @@ build : attrs rdocs vigns clean
 check : build
 	R CMD check RcppTN_*
 
-crancheck :
+crancheck : build
 	R CMD check --as-cran RcppTN_*
 
 install : attrs rdocs vigns clean
