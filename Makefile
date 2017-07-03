@@ -10,7 +10,7 @@ attrs :
 	#Rscript -e "library(Rcpp) ; compileAttributes(verbose=TRUE)"
 
 build : attrs rdocs vigns clean
-	R CMD build .
+	R CMD build --compact-vignettes="both" .
 	R CMD Rd2pdf .
 	tar -xvf RcppTN_*
 
