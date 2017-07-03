@@ -1,3 +1,8 @@
+RcppTN 0.2-1
+------------
+* Fixed reference to Robert (1995) in DESCRIPTION
+
+
 RcppTN 0.2-0
 ------------
 * Maintenance for first CRAN upload and R 3.4.0
