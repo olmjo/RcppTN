@@ -3,13 +3,18 @@ Type: Package
 Title: Rcpp-Based Truncated Normal Distribution RNG and Family
 Version: 0.2-0
 Date: 2017-07-02
-Author: Jonathan Olmsted
+Authors@R: c(person("Jonathan", "Olmsted",
+                              role = c("aut", "cre"),
+                              email = "jpolmsted@gmail.com"))
+Author: Jonathan Olmsted [aut, cre]
 Maintainer: Jonathan Olmsted <jpolmsted@gmail.com>
 Description: R-level and C++-level functionality
     to generate random deviates from and calculate moments of a
     Truncated Normal distribution using the Robert (1995) algorithm.
     In addition to RNG, functions for calculating moments, densities,
     and entropies are provided at both levels.
+URL: http://github.com/olmjo/RcppTN
+BugReports: http://github.com/olmjo/RcppTN/issues
 License: GPL (>= 2)
 Depends:
 Suggests:
