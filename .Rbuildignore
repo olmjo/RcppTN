@@ -6,3 +6,4 @@ make_rdocs.R
 debug
 Makefile
 vignettes/figure
+releases
