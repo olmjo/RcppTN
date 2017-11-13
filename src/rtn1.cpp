@@ -12,10 +12,10 @@ inline bool CheckSimple(const double low, ///< lower bound of distribution
                         const double high ///< upper bound of distribution
                         ) {
   // Init Values Used in Inequality of Interest
-  double val1 = (2 * sqrt(exp(1))) / (low + sqrt(pow(low, 2) + 4));
-  double val2 = exp((pow(low, 2) - low * sqrt(pow(low, 2) + 4)) / (4)) ;
+  double val1 = (2 * sqrt(exp(1.0))) / (low + sqrt(pow(low, 2.0) + 4));
+  double val2 = exp((pow(low, 2.0) - low * sqrt(pow(low, 2.0) + 4)) / (4)) ;
   //
-  
+
   // Test if Simple is Preferred
   if (high > low + val1 * val2) {
     return true ;
@@ -65,8 +65,8 @@ inline double UseAlg2(const double low ///< lower bound of distribution
                       ) {
   // Init Values
   const double alphastar = (low +
-			    sqrt(pow(low, 2) + 4.0)
-			    ) / (2.0) ;
+                sqrt(pow(low, 2.0) + 4.0)
+                ) / (2.0) ;
   const double alpha = alphastar ;
   double e = 0 ;
   double z = 0 ;
@@ -83,7 +83,7 @@ inline double UseAlg2(const double low ///< lower bound of distribution
     e = Rf_rexp(1.0) ;
     z = low + e / alpha ;
 
-    rho = exp(-pow(alpha - z, 2) / 2) ;
+    rho = exp(-pow(alpha - z, 2.0) / 2) ;
     u = Rf_runif(0, 1) ;
     if (u <= rho) {
       // Keep Successes
@@ -120,11 +120,11 @@ inline double UseAlg3(const double low, ///< lower bound of distribution
   while (valid == 0) {
     z = Rf_runif(low, high) ;
     if (0 < low) {
-      rho = exp((pow(low, 2) - pow(z, 2)) / 2) ;
+      rho = exp((pow(low, 2.0) - pow(z, 2.0)) / 2) ;
     } else if (high < 0) {
-      rho = exp((pow(high, 2) - pow(z, 2)) / 2) ;
+      rho = exp((pow(high, 2.0) - pow(z, 2.0)) / 2) ;
     } else if (0 < high && low < 0) {
-      rho = exp(- pow(z, 2) / 2) ;
+      rho = exp(- pow(z, 2.0) / 2) ;
     }
 
     u = Rf_runif(0, 1) ;

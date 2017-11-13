@@ -8,7 +8,7 @@ double v0 (const double mean,
            const double low,
            const double high
            ) {
-    return(pow(sd, 2)) ;
+    return(pow(sd, 2.0)) ;
 }
 
 /// Truncated Below and Above
@@ -42,7 +42,7 @@ double v2 (const double mean,
     double q1 = R::dnorm(s_low, 0.0, 1.0, false) ;
     double q3 = R::pnorm(s_low, 0.0, 1.0, true, false) ;
 
-    double v = pow(sd, 2.0) * (1 + s_low * (q1 / (1 - q3)) - pow(q1 / (1 - q3), 2));
+    double v = pow(sd, 2.0) * (1 + s_low * (q1 / (1 - q3)) - pow(q1 / (1 - q3), 2.0));
     return(v) ;
 }
 
