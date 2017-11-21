@@ -1,8 +1,8 @@
 Package: RcppTN
 Type: Package
 Title: Rcpp-Based Truncated Normal Distribution RNG and Family
-Version: 0.2-1
-Date: 2017-07-02
+Version: 0.2-2
+Date: 2017-11-21
 Authors@R: c(person("Jonathan", "Olmsted",
                               role = c("aut", "cre"),
                               email = "jpolmsted@gmail.com"))
