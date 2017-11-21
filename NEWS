@@ -1,3 +1,9 @@
+RcppTN 0.2-2
+------------
+* Removed vignettes (temporarily) pending successful builds and
+  testing on Solaris
+* Fixed function signatures for standard math functions in C++
+
 RcppTN 0.2-1
 ------------
 * Fixed reference to Robert (1995) in DESCRIPTION
