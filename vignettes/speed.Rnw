@@ -4,7 +4,7 @@
 % \VignetteIndexEntry{Performance}
 % \VignetteKeyword{RNG}
 
-% \VignetteDepends{ggplot2, Rcpp, knitr}
+% \VignetteDepends{ggplot2, Rcpp, knitr, microbenchmark, truncnorm, msm}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PREAMBLE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -48,7 +48,7 @@
 
 \title{Benchmarking \texttt{rtn()}'s Performance}
 
-\date{September 3, 2014}
+\date{This version updated: \today}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CONTENT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

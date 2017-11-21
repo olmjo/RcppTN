@@ -48,7 +48,7 @@
   \texttt{jpolmsted@gmail.com}
 }
 \title{Using \RcppTN{} in \R{} and \Cpp{}}
-\date{September 3, 2014}
+\date{This version updated: \today}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
