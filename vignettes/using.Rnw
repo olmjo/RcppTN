@@ -1,9 +1,9 @@
 % -*- mode: noweb; ess-noweb-default-code-mode: R; ess-noweb-doc-mode: LaTeX-mode; -*-
 
-% \VignetteEngine{knitr::knitr}
-% \VignetteIndexEntry{Using RcppTN}
-% \VignetteKeyword{RNG}
-% \VignetteDepends{ggplot2, Rcpp}
+%\VignetteEngine{knitr::knitr}
+%\VignetteIndexEntry{Using RcppTN}
+%\VignetteKeyword{RNG}
+%\VignetteDepends{ggplot2, Rcpp}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PREAMBLE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

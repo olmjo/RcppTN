@@ -1,10 +1,10 @@
 % -*- mode: noweb; ess-noweb-default-code-mode: R; ess-noweb-doc-mode: LaTeX-mode; -*-
 
-% \VignetteEngine{knitr::knitr}
-% \VignetteIndexEntry{Performance}
-% \VignetteKeyword{RNG}
+%\VignetteEngine{knitr::knitr}
+%\VignetteIndexEntry{Performance}
+%\VignetteKeyword{RNG}
 
-% \VignetteDepends{ggplot2, Rcpp, knitr, microbenchmark, truncnorm, msm}
+%\VignetteDepends{ggplot2, Rcpp, knitr, microbenchmark, truncnorm, msm}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PREAMBLE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
