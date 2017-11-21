@@ -6,5 +6,8 @@ make_rdocs.R
 debug
 Makefile
 vignettes/figure
+vignettes
 releases
 jic
+DESCRIPTION.prev
+ChangeLog

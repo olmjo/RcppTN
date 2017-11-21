@@ -17,7 +17,9 @@ URL: http://github.com/olmjo/RcppTN
 BugReports: http://github.com/olmjo/RcppTN/issues
 License: GPL (>= 2)
 Depends:
-Suggests: testthat
+Suggests: knitr (>= 1.1), ggplot2, msm,
+    truncnorm, testthat, microbenchmark
 LinkingTo: Rcpp
 Imports: Rcpp
+VignetteBuilder: knitr
 RoxygenNote: 6.0.1
